@@ -5,22 +5,27 @@
 ├── ./package.json
 ├── ./package-lock.json
 ├── ./public
-│   └── ./public/vite.svg
 ├── ./README.md
 ├── ./src
-│   ├── ./src/App.css
 │   ├── ./src/App.jsx
 │   ├── ./src/assets
-│   │   └── ./src/assets/react.svg
 │   ├── ./src/components
+│   │   └── ./src/components/Header
+│   │       ├── ./src/components/Header/Header.jsx
+│   │       └── ./src/components/Header/index.js
 │   ├── ./src/constants.js
 │   ├── ./src/helpers
 │   ├── ./src/hooks
 │   ├── ./src/index.css
 │   ├── ./src/main.jsx
 │   ├── ./src/pages
+│   │   ├── ./src/pages/AboutPage.jsx
+│   │   ├── ./src/pages/HomePage.jsx
+│   │   ├── ./src/pages/NotFoundPage.jsx
+│   │   ├── ./src/pages/ProgramsPage.jsx
+│   │   └── ./src/pages/ResourcesPage.jsx
 │   └── ./src/utils.js
 ├── ./structure.txt
 └── ./vite.config.js
 
-8 directories, 16 files
+9 directories, 20 files
