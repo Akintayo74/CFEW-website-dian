@@ -17,13 +17,14 @@
 }
 
 @theme {
-  --color-cfew-primary-900: #1B2816E5;
   --color-cfew-primary-500: #4B6E3C;
+  --color-cfew-primary-800: #27391F;
+  --color-cfew-primary-900: #1B2816E5;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
+  font-weight: 600;
+  color: #ffffff;
   text-decoration: inherit;
 }
 a:hover {
