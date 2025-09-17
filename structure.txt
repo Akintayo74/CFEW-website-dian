@@ -10,9 +10,19 @@
 │   ├── ./src/App.jsx
 │   ├── ./src/assets
 │   ├── ./src/components
-│   │   └── ./src/components/Header
-│   │       ├── ./src/components/Header/Header.jsx
-│   │       └── ./src/components/Header/index.js
+│   │   ├── ./src/components/Footer
+│   │   │   ├── ./src/components/Footer/Footer.jsx
+│   │   │   └── ./src/components/Footer/index.js
+│   │   ├── ./src/components/Header
+│   │   │   ├── ./src/components/Header/Header.jsx
+│   │   │   └── ./src/components/Header/index.js
+│   │   ├── ./src/components/Layout
+│   │   │   ├── ./src/components/Layout/index.js
+│   │   │   └── ./src/components/Layout/Layout.jsx
+│   │   └── ./src/components/Section
+│   │       ├── ./src/components/Section/index.js
+│   │       ├── ./src/components/Section/Section.jsx
+│   │       └── ./src/components/Section/Section.stories.js
 │   ├── ./src/constants.js
 │   ├── ./src/helpers
 │   ├── ./src/hooks
@@ -24,8 +34,12 @@
 │   │   ├── ./src/pages/NotFoundPage.jsx
 │   │   ├── ./src/pages/ProgramsPage.jsx
 │   │   └── ./src/pages/ResourcesPage.jsx
+│   ├── ./src/stories
 │   └── ./src/utils.js
+├── ./.storybook
+│   ├── ./.storybook/main.js
+│   └── ./.storybook/preview.js
 ├── ./structure.txt
 └── ./vite.config.js
 
-9 directories, 20 files
+14 directories, 29 files

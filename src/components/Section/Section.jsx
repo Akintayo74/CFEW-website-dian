@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Section() {
-  return <div></div>;
+  return <div>H</div>;
 }
 
 export default Section;
