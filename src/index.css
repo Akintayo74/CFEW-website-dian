@@ -20,6 +20,8 @@
   --color-cfew-primary-500: #4B6E3C;
   --color-cfew-primary-800: #27391F;
   --color-cfew-primary-900: #1B2816E5;
+  --color-cfew-transparent: #00000080;
+  --color-cfew-interface: #FFF8E8;
 }
 
 a {
