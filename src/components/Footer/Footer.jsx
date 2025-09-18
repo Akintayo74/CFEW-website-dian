@@ -21,7 +21,7 @@ function Footer() {
     <footer className="bg-cfew-primary-800">
       <Container>
         {/* Main Footer Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-16 lg:my-20">
           {/* LEFT COLUMN - Newsletter & Social Icons */}
           <div className="space-y-8">
             {/* Newsletter Section */}
@@ -182,7 +182,7 @@ function Footer() {
         </div>
 
         {/* Mobile-only elements */}
-        <div className="lg:hidden mt-12 space-y-6">
+        <div className="lg:hidden mt-12 space-y-6 mb-16">
           {/* Social Media Icons - Mobile */}
           <div className="flex gap-4" role="list" aria-label="Social media links">
             <a 
