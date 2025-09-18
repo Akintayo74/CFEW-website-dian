@@ -9,9 +9,19 @@
 ├── ./src
 │   ├── ./src/App.jsx
 │   ├── ./src/assets
+│   │   ├── ./src/assets/CFEW-Logo.png
+│   │   ├── ./src/assets/facebook.svg
+│   │   ├── ./src/assets/instagram.svg
+│   │   ├── ./src/assets/linked-in.svg
+│   │   ├── ./src/assets/x.svg
+│   │   └── ./src/assets/youtube.svg
 │   ├── ./src/components
+│   │   ├── ./src/components/Container
+│   │   │   ├── ./src/components/Container/Container.jsx
+│   │   │   └── ./src/components/Container/index.js
 │   │   ├── ./src/components/Footer
 │   │   │   ├── ./src/components/Footer/Footer.jsx
+│   │   │   ├── ./src/components/Footer/Footer.stories.js
 │   │   │   └── ./src/components/Footer/index.js
 │   │   ├── ./src/components/Header
 │   │   │   ├── ./src/components/Header/Header.jsx
@@ -43,4 +53,4 @@
 ├── ./structure.txt
 └── ./vite.config.js
 
-14 directories, 30 files
+15 directories, 39 files

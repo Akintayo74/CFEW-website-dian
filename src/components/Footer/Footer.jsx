@@ -18,7 +18,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-cfew-primary-800 mb-10">
+    <footer className="bg-cfew-primary-800">
       <Container>
         {/* Main Footer Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
