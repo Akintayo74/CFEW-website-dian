@@ -4,7 +4,7 @@ import Container from '../Container/Container';
 function Card() {
   return (
     <Container>
-      <div className='bg-cfew-transparent p-2 md:p-5 md:w-120 lg:w-160 2xl:w-200'>
+      <div className='bg-cfew-transparent p-2 md:p-5 w-80 md:w-120 lg:w-160 2xl:w-200'>
         <h4 className='font-bold mb-5 text-cfew-interface text-xl md:text-4xl lg:font-black lg:text-6xl'>Securing the Earth Through Community Empowerment</h4>
         <p className='font-normal mb-6 text-sm text-cfew-interface'>
           At Centre for Earth Works (CFEW), we unite young minds and communities to protect the environment, tackle climate change, and build a sustainable future.

@@ -1,13 +1,14 @@
 import Container from '../components/Container/Container';
 import Header from '../components/Header'
 import Layout from '../components/Layout/Layout';
+import Slideshow from '../components/Slideshow/Slideshow';
 
 function HomePage() {
 
     return (
         <Layout>
-            <Container>
-                <h1>Hello!</h1>
+            <Slideshow />
+            <Container>    
             </Container>
         </Layout>
     )
