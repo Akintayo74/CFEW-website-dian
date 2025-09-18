@@ -5,6 +5,11 @@
 ├── ./package.json
 ├── ./package-lock.json
 ├── ./public
+│   ├── ./public/slide-1.png
+│   ├── ./public/slide-2.png
+│   ├── ./public/slide-3.png
+│   ├── ./public/slide-4.png
+│   └── ./public/slide-5.png
 ├── ./README.md
 ├── ./src
 │   ├── ./src/App.jsx
@@ -16,6 +21,10 @@
 │   │   ├── ./src/assets/x.svg
 │   │   └── ./src/assets/youtube.svg
 │   ├── ./src/components
+│   │   ├── ./src/components/Card
+│   │   │   ├── ./src/components/Card/Card.jsx
+│   │   │   ├── ./src/components/Card/Card.stories.js
+│   │   │   └── ./src/components/Card/index.js
 │   │   ├── ./src/components/Container
 │   │   │   ├── ./src/components/Container/Container.jsx
 │   │   │   └── ./src/components/Container/index.js
@@ -30,10 +39,13 @@
 │   │   ├── ./src/components/Layout
 │   │   │   ├── ./src/components/Layout/index.js
 │   │   │   └── ./src/components/Layout/Layout.jsx
-│   │   └── ./src/components/Section
-│   │       ├── ./src/components/Section/index.js
-│   │       ├── ./src/components/Section/Section.jsx
-│   │       └── ./src/components/Section/Section.stories.js
+│   │   ├── ./src/components/Section
+│   │   │   ├── ./src/components/Section/index.js
+│   │   │   ├── ./src/components/Section/Section.jsx
+│   │   │   └── ./src/components/Section/Section.stories.js
+│   │   └── ./src/components/Slideshow
+│   │       ├── ./src/components/Slideshow/index.js
+│   │       └── ./src/components/Slideshow/Slideshow.jsx
 │   ├── ./src/constants.js
 │   ├── ./src/helpers
 │   ├── ./src/hooks
@@ -53,4 +65,4 @@
 ├── ./structure.txt
 └── ./vite.config.js
 
-15 directories, 39 files
+17 directories, 49 files
