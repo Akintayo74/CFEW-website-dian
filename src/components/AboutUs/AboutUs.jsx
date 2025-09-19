@@ -40,7 +40,7 @@ function AboutUs() {
             Volunteer
           </Button>
         </div>
-        <Button className='hidden md:block'>
+        <Button className='hidden md:block lg:self-start'>
           Volunteer
         </Button>
       </ImageText>
