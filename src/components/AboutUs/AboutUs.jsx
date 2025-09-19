@@ -3,14 +3,16 @@ import Section from '../Section/Section';
 import ImageText from '../ImageText/ImageText';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import Button from '../Button/Button';
+import Container from '../Container';
 
 function AboutUs() {
   return (
-    <Section>
+    <Section>      
       <ImageText imageSrc='/about-us.png'>
         <SectionHeader>
           About Us
         </SectionHeader>
+        
         <p className='text-cfew-dark'>
           <b>Centre for Earth Works (CFEW)</b> is a research-driven nongovernmental organisation that is passionate about securing the Earth and working to empower communities with sustainable strategies for solving environmental challenges such as waste management, toxic chemicals, sustainable land management, water, sanitation and hygiene, renewable energy, and environmental justice.
         </p>
