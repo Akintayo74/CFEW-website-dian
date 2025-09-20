@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Montserrat, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
@@ -17,6 +17,7 @@
 }
 
 @theme {
+  --font-family-sans: Montserrat, ui-sans-serif, system-ui, sans-serif;
   --color-cfew-primary-50: #EBF1E5;
   --color-cfew-primary-100: #BBCCBB;
   --color-cfew-primary-400: #6C925B;

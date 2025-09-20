@@ -4,7 +4,7 @@ function Section({ children, className = "", spacing = "default", background = "
   const spacingClasses = {
     // tight: "py-16 lg:py-30",
     default: "py-16 lg:py-20", 
-    // loose: "py-32 lg:py-60"
+    loose: "pt-16 pb-32 lg:pt-30 lg:pb-60"
   };
   
   const bgClasses = {
@@ -14,7 +14,7 @@ function Section({ children, className = "", spacing = "default", background = "
   };
   
   return (
-    <section className={`${spacingClasses[spacing]} ${bgClasses[background]} ${className}`}>
+    <section className={`${spacingClasses[spacing]} ${bgClasses[background]} ${className} text-center`}>
       {children}
     </section>
   );
