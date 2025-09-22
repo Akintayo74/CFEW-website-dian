@@ -1,4 +1,3 @@
-// src/components/Header/Header.stories.jsx
 import Header from "./Header";
 
 export default {

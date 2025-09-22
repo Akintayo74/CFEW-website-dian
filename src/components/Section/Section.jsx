@@ -4,11 +4,12 @@ function Section({ children, className = "", spacing = "default", background = "
   const spacingClasses = {
     // tight: "py-16 lg:py-30",
     default: "py-16 lg:py-20", 
-    loose: "pt-16 pb-32 lg:pt-30 lg:pb-60"
+    loose: "pt-16 pb-32 lg:pt-30 lg:pb-60",
+    looseSymmetrical: "py-32 lg:py-60",
   };
   
   const bgClasses = {
-    // white: "bg-white",
+    pink: "bg-cfew-interface",
     // gray: "bg-gray-50",
     primary: "bg-cfew-primary-50"
   };
