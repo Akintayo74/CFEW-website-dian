@@ -13,7 +13,8 @@ function AboutUs() {
         <p className='text-cfew-dark text-left'>
           <b>Centre for Earth Works (CFEW)</b> is a research-driven nongovernmental organisation that is passionate about securing the Earth and working to empower communities with sustainable strategies for solving environmental challenges such as waste management, toxic chemicals, sustainable land management, water, sanitation and hygiene, renewable energy, and environmental justice.
         </p>
-        <div className='text-cfew-primary-600 md:flex md:flex-row md:items-center md:gap-6'>
+        <div className='text-cfew-primary-600 text-left md:text-start flex flex-col md:flex-row md:items-center md:gap-6'>
+
           <div className='my-6'>
             <h6 className='font-bold text-2xl'>17,000+</h6>
             <div className='font-semibold'>Trees Planted</div>
