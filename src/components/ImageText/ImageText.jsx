@@ -1,56 +1,35 @@
 import React from 'react';
 import Container from '../Container';
 
-function ImageText({ 
-  imageSrc, 
-  imageAlt = "Image", 
-  reverse = false, 
+function ImageText({
+  imageSrc,
+  imageAlt = "Image",
+  reverse = false,
   title,
-  children 
+  children
 }) {
   return (
     <Container>
-      <div className={`flex pt-12 md:gap-10 lg:gap-15 ${
-        reverse 
-          ? "flex-col lg:flex-row-reverse" 
-          : "flex-col-reverse lg:flex-row"
+      <div className={`flex flex-col pt-12 lg:gap-10 xl:gap-16 ${
+        reverse ? 'lg:flex-row' : 'lg:flex-row-reverse'
       }`}>
-
-        {/* Desktop -- Image container */}
-        <div className='hidden lg:flex-1 lg:flex'>
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            className='w-full h-auto object-cover rounded lg:rounded-lg lg:h-full'
-          />
-        </div>
-
-        <div className='flex-1 mb-12 md:mb-0 lg:flex lg:flex-col'>
+        {/* Text container - always first on mobile */}
+        <div className="flex-1 mb-8 lg:mb-0 lg:flex lg:flex-col lg:justify-center">
           {title && (
-            <h2 className='text-cfew-dark text-left text-3xl lg:text-5xl font-bold mb-5 lg:mb-6'>
+            <h2 className="text-cfew-dark text-left text-3xl lg:text-5xl font-bold mb-5 lg:mb-6">
               {title}
             </h2>
           )}
-
-          {/* Mobile -- reverse=true image */}
-          {reverse && (<div className='lg:hidden mb-8'>
-            <img
-              src={imageSrc}
-              alt={imageAlt}
-              className='w-full h-auto object-cover rounded'
-            />
-          </div>)}
-
           {children}
-
-          {/* Mobile -- regular(reverse=false) imag */}
-          {reverse ? undefined : (<div className='flex-1 lg:flex'>
-            <img
-              src={imageSrc}
-              alt={imageAlt}
-              className='w-full h-auto object-cover rounded lg:rounded-lg lg:h-full'
-            />
-          </div>)}
+        </div>
+        
+        {/* Image container - always second on mobile */}
+        <div className="flex-1">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="w-full h-auto object-cover rounded lg:rounded-lg"
+          />
         </div>
       </div>
     </Container>

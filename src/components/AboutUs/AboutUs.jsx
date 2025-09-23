@@ -36,11 +36,11 @@ function AboutUs() {
           </div>
 
           <Button className='md:hidden'>
-            Volunteer
+            Learn More
           </Button>
         </div>
         <Button className='hidden md:block lg:self-start'>
-          Volunteer
+          Learn More
         </Button>
       </ImageText>
     </Section>
