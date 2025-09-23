@@ -1,5 +1,5 @@
-import React from 'react';
-import Card from '../Card/Card';
+import React from "react";
+import Card from "../Card/Card";
 
 function Slideshow() {
   //  const slides = [
@@ -12,8 +12,8 @@ function Slideshow() {
 
   return (
     <div className="relative">
-      <img src='/slide-1.png' className='w-full h-150 md:h-auto' />
-      <div className='absolute bottom-20 left-0'>
+      <img src="/slide-1.png" className="h-150 w-full md:h-auto" />
+      <div className="absolute bottom-20 left-0">
         <Card />
       </div>
     </div>
