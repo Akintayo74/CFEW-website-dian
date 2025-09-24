@@ -5,6 +5,7 @@ import Layout from '../components/Layout/Layout';
 import Slideshow from '../components/Slideshow/Slideshow';
 import ThematicAreas from '../components/ThematicAreas/ThematicAreas';
 import FoundersMessage from '../components/FoundersMessage/FoundersMessage'
+import StoriesInsights from '../components/StoriesInsights/StoriesInsights';
 
 function HomePage() {
 
@@ -15,8 +16,7 @@ function HomePage() {
             <ThematicAreas />
             <HowWeWork />
             <FoundersMessage />
-            <Container>    
-            </Container>
+            <StoriesInsights />
         </Layout>
     )
 }

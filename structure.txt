@@ -5,22 +5,47 @@
 ├── ./package.json
 ├── ./package-lock.json
 ├── ./public
+│   ├── ./public/about-us.png
+│   ├── ./public/portraits
+│   │   └── ./public/portraits/founder-image.png
 │   ├── ./public/slide-1.png
 │   ├── ./public/slide-2.png
 │   ├── ./public/slide-3.png
 │   ├── ./public/slide-4.png
-│   └── ./public/slide-5.png
+│   ├── ./public/slide-5.png
+│   ├── ./public/thematic-agriculture.png
+│   ├── ./public/thematic-education.png
+│   ├── ./public/thematic-environment.png
+│   └── ./public/thematic-health.png
 ├── ./README.md
 ├── ./src
 │   ├── ./src/App.jsx
 │   ├── ./src/assets
 │   │   ├── ./src/assets/CFEW-Logo.png
 │   │   ├── ./src/assets/facebook.svg
+│   │   ├── ./src/assets/HandHeart.png
 │   │   ├── ./src/assets/instagram.svg
+│   │   ├── ./src/assets/Laptop.png
 │   │   ├── ./src/assets/linked-in.svg
+│   │   ├── ./src/assets/Megaphone.png
+│   │   ├── ./src/assets/Recycle.png
+│   │   ├── ./src/assets/SunHorizon.png
 │   │   ├── ./src/assets/x.svg
 │   │   └── ./src/assets/youtube.svg
 │   ├── ./src/components
+│   │   ├── ./src/components/AboutUs
+│   │   │   ├── ./src/components/AboutUs/AboutUs.jsx
+│   │   │   ├── ./src/components/AboutUs/AboutUs.stories.js
+│   │   │   └── ./src/components/AboutUs/index.js
+│   │   ├── ./src/components/ActionCard
+│   │   │   ├── ./src/components/ActionCard/ActionCard.jsx
+│   │   │   └── ./src/components/ActionCard/index.js
+│   │   ├── ./src/components/BlogCard
+│   │   │   ├── ./src/components/BlogCard/BlogCard.jsx
+│   │   │   └── ./src/components/BlogCard/index.js
+│   │   ├── ./src/components/Button
+│   │   │   ├── ./src/components/Button/Button.jsx
+│   │   │   └── ./src/components/Button/index.js
 │   │   ├── ./src/components/Card
 │   │   │   ├── ./src/components/Card/Card.jsx
 │   │   │   ├── ./src/components/Card/Card.stories.js
@@ -32,10 +57,24 @@
 │   │   │   ├── ./src/components/Footer/Footer.jsx
 │   │   │   ├── ./src/components/Footer/Footer.stories.js
 │   │   │   └── ./src/components/Footer/index.js
+│   │   ├── ./src/components/FoundersMessage
+│   │   │   ├── ./src/components/FoundersMessage/FoundersMessage.jsx
+│   │   │   ├── ./src/components/FoundersMessage/FoundersMessage.stories.js
+│   │   │   └── ./src/components/FoundersMessage/index.js
 │   │   ├── ./src/components/Header
 │   │   │   ├── ./src/components/Header/Header.jsx
 │   │   │   ├── ./src/components/Header/Header.stories.js
 │   │   │   └── ./src/components/Header/index.js
+│   │   ├── ./src/components/HowWeWork
+│   │   │   ├── ./src/components/HowWeWork/HowWeWork.jsx
+│   │   │   ├── ./src/components/HowWeWork/HowWeWork.stories.js
+│   │   │   └── ./src/components/HowWeWork/index.js
+│   │   ├── ./src/components/ImageText
+│   │   │   ├── ./src/components/ImageText/ImageText.jsx
+│   │   │   └── ./src/components/ImageText/index.js
+│   │   ├── ./src/components/ImageTextHeader
+│   │   │   ├── ./src/components/ImageTextHeader/ImageTextHeader.jsx
+│   │   │   └── ./src/components/ImageTextHeader/index.js
 │   │   ├── ./src/components/Layout
 │   │   │   ├── ./src/components/Layout/index.js
 │   │   │   └── ./src/components/Layout/Layout.jsx
@@ -43,9 +82,22 @@
 │   │   │   ├── ./src/components/Section/index.js
 │   │   │   ├── ./src/components/Section/Section.jsx
 │   │   │   └── ./src/components/Section/Section.stories.js
-│   │   └── ./src/components/Slideshow
-│   │       ├── ./src/components/Slideshow/index.js
-│   │       └── ./src/components/Slideshow/Slideshow.jsx
+│   │   ├── ./src/components/SectionHeader
+│   │   │   ├── ./src/components/SectionHeader/index.js
+│   │   │   ├── ./src/components/SectionHeader/SectionHeader.jsx
+│   │   │   └── ./src/components/SectionHeader/SectionHeader.stories.js
+│   │   ├── ./src/components/Slideshow
+│   │   │   ├── ./src/components/Slideshow/index.js
+│   │   │   ├── ./src/components/Slideshow/Slideshow.jsx
+│   │   │   └── ./src/components/Slideshow/Slideshow.stories.js
+│   │   ├── ./src/components/StoriesInsights
+│   │   │   ├── ./src/components/StoriesInsights/index.js
+│   │   │   ├── ./src/components/StoriesInsights/StoriesInsights.jsx
+│   │   │   └── ./src/components/StoriesInsights/StoriesInsights.stories.js
+│   │   └── ./src/components/ThematicAreas
+│   │       ├── ./src/components/ThematicAreas/index.js
+│   │       ├── ./src/components/ThematicAreas/ThematicAreas.jsx
+│   │       └── ./src/components/ThematicAreas/ThematicAreas.stories.js
 │   ├── ./src/constants.js
 │   ├── ./src/helpers
 │   ├── ./src/hooks
@@ -65,4 +117,4 @@
 ├── ./structure.txt
 └── ./vite.config.js
 
-17 directories, 49 files
+29 directories, 89 files
