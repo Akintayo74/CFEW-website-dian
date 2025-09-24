@@ -6,6 +6,7 @@ import Slideshow from '../components/Slideshow/Slideshow';
 import ThematicAreas from '../components/ThematicAreas/ThematicAreas';
 import FoundersMessage from '../components/FoundersMessage/FoundersMessage'
 import StoriesInsights from '../components/StoriesInsights/StoriesInsights';
+import GetInvolved from '../components/GetInvolved/GetInvolved';
 
 function HomePage() {
 
@@ -17,6 +18,7 @@ function HomePage() {
             <HowWeWork />
             <FoundersMessage />
             <StoriesInsights />
+            <GetInvolved />
         </Layout>
     )
 }

@@ -3,6 +3,7 @@ import Section from "../Section/Section";
 import SectionHeader from "../SectionHeader";
 import BlogCard from "../BlogCard/BlogCard";
 import Container from "../Container/Container";
+import Button from "../Button/Button";
 
 function StoriesInsights() {
   return (
@@ -14,7 +15,7 @@ function StoriesInsights() {
           Stay informed with stories from the field, environmental tips, and
           updates on our ongoing programs.
         </p>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:justify-between lg:grid-cols-3 2xl:grid-cols-4 ">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:justify-between lg:grid-cols-3 2xl:grid-cols-4">
           <BlogCard
             imageSrc="/slide-1.png"
             imageAlt="Random Image"
@@ -40,6 +41,9 @@ function StoriesInsights() {
             title='The reemergence of the North Central Green life'
           />
         </div>
+        <Button className="mt-12 bg-cfew-primary-100" align="none">
+          More News
+        </Button>
       </div>
       </Container>
     </Section>
