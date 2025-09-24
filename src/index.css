@@ -1,14 +1,10 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 :root {
-  /* font-family: Montserrat, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -58,4 +54,24 @@ h1 {
   a:hover {
     color: #747bff;
   }
+} */
+
+
+
+
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Montserrat, ui-sans-serif, system-ui, sans-serif;
+  --color-cfew-primary-50: #EBF1E5;
+  --color-cfew-primary-100: #BBCCBB;
+  --color-cfew-primary-400: #6C925B;
+  --color-cfew-primary-500: #4B6E3C;
+  --color-cfew-primary-600: #3F5C32;
+  --color-cfew-primary-800: #27391F;
+  --color-cfew-primary-900: #1B2816E5;
+  --color-cfew-transparent: #00000080;
+  --color-cfew-interface: #FFF8E8;
+  --color-cfew-dark: #2D2D2D;
 }

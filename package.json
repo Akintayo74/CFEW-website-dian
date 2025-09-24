@@ -36,8 +36,5 @@
     "prop-types": "^15.8.1",
     "storybook": "^9.1.6",
     "vite": "^7.1.2"
-  },
-  "prettier": {
-    "plugins": ["prettier-plugin-tailwindcss"]
   }
 }
