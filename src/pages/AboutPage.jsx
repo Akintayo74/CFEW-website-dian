@@ -1,12 +1,11 @@
-
+import Layout from "../components/Layout/Layout";
 
 function AboutPage() {
-
-    return (
-        <div className="bg-yellow-500">
-            <h1>About page</h1>
-        </div>
-    )
+  return (
+    <Layout>
+     
+    </Layout>
+  );
 }
 
 export default AboutPage;
