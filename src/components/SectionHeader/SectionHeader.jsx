@@ -1,7 +1,7 @@
 import React from "react";
 
 function SectionHeader({ children }) {
-  return <h1 className="text-cfew-dark text-4xl lg:text-5xl mb-5 font-bold lg:mb-6">{children}</h1>;
+  return <h1 className="text-cfew-dark text-left text-4xl lg:text-5xl mb-5 font-bold lg:mb-6">{children}</h1>;
 }
 
 export default SectionHeader;
