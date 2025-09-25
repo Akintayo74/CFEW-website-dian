@@ -5,10 +5,11 @@ function Section({
   background = "primary",
 }) {
   const spacingClasses = {
-    // tight: "py-16 lg:py-30",
+    // tight: "",
     default: "py-16 lg:py-20",
     defaultLoose: "py-16 lg:py-30",
     loose: "pt-16 pb-32 lg:pt-30 lg:pb-60",
+    looseReverse: "pt-32 pb-16 lg:pt-60 lg:pb-30",
     looseSymmetrical: "py-32 lg:py-60",
   };
 

@@ -1,8 +1,8 @@
-import Footer from "./Footer";
+import CoreTeam from "./CoreTeam";
 
 export default {
-  title: "Components/Footer",
-  component: Footer,
+  title: "Components/CoreTeam",
+  component: CoreTeam,
 };
 
 export const Default = {

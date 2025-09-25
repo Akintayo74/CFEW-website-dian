@@ -14,6 +14,81 @@ export const NAV_LINKS = [
     },
     {
         href: '/resources',
-        label: 'Resources'
+        label: 'Resources',
     }
+]
+
+export const CFEW_PORTRAITS_METADATA = [
+    {
+        source: '/portraits/dotun-benson.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'Dotun F. Benson',
+        currentPosition: 'CFEW Team Lead',
+    },
+    {
+        source: '/portraits/catherine-oduah.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'Catherine Oduah',
+        currentPosition: 'Human Resource Manager',
+    },
+    {
+        source: '/portraits/bukunmi-olotu.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'BENJAMINE B.OLOTU',
+        currentPosition: 'ADMIN. & FINANCE OFFICER',
+    },
+    {
+        source: '/portraits/ogechi-jacintha.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'JACINTHA O. CHUKWUJEKWU',
+        currentPosition: 'PROGRAMS OFFICER',
+    },
+    {
+        source: '/portraits/dakuo-kitagak.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'DAKU K. YOILA',
+        currentPosition: 'MONITORING & EVALUATION OFFICER',
+    },
+    {
+        source: '/portraits/nenbammwa-micah.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'NENBAMMWA MICAH',
+        currentPosition: 'RESEARCH OFFICER',
+    },
+    {
+        source: '/portraits/angela-iyeh.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'ANGELA I. EZEKIEL',
+        currentPosition: 'COMMUNICATIONS & GENDER OFFICER',
+    },
+    {
+        source: '/portraits/osarumwense-ogbeifun.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'OSARUMWENSE OGBEIFUN',
+        currentPosition: 'MEAL OFFICER',
+    },
+    {
+        source: '/portraits/peace-ayuba.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'PEACE M. AYUBA',
+        currentPosition: 'AST. FINANCE & ADMIN. OFFICER',
+    },
+    {
+        source: '/portraits/ruth-eshioagiame.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'RUTH E. SULE',
+        currentPosition: 'AST. FINANCE OFFICER',
+    },
+    {
+        source: '/portraits/dorcas-olayemi.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'DORCAS O. AYANGUNNA',
+        currentPosition: 'AST. PROJECT OFFICER',
+    },
+    {
+        source: '/portraits/timothy-kevin.png',
+        alt: 'A portrait of the leader of CFEW organisation',
+        name: 'TIMOTHY K. YANAN',
+        currentPosition: 'I.T OFFICER',
+    },
 ]
