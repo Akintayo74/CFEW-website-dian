@@ -34,7 +34,7 @@ function Header() {
             {/* Desktop Design */}
             <nav className="hidden items-center gap-8 md:flex">
               {NAV_LINKS.map((link) => (
-                <a key={link.href} href={link.href}>
+                <a key={link.href} href={link.href} className="text-cfew-interface hover:underline">
                   {link.label}
                 </a>
               ))}

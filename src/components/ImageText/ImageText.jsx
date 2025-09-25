@@ -30,7 +30,7 @@ function ImageText({
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="h-auto w-full rounded object-cover lg:rounded-lg"
+            className="h-full w-full rounded object-cover lg:rounded-lg"
           />
         </div>
       </div>

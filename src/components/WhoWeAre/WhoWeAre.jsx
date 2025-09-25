@@ -7,7 +7,7 @@ function WhoWeAre() {
   return (
     <Section spacing='defaultLoose'>
       <Container>
-        <SectionHeader>
+        <SectionHeader align='text-left'>
           Who We Are
         </SectionHeader>
 
