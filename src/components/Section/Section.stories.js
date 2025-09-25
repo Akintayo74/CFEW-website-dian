@@ -1,4 +1,3 @@
-// src/components/Section/Section.stories.js
 import Section from './Section';
 
 export default {
