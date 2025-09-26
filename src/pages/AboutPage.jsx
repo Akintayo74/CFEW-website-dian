@@ -3,6 +3,7 @@ import CoreTeam from "../components/CoreTeam/CoreTeam";
 import Layout from "../components/Layout/Layout";
 import OurCoreValues from "../components/OurCoreValues/OurCoreValues";
 import OurThematicAreas from "../components/OurThematicAreas/OurThematicAreas";
+import TrustedPartners from "../components/TrustedPartners/TrustedPartners";
 import WhoWeAre from "../components/WhoWeAre/WhoWeAre";
 
 function AboutPage() {
@@ -13,6 +14,7 @@ function AboutPage() {
         <OurCoreValues />
         <OurThematicAreas />
         <CoreTeam />
+        <TrustedPartners />
     </Layout>
   );
 }

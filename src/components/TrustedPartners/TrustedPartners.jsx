@@ -9,7 +9,9 @@ function TrustedPartners() {
     <Section spacing="loose">
       <Container>
         <SectionHeader>Our Trusted Partners</SectionHeader>
-        <p className="text-cfew-dark">Together, we amplify impact and accelerate change</p>
+        <p className="text-cfew-dark text-sm lg:text-lg leading-relaxed">
+          Together, we amplify impact and accelerate change
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center items-center mt-10">
           {CFEW_PARTNERS.map((logo) => (
