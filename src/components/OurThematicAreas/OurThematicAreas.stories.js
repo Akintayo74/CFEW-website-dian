@@ -1,7 +1,7 @@
 import OurThematicAreas from './OurThematicAreas';
 
 export default {
-  title: 'Components/OurThematicAreas',
+  title: 'About/OurThematicAreas',
   component: OurThematicAreas,
 };
 

@@ -1,7 +1,7 @@
 import AboutUsImageBanner from "./AboutUsImageBanner";
 
 export default {
-  title: "Components/AboutUsImageBanner",
+  title: "About/AboutUsImageBanner",
   component: AboutUsImageBanner,
 };
 

@@ -1,7 +1,7 @@
 import FoundersMessage from "./FoundersMessage";
 
 export default {
-  title: "Components/FoundersMessage",
+  title: "Home/FoundersMessage",
   component: FoundersMessage,
 };
 

@@ -98,14 +98,14 @@ export const CFEW_PARTNERS = [
     //     source: '/partners/global-methane-hub.svg',
     //     alt: 'The logo of the Global Methane Hub',
     // },
-    {
-        source: '/partners/global-methane-hub.png',
-        alt: 'The logo of the Global Methane Hub',
-    },
     // {
-    //     source: '/partners/gmh2.png',
+    //     source: '/partners/global-methane-hub.png',
     //     alt: 'The logo of the Global Methane Hub',
     // },
+    {
+        source: '/partners/global-methane-hub2.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
     {
         source: '/partners/giz.png',
         alt: 'The logo of the Global Methane Hub',

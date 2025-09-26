@@ -1,7 +1,7 @@
 import CoreTeam from "./CoreTeam";
 
 export default {
-  title: "Components/CoreTeam",
+  title: "About/CoreTeam",
   component: CoreTeam,
 };
 

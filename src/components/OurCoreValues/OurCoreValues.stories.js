@@ -1,7 +1,7 @@
 import OurCoreValues from './OurCoreValues';
 
 export default {
-  title: 'Components/OurCoreValues',
+  title: 'About/OurCoreValues',
   component: OurCoreValues,
 };
 

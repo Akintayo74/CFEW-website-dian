@@ -1,7 +1,7 @@
 import AboutUs from "./AboutUs";
 
 export default {
-  title: "Components/AboutUs",
+  title: "Home/AboutUs",
   component: AboutUs,
 };
 

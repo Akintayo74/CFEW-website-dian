@@ -1,7 +1,7 @@
 import WhoWeAre from "./WhoWeAre";
 
 export default {
-  title: "Components/WhoWeAre",
+  title: "About/WhoWeAre",
   component: WhoWeAre,
 };
 

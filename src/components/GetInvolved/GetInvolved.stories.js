@@ -1,7 +1,7 @@
 import GetInvolved from "./GetInvolved";
 
 export default {
-  title: "Components/GetInvolved",
+  title: "Home/GetInvolved",
   component: GetInvolved,
 };
 

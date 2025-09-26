@@ -1,7 +1,7 @@
 import Slideshow from "./Slideshow";
 
 export default {
-  title: "Components/Slideshow",
+  title: "Home/Slideshow",
   component: Slideshow,
 };
 

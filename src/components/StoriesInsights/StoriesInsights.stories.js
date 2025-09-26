@@ -1,7 +1,7 @@
 import StoriesInsights from "./StoriesInsights";
 
 export default {
-  title: "Components/StoriesInsights",
+  title: "Home/StoriesInsights",
   component: StoriesInsights,
 };
 

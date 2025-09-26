@@ -1,7 +1,7 @@
 import TrustedPartners from './TrustedPartners';
 
 export default {
-  title: 'Components/TrustedPartners',
+  title: 'About/TrustedPartners',
   component: TrustedPartners,
 };
 

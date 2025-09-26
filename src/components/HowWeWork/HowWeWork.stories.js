@@ -1,7 +1,7 @@
 import HowWeWork from "./HowWeWork";
 
 export default {
-  title: "Components/HowWeWork",
+  title: "Home/HowWeWork",
   component: HowWeWork,
 };
 
