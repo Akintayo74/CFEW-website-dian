@@ -3,20 +3,22 @@ import Section from "../Section";
 import Container from "../Container/Container";
 import ImageText from "../ImageText/ImageText";
 import SectionHeader from '../SectionHeader';
+import Button from '../Button';
 
 function PreviousInitiatives() {
   return (
     <Section>
       <Container>
-        <SectionHeader>
+        <SectionHeader align="text-left" marginBottom="lg:mb-10">
           Previous Initiatives
         </SectionHeader>
       </Container>
-      <div className='text-left text-cfew-dark text-sm flex flex-col gap-10 lg:gap-20 lg:text-lg leading-relaxed h-full'>
+      <div className='text-left text-cfew-dark text-sm flex flex-col gap-10 lg:gap-20 lg:text-lg leading-relaxed h-full mb-12 lg:mb-20'>
         <ImageText
           imageSrc="/previous-initiatives/ourtake.png"
           imageAlt="An image of 3 volunteers clearing strewn trash from the environment."
           title='Ourtake'
+          padding="0"
         >
           <p>
             The Ourtake project is a platform where CFEW engages with informal waste pickers, mainstreaming their crucial role in combating pollution of all kinds, especially plastic pollution. This is done through capacity building, training, and empowerment.
@@ -86,6 +88,10 @@ function PreviousInitiatives() {
           </p>
         </ImageText>
       </div>
+
+      <Button className="bg-cfew-primary-100">
+        Upcoming
+      </Button>
     </Section>
   );
 }

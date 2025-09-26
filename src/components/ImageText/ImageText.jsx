@@ -6,12 +6,13 @@ function ImageText({
   imageAlt = "Image",
   reverse = false,
   title,
+  padding = 'pt-12',
   children,
 }) {
   return (
     <Container>
       <div
-        className={`flex flex-col pt-12 md:gap-10 xl:gap-16 ${
+        className={`${padding} flex flex-col md:gap-10 xl:gap-16 ${
           reverse ? "md:flex-row" : "md:flex-row-reverse"
         }`}
       >
