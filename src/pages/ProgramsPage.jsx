@@ -1,11 +1,12 @@
-
+import Layout from '../components/Layout';
+import ProgramsImageBanner from '../components/ProgramsImageBanner/ProgramsImageBanner';
 
 function ProgramsPage() {
 
     return (
-        <div className="bg-purple-800">
-            <h1>Programs Page</h1>
-        </div>
+        <Layout>
+            <ProgramsImageBanner />
+        </Layout>
     )
 }
 
