@@ -11,8 +11,8 @@ function ImageText({
   return (
     <Container>
       <div
-        className={`flex flex-col pt-12 lg:gap-10 xl:gap-16 ${
-          reverse ? "lg:flex-row" : "lg:flex-row-reverse"
+        className={`flex flex-col pt-12 md:gap-10 xl:gap-16 ${
+          reverse ? "md:flex-row" : "md:flex-row-reverse"
         }`}
       >
         {/* Text container - always first on mobile */}
