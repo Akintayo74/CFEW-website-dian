@@ -92,3 +92,52 @@ export const CFEW_PORTRAITS_METADATA = [
         currentPosition: 'I.T OFFICER',
     },
 ]
+
+export const CFEW_PARTNERS = [
+    // {
+    //     source: '/partners/global-methane-hub.svg',
+    //     alt: 'The logo of the Global Methane Hub',
+    // },
+    {
+        source: '/partners/global-methane-hub.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    // {
+    //     source: '/partners/gmh2.png',
+    //     alt: 'The logo of the Global Methane Hub',
+    // },
+    {
+        source: '/partners/giz.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    {
+        source: '/partners/break-free-from-plastic.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    {
+        source: '/partners/ncf.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    {
+        source: '/partners/climate-coalition.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    {
+        source: '/partners/development-exchange.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    {
+        source: '/partners/gaia-logo-white.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    {
+        source: '/partners/global-fund.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    {
+        source: '/partners/ipen.png',
+        alt: 'The logo of the Global Methane Hub',
+    },
+    
+    
+]
