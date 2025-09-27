@@ -16,7 +16,6 @@ function UpcomingInitiatives() {
 
         <div className='flex flex-col gap-5 mt-5'>
           {UPCOMING_EVENTS.map((event, index) => (
-            // <div key={index} className='grid grid-cols-1 h-full lg:grid-cols-4 items-center justify-items-center text-left text-cfew-primary-800 text-sm gap-5'>
             <div key={index} className='grid grid-cols-1 h-full lg:grid-cols-4 justify-items-start items-center  text-left text-cfew-primary-800 text-sm gap-5'>
               <div className='flex justify-center'>
                 <span className='
@@ -32,7 +31,7 @@ function UpcomingInitiatives() {
               <h5 className='font-bold text-xl'>
                 {event.name}
               </h5>
-              <p className='justify-self-end'>
+              <p className='lg:justify-self-end'>
                 {event.time}
               </p>
 
@@ -43,7 +42,7 @@ function UpcomingInitiatives() {
                 <p>{event.location}</p>
               </div>
 
-              <hr className="border-cfew-primary-400 border-[1.5px] w-full lg:hidden" />
+              <hr className="border-cfew-primary-400 border-[1.5px] col-span-full w-full" />
             </div>
           ))}
         </div>
