@@ -154,3 +154,9 @@ export const UPCOMING_EVENTS = [
         location: 'Plateau State, Nigeria'
     }
 ]
+
+export const LATEST_FROM_BLOG = [
+    {
+        title: ''
+    }
+]

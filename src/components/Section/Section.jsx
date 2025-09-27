@@ -7,6 +7,7 @@ function Section({
   const spacingClasses = {
     none: "p-0",
     tight: "pt-16 pb-12 lg:pt-30",
+    tightNone: 'pt-16 lg:pt-30',
     default: "py-16 lg:py-20",
     defaultLoose: "py-16 lg:py-30",
     loose: "pt-16 pb-32 lg:pt-30 lg:pb-60",
