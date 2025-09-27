@@ -23,8 +23,8 @@ function AboutUs() {
             <div className="font-semibold">Trees Planted</div>
           </div>
 
-          <hr className="border-cfew-primary-400 border-[1.5px] md:hidden" />
-          <div className="md:border-cfew-primary-400 hidden md:block md:h-12 md:border-l"></div>
+          <hr className="md:hidden border-cfew-primary-400 border-[1.5px] " />
+          <div className="hidden md:border-cfew-primary-400  md:block md:h-12 md:border-l"></div>
 
           <div className="my-6">
             <h6 className="text-2xl font-bold">500+</h6>

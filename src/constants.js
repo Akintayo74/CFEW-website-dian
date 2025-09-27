@@ -94,14 +94,6 @@ export const CFEW_PORTRAITS_METADATA = [
 ]
 
 export const CFEW_PARTNERS = [
-    // {
-    //     source: '/partners/global-methane-hub.svg',
-    //     alt: 'The logo of the Global Methane Hub',
-    // },
-    // {
-    //     source: '/partners/global-methane-hub.png',
-    //     alt: 'The logo of the Global Methane Hub',
-    // },
     {
         source: '/partners/global-methane-hub2.png',
         alt: 'The logo of the Global Methane Hub',
@@ -140,4 +132,25 @@ export const CFEW_PARTNERS = [
     },
     
     
+]
+
+export const UPCOMING_EVENTS = [
+    {
+        name: 'Environmental Sanitation',
+        date: '20 Sept',
+        time: '8:00 am',
+        location: 'No.3 Old Nitel Building, Old Airport Road, Jos Plateau State, Nigeria',
+    },
+    {
+        name: 'Protect the Environment (Webinar',
+        date: '20 Sept',
+        time: '8:00 am',
+        location: 'Online',
+    },
+    {
+        name: 'Environmental Sanitation',
+        date: '20 Sept',
+        time: '8:00 am',
+        location: 'Plateau State, Nigeria'
+    }
 ]
