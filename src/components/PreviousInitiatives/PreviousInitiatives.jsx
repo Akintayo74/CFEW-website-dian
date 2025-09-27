@@ -8,7 +8,7 @@ import Button from '../Button';
 function PreviousInitiatives() {
 
   return (
-    <Section>
+    <div>
       <Container>
         <SectionHeader align="text-left" marginBottom="lg:mb-10">
           Previous Initiatives
@@ -94,7 +94,7 @@ function PreviousInitiatives() {
         Upcoming
       </Button>
       
-    </Section>
+    </div>
   );
 }
 

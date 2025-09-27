@@ -30,9 +30,9 @@ function ProgramsRouter() {
   }
 
   return (
-    <Section>
+    <Section spacing='tight'>
       
-      <div >
+      <div className='mb-12 lg:mb-20'>
         <Container>
           <BreadCrumbs
             tabs={tabs}
@@ -48,6 +48,8 @@ function ProgramsRouter() {
       </div>
       
     </Section>
+    
+    
   );
 }
 
