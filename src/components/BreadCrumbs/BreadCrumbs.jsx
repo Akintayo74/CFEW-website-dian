@@ -7,7 +7,7 @@ function BreadCrumbs({ tabs, activeTab, onTabChange }) {
     if (activeTab === tabId) {
       return baseClasses + "bg-cfew-primary-500 text-white";
     } else {
-      return baseClasses + "text-green-800 hover:bg-cfew-primary-500 hover:text-white";
+      return baseClasses + "text-green-800 hover:bg-cfew-primary-500 hover:text-white hover:cursor-pointer";
     }
   };
 
