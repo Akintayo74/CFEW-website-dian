@@ -4,11 +4,22 @@ import Container from "../Container/Container";
 import ImageText from "../ImageText/ImageText";
 import SectionHeader from '../SectionHeader';
 import Button from '../Button';
+import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 
 function PreviousInitiatives() {
+  const tabs = [
+    { id: 'previous', name: 'PREVIOUS' },
+    { id: 'upcoming', name: 'UPCOMING' }
+  ];
+
   return (
     <Section>
       <Container>
+
+        <BreadCrumbs
+          tabs={tabs}
+        />
+
         <SectionHeader align="text-left" marginBottom="lg:mb-10">
           Previous Initiatives
         </SectionHeader>
@@ -92,6 +103,7 @@ function PreviousInitiatives() {
       <Button className="bg-cfew-primary-100">
         Upcoming
       </Button>
+      
     </Section>
   );
 }

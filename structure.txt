@@ -5,9 +5,49 @@
 ├── ./package.json
 ├── ./package-lock.json
 ├── ./public
+│   ├── ./public/about-us-page.webp
 │   ├── ./public/about-us.png
+│   ├── ./public/BLOG.webp
+│   ├── ./public/get-involved.png
+│   ├── ./public/our-core-values.png
+│   ├── ./public/our-thematic-agriculture.png
+│   ├── ./public/our-thematic-education.png
+│   ├── ./public/our-thematic-environment.png
+│   ├── ./public/our-thematic-health.png
+│   ├── ./public/partners
+│   │   ├── ./public/partners/break-free-from-plastic.png
+│   │   ├── ./public/partners/climate-coalition.png
+│   │   ├── ./public/partners/development-exchange.png
+│   │   ├── ./public/partners/gaia-logo-white.png
+│   │   ├── ./public/partners/giz.png
+│   │   ├── ./public/partners/global-fund.png
+│   │   ├── ./public/partners/global-methane-hub2.png
+│   │   ├── ./public/partners/global-methane-hub.png
+│   │   ├── ./public/partners/ipen.png
+│   │   └── ./public/partners/ncf.png
 │   ├── ./public/portraits
-│   │   └── ./public/portraits/founder-image.png
+│   │   ├── ./public/portraits/angela-iyeh.png
+│   │   ├── ./public/portraits/bukunmi-olotu.png
+│   │   ├── ./public/portraits/catherine-oduah.png
+│   │   ├── ./public/portraits/dakuo-kitagak.png
+│   │   ├── ./public/portraits/dorcas-olayemi.png
+│   │   ├── ./public/portraits/dotun-benson.png
+│   │   ├── ./public/portraits/founder-image.png
+│   │   ├── ./public/portraits/nenbammwa-micah.png
+│   │   ├── ./public/portraits/ogechi-jacintha.png
+│   │   ├── ./public/portraits/osarumwense-ogbeifun.png
+│   │   ├── ./public/portraits/peace-ayuba.png
+│   │   ├── ./public/portraits/ruth-eshioagiame.png
+│   │   └── ./public/portraits/timothy-kevin.png
+│   ├── ./public/previous-initiatives
+│   │   ├── ./public/previous-initiatives/climate-recovery.png
+│   │   ├── ./public/previous-initiatives/green-school.png
+│   │   ├── ./public/previous-initiatives/methane-reduction.png
+│   │   ├── ./public/previous-initiatives/ourtake.png
+│   │   ├── ./public/previous-initiatives/project-earn.png
+│   │   ├── ./public/previous-initiatives/tree-life.png
+│   │   └── ./public/previous-initiatives/youth-land.png
+│   ├── ./public/programs-page-banner.webp
 │   ├── ./public/slide-1.png
 │   ├── ./public/slide-2.png
 │   ├── ./public/slide-3.png
@@ -21,6 +61,8 @@
 ├── ./src
 │   ├── ./src/App.jsx
 │   ├── ./src/assets
+│   │   ├── ./src/assets/book.png
+│   │   ├── ./src/assets/bulb.png
 │   │   ├── ./src/assets/CFEW-Logo.png
 │   │   ├── ./src/assets/facebook.svg
 │   │   ├── ./src/assets/HandHeart.png
@@ -28,7 +70,9 @@
 │   │   ├── ./src/assets/Laptop.png
 │   │   ├── ./src/assets/linked-in.svg
 │   │   ├── ./src/assets/Megaphone.png
+│   │   ├── ./src/assets/plus.png
 │   │   ├── ./src/assets/Recycle.png
+│   │   ├── ./src/assets/shield.png
 │   │   ├── ./src/assets/SunHorizon.png
 │   │   ├── ./src/assets/x.svg
 │   │   └── ./src/assets/youtube.svg
@@ -37,12 +81,19 @@
 │   │   │   ├── ./src/components/AboutUs/AboutUs.jsx
 │   │   │   ├── ./src/components/AboutUs/AboutUs.stories.js
 │   │   │   └── ./src/components/AboutUs/index.js
+│   │   ├── ./src/components/AboutUsImageBanner
+│   │   │   ├── ./src/components/AboutUsImageBanner/AboutUsImageBanner.jsx
+│   │   │   ├── ./src/components/AboutUsImageBanner/AboutUsImageBanner.stories.js
+│   │   │   └── ./src/components/AboutUsImageBanner/index.js
 │   │   ├── ./src/components/ActionCard
 │   │   │   ├── ./src/components/ActionCard/ActionCard.jsx
 │   │   │   └── ./src/components/ActionCard/index.js
 │   │   ├── ./src/components/BlogCard
 │   │   │   ├── ./src/components/BlogCard/BlogCard.jsx
 │   │   │   └── ./src/components/BlogCard/index.js
+│   │   ├── ./src/components/BreadCrumbs
+│   │   │   ├── ./src/components/BreadCrumbs/BreadCrumbs.jsx
+│   │   │   └── ./src/components/BreadCrumbs/index.js
 │   │   ├── ./src/components/Button
 │   │   │   ├── ./src/components/Button/Button.jsx
 │   │   │   └── ./src/components/Button/index.js
@@ -53,6 +104,10 @@
 │   │   ├── ./src/components/Container
 │   │   │   ├── ./src/components/Container/Container.jsx
 │   │   │   └── ./src/components/Container/index.js
+│   │   ├── ./src/components/CoreTeam
+│   │   │   ├── ./src/components/CoreTeam/CoreTeam.jsx
+│   │   │   ├── ./src/components/CoreTeam/CoreTeam.stories.js
+│   │   │   └── ./src/components/CoreTeam/index.js
 │   │   ├── ./src/components/Footer
 │   │   │   ├── ./src/components/Footer/Footer.jsx
 │   │   │   ├── ./src/components/Footer/Footer.stories.js
@@ -61,6 +116,10 @@
 │   │   │   ├── ./src/components/FoundersMessage/FoundersMessage.jsx
 │   │   │   ├── ./src/components/FoundersMessage/FoundersMessage.stories.js
 │   │   │   └── ./src/components/FoundersMessage/index.js
+│   │   ├── ./src/components/GetInvolved
+│   │   │   ├── ./src/components/GetInvolved/GetInvolved.jsx
+│   │   │   ├── ./src/components/GetInvolved/GetInvolved.stories.js
+│   │   │   └── ./src/components/GetInvolved/index.js
 │   │   ├── ./src/components/Header
 │   │   │   ├── ./src/components/Header/Header.jsx
 │   │   │   ├── ./src/components/Header/Header.stories.js
@@ -69,6 +128,9 @@
 │   │   │   ├── ./src/components/HowWeWork/HowWeWork.jsx
 │   │   │   ├── ./src/components/HowWeWork/HowWeWork.stories.js
 │   │   │   └── ./src/components/HowWeWork/index.js
+│   │   ├── ./src/components/ImageBanner
+│   │   │   ├── ./src/components/ImageBanner/ImageBanner.jsx
+│   │   │   └── ./src/components/ImageBanner/index.js
 │   │   ├── ./src/components/ImageText
 │   │   │   ├── ./src/components/ImageText/ImageText.jsx
 │   │   │   └── ./src/components/ImageText/index.js
@@ -78,14 +140,28 @@
 │   │   ├── ./src/components/Layout
 │   │   │   ├── ./src/components/Layout/index.js
 │   │   │   └── ./src/components/Layout/Layout.jsx
+│   │   ├── ./src/components/OurCoreValues
+│   │   │   ├── ./src/components/OurCoreValues/index.js
+│   │   │   ├── ./src/components/OurCoreValues/OurCoreValues.jsx
+│   │   │   └── ./src/components/OurCoreValues/OurCoreValues.stories.js
+│   │   ├── ./src/components/OurThematicAreas
+│   │   │   ├── ./src/components/OurThematicAreas/index.js
+│   │   │   ├── ./src/components/OurThematicAreas/OurThematicAreas.jsx
+│   │   │   └── ./src/components/OurThematicAreas/OurThematicAreas.stories.js
+│   │   ├── ./src/components/PreviousInitiatives
+│   │   │   ├── ./src/components/PreviousInitiatives/index.js
+│   │   │   ├── ./src/components/PreviousInitiatives/PreviousInitiatives.jsx
+│   │   │   └── ./src/components/PreviousInitiatives/PreviousInitiatives.stories.js
+│   │   ├── ./src/components/ProgramsImageBanner
+│   │   │   ├── ./src/components/ProgramsImageBanner/index.js
+│   │   │   ├── ./src/components/ProgramsImageBanner/ProgramsImageBanner.jsx
+│   │   │   └── ./src/components/ProgramsImageBanner/ProgramsImageBanner.stories.js
 │   │   ├── ./src/components/Section
 │   │   │   ├── ./src/components/Section/index.js
-│   │   │   ├── ./src/components/Section/Section.jsx
-│   │   │   └── ./src/components/Section/Section.stories.js
+│   │   │   └── ./src/components/Section/Section.jsx
 │   │   ├── ./src/components/SectionHeader
 │   │   │   ├── ./src/components/SectionHeader/index.js
-│   │   │   ├── ./src/components/SectionHeader/SectionHeader.jsx
-│   │   │   └── ./src/components/SectionHeader/SectionHeader.stories.js
+│   │   │   └── ./src/components/SectionHeader/SectionHeader.jsx
 │   │   ├── ./src/components/Slideshow
 │   │   │   ├── ./src/components/Slideshow/index.js
 │   │   │   ├── ./src/components/Slideshow/Slideshow.jsx
@@ -94,10 +170,18 @@
 │   │   │   ├── ./src/components/StoriesInsights/index.js
 │   │   │   ├── ./src/components/StoriesInsights/StoriesInsights.jsx
 │   │   │   └── ./src/components/StoriesInsights/StoriesInsights.stories.js
-│   │   └── ./src/components/ThematicAreas
-│   │       ├── ./src/components/ThematicAreas/index.js
-│   │       ├── ./src/components/ThematicAreas/ThematicAreas.jsx
-│   │       └── ./src/components/ThematicAreas/ThematicAreas.stories.js
+│   │   ├── ./src/components/ThematicAreas
+│   │   │   ├── ./src/components/ThematicAreas/index.js
+│   │   │   ├── ./src/components/ThematicAreas/ThematicAreas.jsx
+│   │   │   └── ./src/components/ThematicAreas/ThematicAreas.stories.js
+│   │   ├── ./src/components/TrustedPartners
+│   │   │   ├── ./src/components/TrustedPartners/index.js
+│   │   │   ├── ./src/components/TrustedPartners/TrustedPartners.jsx
+│   │   │   └── ./src/components/TrustedPartners/TrustedPartners.stories.js
+│   │   └── ./src/components/WhoWeAre
+│   │       ├── ./src/components/WhoWeAre/index.js
+│   │       ├── ./src/components/WhoWeAre/WhoWeAre.jsx
+│   │       └── ./src/components/WhoWeAre/WhoWeAre.stories.js
 │   ├── ./src/constants.js
 │   ├── ./src/helpers
 │   ├── ./src/hooks
@@ -115,6 +199,7 @@
 │   ├── ./.storybook/main.js
 │   └── ./.storybook/preview.js
 ├── ./structure.txt
+├── ./vercel.json
 └── ./vite.config.js
 
-29 directories, 89 files
+42 directories, 161 files
