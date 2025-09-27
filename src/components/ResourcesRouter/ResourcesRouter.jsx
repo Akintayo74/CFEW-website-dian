@@ -36,7 +36,7 @@ function ResourcesRouter() {
   }
 
   return (
-    <Section spacing='tightNone'>
+    <Section spacing='tight'>
       
       <div className='mb-12 lg:mb-20'>
         <Container>
