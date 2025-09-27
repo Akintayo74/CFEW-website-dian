@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ImageBanner({ imageSrc, imageAlt, children }) {
+function ImageBanner({ imageSrc, imageAlt, children, overlay = true }) {
   return (
     <div className='relative'>
       <img
@@ -8,7 +8,7 @@ function ImageBanner({ imageSrc, imageAlt, children }) {
         alt={imageAlt}
         className='w-full object-cover'
       />
-      <div className='absolute inset-0 bg-black/40'></div>
+      {overlay && <div className='absolute inset-0 bg-black/40'></div>}
 
       <h1 className='absolute bottom-5 left-0 px-5 leading-[1.4] lg:px-10 lg:bottom-15  text-cfew-interface font-bold text-xl md:text-4xl lg:text-5xl md:leading-tight'>
         { children }
