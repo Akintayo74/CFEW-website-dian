@@ -3,16 +3,27 @@ import logo from "@/assets/CFEW-Logo.png";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants";
 import Container from "../Container/Container";
+import { useLocation } from "react-router-dom";
 
 function Header() {
+  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   function toggleMobileMenu() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
+  const getLinkClassName = (href) => {
+    const baseClasses = "text-cfew-interface font-bold text-base hover:underline";
+    const activeClasses = "text-cfew-primary-400 border-b-2 border-cfew-primary-500";
+    
+    return location.pathname === href 
+      ? `${baseClasses} ${activeClasses}` 
+      : baseClasses;
+  };
+
   return (
-    <header className="bg-cfew-primary-900">
+    <header className="bg-cfew-primary-900 sticky top-0 z-1">
       <Container>
         <div className="flex items-center justify-between py-3.5">
           <img src={logo} />
@@ -34,7 +45,11 @@ function Header() {
             {/* Desktop Design */}
             <nav className="hidden items-center gap-8 md:flex">
               {NAV_LINKS.map((link) => (
-                <a key={link.href} href={link.href} className="text-cfew-interface hover:underline">
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={getLinkClassName(link.href)}
+                >
                   {link.label}
                 </a>
               ))}

@@ -22,6 +22,7 @@ function CoreTeam() {
                 alt={image.alt}
 
               />
+              <div className="absolute inset-0 hero-gradient"></div>
               <div className="absolute bottom-8 left-8 text-sm text-left text-white">
                 <p className="font-bold lg:text-lg">
                   {image.name.toUpperCase()}

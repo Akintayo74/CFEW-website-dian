@@ -77,3 +77,7 @@ h1 {
   --color-cfew-dark: #2D2D2D;
   --color-cfew-blog: #EDEBD7;
 }
+
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.159375) 57.51%, rgba(0, 0, 0, 0.31875) 79.82%, rgba(0, 0, 0, 0.6375) 100.04%);
+}
