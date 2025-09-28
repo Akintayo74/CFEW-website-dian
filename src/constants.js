@@ -100,37 +100,36 @@ export const CFEW_PARTNERS = [
     },
     {
         source: '/partners/giz.png',
-        alt: 'The logo of the Global Methane Hub',
+        alt: 'The logo of the GIZ foundation',
     },
     {
         source: '/partners/break-free-from-plastic.png',
-        alt: 'The logo of the Global Methane Hub',
+        alt: 'The logo of the Break Free from Plastic organisation',
     },
     {
         source: '/partners/ncf.png',
-        alt: 'The logo of the Global Methane Hub',
-    },
-    {
-        source: '/partners/climate-coalition.png',
-        alt: 'The logo of the Global Methane Hub',
-    },
-    {
-        source: '/partners/development-exchange.png',
-        alt: 'The logo of the Global Methane Hub',
+        alt: 'The logo of the NCF organisation',
     },
     {
         source: '/partners/gaia-logo-white.png',
-        alt: 'The logo of the Global Methane Hub',
+        alt: 'The logo of the Gaia organisation',
+    },
+    {
+        source: '/partners/development-exchange.png',
+        alt: 'The logo of the Development Exchance Coalition organisation',
     },
     {
         source: '/partners/global-fund.png',
-        alt: 'The logo of the Global Methane Hub',
+        alt: 'The logo of the Global Greengrants Fund Foundation',
     },
     {
         source: '/partners/ipen.png',
-        alt: 'The logo of the Global Methane Hub',
+        alt: 'The logo of IPEN organisation',
     },
-    
+    {
+        source: '/partners/climate-coalition.png',
+        alt: 'The logo of the Climate & Clean Air Coalition foundation',
+    },
     
 ]
 
