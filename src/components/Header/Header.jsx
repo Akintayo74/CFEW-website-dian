@@ -3,10 +3,10 @@ import logo from "@/assets/CFEW-Logo.png";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants";
 import Container from "../Container/Container";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 function Header() {
-  const location = useLocation();
+  // const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   function toggleMobileMenu() {
@@ -23,7 +23,7 @@ function Header() {
   };
 
   return (
-    <header className="bg-cfew-primary-900 sticky top-0 z-1">
+    <header className="bg-cfew-primary-900-90% sticky top-0 z-1">
       <Container>
         <div className="flex items-center justify-between py-3.5">
           <img src={logo} />
@@ -62,20 +62,21 @@ function Header() {
         </div>
 
         {isMobileMenuOpen && (
-          <nav className="md:hidden">
-            <div className="flex flex-col">
+          <nav className="md:hidden flex flex-col items-center gap-5 bg-cfew-primary-900 -mx-5">
+            <div className="flex flex-col items-center gap-5 mt-5">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-bold text-white hover:text-cfew-primary-400"
                 >
                   {link.label}
                 </a>
               ))}
             </div>
 
-            <button className="bg-cfew-primary-500 rounded-2xl px-4 py-2 text-white">
+            <button className="bg-cfew-primary-500 rounded-3xl px-4 py-2 text-white mb-16 font-bold">
               Donate
             </button>
           </nav>
