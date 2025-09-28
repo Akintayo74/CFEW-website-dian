@@ -36,9 +36,10 @@ function ResourcesRouter() {
   }
 
   return (
-    <Section spacing='tight'>
+    // <Section spacing='tight'>
+    <div>
       
-      <div className='mb-12 lg:mb-20'>
+      <Section spacing='defaultTight'>
         <Container>
           <BreadCrumbs
             tabs={tabs}
@@ -46,14 +47,16 @@ function ResourcesRouter() {
             onTabChange={handleTabChange}
           />
         </Container>
-      </div>
+      </Section>
       
 
       <div>
         {renderContent()}
       </div>
+
+    </div>
       
-    </Section>
+    // </Section>
     
     
   );

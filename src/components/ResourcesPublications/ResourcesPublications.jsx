@@ -3,10 +3,11 @@ import Container from '../Container';
 import SectionHeader from '../SectionHeader';
 import Button from '../Button';
 import LatestCards from '../LatestCards/LatestCards';
+import Section from '../Section';
 
 function ResourcesPublications() {
   return (
-    <div>
+    <Section spacing='noneTight'>
       <Container>
         <SectionHeader align='text-left'>
           Publications
@@ -21,7 +22,7 @@ function ResourcesPublications() {
         />
 
       </Container>
-    </div>
+    </Section>
   );
 }
 

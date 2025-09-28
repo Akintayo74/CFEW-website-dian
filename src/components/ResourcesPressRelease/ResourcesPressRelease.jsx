@@ -3,10 +3,11 @@ import Container from '../Container';
 import SectionHeader from '../SectionHeader';
 import Button from '../Button';
 import LatestCards from '../LatestCards/LatestCards';
+import Section from '../Section';
 
 function ResourcesPressRelease() {
   return (
-    <div>
+    <Section spacing='noneTight'>
       <Container>
         <SectionHeader align='text-left'>
           Recent Press Release
@@ -20,7 +21,7 @@ function ResourcesPressRelease() {
           textExcerpt='The Global Alliance for Incinerator Alternatives (GAIA) has pushed for a limit in the production of plastic products because it has become a threat to public health and environmental pollution.'
         />
       </Container>
-    </div>
+    </Section>
   );
 }
 

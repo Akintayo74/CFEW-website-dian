@@ -8,6 +8,8 @@ function Section({
     none: "p-0",
     tight: "pt-16 pb-12 lg:pt-30",
     tightNone: 'pt-16 lg:pt-30',
+    noneTight: 'pt-0 pb-16 lg:pb-30',
+    defaultTight: 'pt-16 pb-20 lg:pt-30',
     default: "py-16 lg:py-20",
     defaultLoose: "py-16 lg:py-30",
     loose: "pt-16 pb-32 lg:pt-30 lg:pb-60",
@@ -17,7 +19,6 @@ function Section({
 
   const bgClasses = {
     pink: "bg-cfew-interface",
-    // gray: "bg-gray-50",
     primary: "bg-cfew-primary-50",
   };
 
