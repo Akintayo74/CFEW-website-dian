@@ -2,7 +2,6 @@ import React from 'react';
 import parallaxImage from "../../assets/parallax-image.jpg";
 import Container from "../Container";
 import SectionHeader from '../SectionHeader';
-import Section from '../Section/Section';
 import GlassCard from '../GlassCard/GlassCard';
 
 function ImpactYears() {
@@ -22,12 +21,39 @@ function ImpactYears() {
               <SectionHeader textColor='text-cfew-interface' align='text-left'>
                 8 Years of Impact
               </SectionHeader>
-              <div className="min-h-[300px] md:min-h-[500px] grid grid-cols-1 md:grid-cols-2 justify-items-center items-center text-center text-cfew-interface">
+              <div className="min-h-[300px] md:min-h-[500px] grid grid-cols-1 grid-rows-8 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-5 lg:gap-20 justify-items-center items-center text-center text-cfew-interface">
                 <GlassCard
                   runningAnimation='17,000+'
-                >
-                  Hello!
-                </GlassCard>
+                  text='Native trees grown'
+                />
+                <GlassCard
+                  runningAnimation='8+'
+                  text='Years of Securing the Earth & Impacting Communities'
+                />
+                <GlassCard
+                  runningAnimation='500+'
+                  text='Green Jobs Created'
+                />
+                <GlassCard
+                  runningAnimation='2,000+'
+                  text='Youths Empowered'
+                />
+                <GlassCard
+                  runningAnimation='21+'
+                  text='Tonnes of Organic Waste Converted to Compost Nature'
+                />
+                <GlassCard
+                  runningAnimation='1,000+'
+                  text='Women Empowered'
+                />
+                <GlassCard
+                  runningAnimation='20,000+'
+                  text='Young People Reached'
+                />
+                <GlassCard
+                  runningAnimation='102+'
+                  text='Tonnes of Plastic Recovered'
+                />
               </div>
             </Container>
         </div>
