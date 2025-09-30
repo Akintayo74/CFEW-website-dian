@@ -14,12 +14,11 @@ function Header() {
   }
 
   const getLinkClassName = (href) => {
-    const baseClasses = "text-cfew-interface font-bold text-base hover:underline";
-    const activeClasses = "text-cfew-primary-400 border-b-2 border-cfew-primary-500";
-    
-    return location.pathname === href 
-      ? `${baseClasses} ${activeClasses}` 
-      : baseClasses;
+    const isActive = location.pathname === href;
+  
+    return isActive
+      ? "text-cfew-primary-400 font-bold text-base"
+      : "text-cfew-interface font-bold text-base hover:underline";
   };
 
   return (

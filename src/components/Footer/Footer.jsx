@@ -4,9 +4,20 @@ import { NAV_LINKS } from "../../constants";
 import { Phone, Mail, MapPin } from "lucide-react";
 import {SOCIAL_LINKS} from '../../constants';
 import {GET_INVOLVED_LINKS} from '../../constants';
+import { useLocation } from "react-router-dom";
 
 
 function Footer() {
+  const location = useLocation();
+
+  const getLinkClassName = (href) => {
+    const isActive = location.pathname === href;
+    
+    return isActive
+    ? "text-cfew-primary-400 font-bold text-sm md:text-lg hover:text-cfew-primary-400 hover:no-underline"
+    : "text-cfew-interface font-bold text-sm md:text-lg hover:text-gray-300 hover:underline";
+  };
+
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -23,10 +34,10 @@ function Footer() {
             {/* Left Column: Newsletter and Social */}
             <div className="flex flex-col">
               <div>
-                <h2 className="mb-4 text-3xl font-bold lg:text-4xl">
+                <h2 className="mb-4 text-3xl font-bold lg:text-4xl lg:mb-6">
                   Stay updated with the Latest News
                 </h2>
-                <p className="mb-6 text-lg">
+                <p className="mb-6 lg:mb-8 text-lg">
                   Get instant news by subscribing to our news letter
                 </p>
 
@@ -83,7 +94,7 @@ function Footer() {
                       <li key={link.href}>
                         <a
                           href={link.href}
-                          className="text-sm transition-colors hover:text-gray-300 hover:underline md:text-lg"
+                          className={getLinkClassName(link.href)}
                         >
                           {link.label}
                         </a>
