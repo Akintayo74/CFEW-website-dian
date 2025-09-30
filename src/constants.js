@@ -1,3 +1,9 @@
+import facebook from "@/assets/facebook.svg";
+import instagram from "@/assets/instagram.svg";
+import linkedIn from "@/assets/linked-in.svg";
+import xIcon from "@/assets/x.svg";
+import youtube from "@/assets/youtube.svg";
+
 
 export const NAV_LINKS = [
     {
@@ -154,8 +160,18 @@ export const UPCOMING_EVENTS = [
     }
 ]
 
-export const LATEST_FROM_BLOG = [
-    {
-        title: ''
-    }
-]
+
+
+export const SOCIAL_LINKS = [
+  { href: "https://facebook.com/cearthworks", icon: facebook, alt: "Facebook" },
+  { href: "https://instagram.com/cearthworks", icon: instagram, alt: "Instagram" },
+  { href: "https://x.com/cearthworks", icon: xIcon, alt: "X (Twitter)" },
+  { href: "https://youtube.com/cearthworks", icon: youtube, alt: "YouTube" },
+  { href: "https://linkedin.com/company/cearthworks", icon: linkedIn, alt: "LinkedIn" },
+];
+
+export const GET_INVOLVED_LINKS = [
+  { href: "/donate", label: "Donate" },
+  { href: "/volunteer", label: "Volunteer" },
+  { href: "/partner", label: "Partner with us" },
+];
