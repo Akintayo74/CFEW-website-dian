@@ -32,18 +32,18 @@ function Footer() {
 
                 <form
                   onSubmit={handleNewsletterSubmit}
-                  className="relative mb-8 flex max-w-lg rounded-full bg-white px-2 py-2 lg:mb-12"
+                  className="md:relative mb-8 flex flex-col gap-4 md:flex-row max-w-lg rounded-full md:bg-white px-2 py-2 lg:mb-12"
                 >
                   <input
                     type="email"
                     name="email"
                     placeholder="Enter your email"
-                    className="flex-1 rounded-full border-none px-6 py-4 text-sm text-gray-700 outline-none md:text-lg"
+                    className="flex-1 rounded-full border-none px-6 py-4 text-sm bg-white text-gray-700 outline-none md:text-lg"
                     required
                   />
                   <button
                     type="submit"
-                    className="absolute right-1 top-3 rounded-full bg-cfew-primary-500 px-6 py-3 font-medium transition-colors hover:bg-cfew-primary-600 md:px-8 md:py-4"
+                    className="md:absolute md:right-1 md:top-3 rounded-full bg-cfew-primary-500 px-6 py-3 font-medium transition-colors hover:bg-cfew-primary-600 md:px-8 md:py-4"
                   >
                     SUBSCRIBE
                   </button>
