@@ -3,7 +3,6 @@ import Section from "../Section";
 import Container from "../Container/Container";
 import ImageText from "../ImageText";
 import SectionHeader from "../SectionHeader";
-import Clipboard from "../../assets/clipboard.svg";
 import Button from "../Button";
 import CopyButton from "../CopyButton/CopyButton";
 
@@ -63,48 +62,48 @@ function DonationImpact() {
               <SectionHeader align="text-left" className="leading-tight">
                 Flexible ways to donate
               </SectionHeader>
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 lg:gap-20 text-left">
-                <div className="flex flex-col md:gap-4 lg:gap-6">
-                  <h2 className="font-bold leading-snug text-xl md:text-2xl  lg:text-3xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 text-left">
+                <div className="flex flex-col gap-6 leading-relaxed">
+                  <h2 className="font-bold leading-snug text-2xl lg:text-3xl">
                     Direct Bank Account
                   </h2>
                   <div>
-                    <h6 className="font-bold text-cfew-primary-900">
+                    <h6 className="font-bold leading-none text-cfew-primary-900">
                       Bank Name
                     </h6>
                     <p>UNION BANK PLC</p>
                   </div>
                   <div>
-                    <h6 className="font-bold text-cfew-primary-900">
+                    <h6 className="font-bold leading-none text-cfew-primary-900">
                       Account Name
                     </h6>
                     <p>Centre for Earthworks Development</p>
                   </div>
                   <div>
-                    <h6 className="font-bold text-cfew-primary-900">
+                    <h6 className="font-bold leading-none text-cfew-primary-900">
                       Account Number
                     </h6>
                     <CopyButton text="0136968956" />
                   </div>
                 </div>
-                <div className="flex flex-col md:gap-4 lg:gap-6">
-                  <h2 className="font-bold leading-snug text-xl md:text-2xl  lg:text-3xl">
+                <div className="flex flex-col leading-relaxed gap-6">
+                  <h2 className="font-bold leading-snug text-2xl lg:text-3xl">
                     Domicilliary Account
                   </h2>
                   <div>
-                    <h6 className="font-bold text-cfew-primary-900">
+                    <h6 className="font-bold leading-none text-cfew-primary-900">
                       Bank Name
                     </h6>
                     <p>UNION BANK PLC</p>
                   </div>
                   <div>
-                    <h6 className="font-bold text-cfew-primary-900">
+                    <h6 className="font-bold leading-none text-cfew-primary-900">
                       Account Name
                     </h6>
                     <p>Center for Earthworks Development</p>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h6 className="font-bold text-cfew-primary-900">
+                    <h6 className="font-bold leading-none text-cfew-primary-900">
                       Account Number
                     </h6>
                     <CopyButton text="0136968956" prefix='USD' />

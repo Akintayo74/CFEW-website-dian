@@ -15,7 +15,7 @@ function CopyButton({ text, label, prefix }) {
   }
 
   return (
-    <div className="flex flex-col gap-1 relative">
+    <div className="flex flex-col gap-1 relative leading-relaxed">
       <button className="flex items-center gap-2.5" onClick={handleCopy}>
         {prefix && <span className="text-cfew-dark">{prefix}</span>}
         {label || text}
@@ -27,7 +27,7 @@ function CopyButton({ text, label, prefix }) {
         </span>
       </button>
       {copied && (
-        <span className="absolute top-7 left-0 text-sm bg-cfew-primary-800 opacity-100 text-white px-4 py-2 rounded shadow-lg w-max z-5">
+        <span className="absolute top-4 md:top-7 left-0 text-sm bg-cfew-primary-800 opacity-100 text-white px-4 py-2 rounded shadow-lg w-max z-5">
          Text Copied!
         </span>
       )}
