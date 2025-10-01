@@ -4,8 +4,17 @@ import Container from "../Container/Container";
 import ImageText from "../ImageText";
 import SectionHeader from "../SectionHeader";
 import Clipboard from "../../assets/clipboard.svg";
+import Button from "../Button";
 
 function DonationImpact() {
+  async function handleCopyClick(textToCopy) {
+    try {
+      await navigator.clipboard.writeText(textToCopy);
+      alert("Text copied to clipboard!");
+    } catch (err) {
+      alert("Failed to copy text");
+    }
+  }
   return (
     <Section>
       <div className="text-cfew-dark text-sm md:text-base lg:text-lg lg:leading-relaxed flex flex-col gap-20">
@@ -58,14 +67,12 @@ function DonationImpact() {
         <Container>
           <Section background="pink">
             <Container>
-              <SectionHeader align="text-left">
+              <SectionHeader align="text-left" className="leading-tight">
                 Flexible ways to donate
               </SectionHeader>
               <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 text-left">
                 <div className="flex flex-col lg:gap-6">
-                  <h2
-                    className="font-bold leading-snug text-xl md:text-2xl  lg:text-3xl"
-                  >
+                  <h2 className="font-bold leading-snug text-xl md:text-2xl  lg:text-3xl">
                     Direct Bank Account
                   </h2>
                   <div>
@@ -84,18 +91,22 @@ function DonationImpact() {
                     <h6 className="font-bold text-cfew-primary-900">
                       Account Number
                     </h6>
-                    <p className="flex items-center gap-2.5">
+                    <button
+                      className="flex items-center gap-2.5"
+                      onClick={() => handleCopyClick('0136968956')}
+                    >
                       0136968956
                       <span>
-                        <img src={Clipboard} alt="An Image of a clipboard to indicate a copy paste feature"/>
+                        <img
+                          src={Clipboard}
+                          alt="An Image of a clipboard to indicate a copy paste feature"
+                        />
                       </span>
-                    </p>
+                    </button>
                   </div>
                 </div>
                 <div className="flex flex-col lg:gap-6">
-                  <h2
-                    className="font-bold leading-snug text-xl md:text-2xl  lg:text-3xl"
-                  >
+                  <h2 className="font-bold leading-snug text-xl md:text-2xl  lg:text-3xl">
                     Domicilliary Account
                   </h2>
                   <div>
@@ -110,29 +121,56 @@ function DonationImpact() {
                     </h6>
                     <p>Center for Earthworks Development</p>
                   </div>
-                  <div>
+                  <div className="flex flex-col gap-2">
                     <h6 className="font-bold text-cfew-primary-900">
                       Account Number
                     </h6>
-                    <p className="flex items-center gap-2.5">
-                      <span className="text-cfew-primary-500">USD</span>0136968956
+                    <button
+                      className="flex items-center gap-2.5"
+                      onClick={() => handleCopyClick('0136968956')}
+                    >
+                      <span className="text-cfew-primary-500">USD</span>
+                      0136968956
                       <span>
-                        <img src={Clipboard} alt="An Image of a clipboard to indicate a copy paste feature"/>
+                        <img
+                          src={Clipboard}
+                          alt="An Image of a clipboard to indicate a copy paste feature"
+                        />
                       </span>
-                    </p>
-                    <p className="flex items-center gap-2.5">
-                      <span className="text-cfew-primary-500">GBP</span>0136968956
+                    </button>
+                    <button
+                      className="flex items-center gap-2.5"
+                      onClick={() => handleCopyClick('0136968956')}
+                    >
+                      <span className="text-cfew-primary-500">GBP</span>
+                      0136968956
                       <span>
-                        <img src={Clipboard} alt="An Image of a clipboard to indicate a copy paste feature"/>
+                        <img
+                          src={Clipboard}
+                          alt="An Image of a clipboard to indicate a copy paste feature"
+                        />
                       </span>
-                    </p>
-                    <p className="flex items-center gap-2.5">
-                      <span className="text-cfew-primary-500">EURO</span>0136968956
+                    </button>
+                    <button
+                      className="flex items-center gap-2.5"
+                      onClick={() => handleCopyClick('0136968956')}
+                    >
+                      <span className="text-cfew-primary-500">EURO</span>
+                      0136968956
                       <span>
-                        <img src={Clipboard} alt="An Image of a clipboard to indicate a copy paste feature"/>
+                        <img
+                          src={Clipboard}
+                          alt="An Image of a clipboard to indicate a copy paste feature"
+                        />
                       </span>
-                    </p>
+                    </button>
                   </div>
+                </div>
+                <div className="flex flex-col gap-6">
+                  <h2 className="font-bold leading-snug text-xl md:text-2xl lg:text-3xl">
+                    Pay Stack
+                  </h2>
+                  <Button>Donate Now</Button>
                 </div>
               </div>
             </Container>
