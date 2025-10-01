@@ -47,9 +47,9 @@ function Dropdown({ label = "Get Involved", isMobile = false }) {
         </button>
       </DropdownMenu.Trigger>
 
-      <DropdownMenu.Content className="flex flex-col gap-4 bg-cfew-primary-800 p-7 rounded-xl text-white">
+      <DropdownMenu.Content className="flex flex-col gap-4 bg-cfew-primary-800 p-7 rounded-xl text-white ">
         {GET_INVOLVED_HEADER.map((link) => (
-          <DropdownMenu.Item>
+          <DropdownMenu.Item className="">
             <a key={link.href} href={link.href} className="hover:text-cfew-primary-400">
               {link.label}
             </a>
