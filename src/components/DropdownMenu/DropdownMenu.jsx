@@ -4,9 +4,9 @@ import { ChevronDown } from "lucide-react";
 import { GET_INVOLVED_HEADER } from "../../constants";
 
 function Dropdown({ label = "Get Involved", isMobile = false }) {
+
   if (isMobile) {
     const [toggleIsOpen, setToggleIsOpen] = React.useState(false);
-
     return (
       <div className="flex flex-col items-center gap-3 ">
         <button
@@ -24,7 +24,7 @@ function Dropdown({ label = "Get Involved", isMobile = false }) {
             {GET_INVOLVED_HEADER.map((link) => (
               <a
                 key={link.href}
-                href={link.href}   
+                href={link.href}
                 className="text-white hover:text-cfew-primary-400"
               >
                 {link.label}
@@ -38,22 +38,23 @@ function Dropdown({ label = "Get Involved", isMobile = false }) {
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild className="">
+      <DropdownMenu.Trigger asChild>
         <button className="text-cfew-interface flex items-center gap-3 font-bold border-0 hover:text-cfew-primary-400 cursor-pointer">
           Get Involved
           <span>
             <ChevronDown width={24} height={24} />
-          </span>{" "}
-          {/* or use an icon library */}
+          </span>
         </button>
       </DropdownMenu.Trigger>
 
-      <DropdownMenu.Content className="flex flex-col gap-4 bg-cfew-primary-800 p-7 rounded-xl text-white font-bold">
-        <DropdownMenu.Item>
-          <a href="https://www.wikipedia.org/">Donate</a>
-        </DropdownMenu.Item>
-        <DropdownMenu.Item>Volunteer</DropdownMenu.Item>
-        <DropdownMenu.Item>Contact Us</DropdownMenu.Item>
+      <DropdownMenu.Content className="flex flex-col gap-4 bg-cfew-primary-800 p-7 rounded-xl text-white">
+        {GET_INVOLVED_HEADER.map((link) => (
+          <DropdownMenu.Item>
+            <a key={link.href} href={link.href} className="hover:text-cfew-primary-400">
+              {link.label}
+            </a>
+          </DropdownMenu.Item>
+        ))}
       </DropdownMenu.Content>
     </DropdownMenu.Root>
   );

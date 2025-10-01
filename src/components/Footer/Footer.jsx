@@ -49,12 +49,12 @@ function Footer() {
                     type="email"
                     name="email"
                     placeholder="Enter your email"
-                    className="flex-1 rounded-full border-none px-6 py-4 text-sm bg-white text-gray-700 outline-none md:text-lg"
+                    className="flex-1 rounded-full border-none px-6 py-4 text-sm bg-white text-gray-700 outline-none md:text-lg md:pr-40"
                     required
                   />
                   <button
                     type="submit"
-                    className="md:absolute md:right-1 md:top-3 rounded-full bg-cfew-primary-500 px-6 py-3 font-medium transition-colors hover:bg-cfew-primary-600 md:px-8 md:py-4"
+                    className="md:absolute md:right-2.5 md:top-2.5 rounded-full bg-cfew-primary-500 px-6 py-3 font-medium transition-colors hover:bg-cfew-primary-600 md:px-8 md:py-4"
                   >
                     SUBSCRIBE
                   </button>

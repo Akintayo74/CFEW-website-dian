@@ -33,8 +33,8 @@ export const GET_INVOLVED_HEADER = [
     label: "Volunteer",
   },
   {
-    href: "/partner",
-    label: "Partner with us",
+    href: "/contact-us",
+    label: "Contact Us",
   },
 ];
 
