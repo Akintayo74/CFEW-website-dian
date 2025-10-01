@@ -4,11 +4,11 @@ import { NAV_LINKS } from "../../constants";
 import { Phone, Mail, MapPin } from "lucide-react";
 import {SOCIAL_LINKS} from '../../constants';
 import {GET_INVOLVED_FOOTER} from '../../constants';
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 
 function Footer() {
-  const location = useLocation();
+  // const location = useLocation();
 
   const getLinkClassName = (href) => {
     const isActive = location.pathname === href;

@@ -3,11 +3,11 @@ import logo from "@/assets/CFEW-Logo.png";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants";
 import Container from "../Container/Container";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Dropdown from "../DropdownMenu/DropdownMenu";
 
 function Header() {
-  // const location = useLocation();
+  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   function toggleMobileMenu() {
