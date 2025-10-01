@@ -3,7 +3,7 @@ import Container from "../Container/Container";
 import { NAV_LINKS } from "../../constants";
 import { Phone, Mail, MapPin } from "lucide-react";
 import {SOCIAL_LINKS} from '../../constants';
-import {GET_INVOLVED_LINKS} from '../../constants';
+import {GET_INVOLVED_FOOTER} from '../../constants';
 import { useLocation } from "react-router-dom";
 
 
@@ -109,7 +109,7 @@ function Footer() {
                     Get Involved
                   </h3>
                   <ul className="flex flex-col gap-4 font-semibold">
-                    {GET_INVOLVED_LINKS.map((link) => (
+                    {GET_INVOLVED_FOOTER.map((link) => (
                       <li key={link.href}>
                         <a
                           href={link.href}

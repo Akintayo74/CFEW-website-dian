@@ -3,10 +3,11 @@ import logo from "@/assets/CFEW-Logo.png";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants";
 import Container from "../Container/Container";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
+import Dropdown from "../DropdownMenu/DropdownMenu";
 
 function Header() {
-  const location = useLocation();
+  // const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   function toggleMobileMenu() {
@@ -26,7 +27,6 @@ function Header() {
       <Container>
         <div className="flex items-center justify-between py-3.5">
           <img src={logo} />
-
           <div>
             {/* Mobile First design */}
             <button
@@ -52,6 +52,7 @@ function Header() {
                   {link.label}
                 </a>
               ))}
+              <Dropdown isMobile={false}/>
             </nav>
           </div>
 
@@ -73,6 +74,7 @@ function Header() {
                   {link.label}
                 </a>
               ))}
+              <Dropdown isMobile={true}/>
             </div>
 
             <button className="bg-cfew-primary-500 rounded-3xl px-4 py-2 text-white mb-16 font-bold">
