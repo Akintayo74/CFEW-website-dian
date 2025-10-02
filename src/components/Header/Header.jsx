@@ -62,7 +62,7 @@ function Header() {
         </div>
 
         {isMobileMenuOpen && (
-          <nav className="md:hidden flex flex-col items-center gap-5 bg-cfew-primary-900 -mx-5">
+          <nav className="md:hidden flex flex-col items-center gap-5 bg-cfew-primary-800 absolute top-full left-0 right-0 ">
             <div className="flex flex-col items-center gap-5 mt-5">
               {NAV_LINKS.map((link) => (
                 <a
