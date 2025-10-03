@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Dialog from "@radix-ui/react-dialog";
 import { X } from 'lucide-react';
+import CopyButton from '../CopyButton/CopyButton';
 
 function ContactUsModal() {
   return (
@@ -11,48 +12,24 @@ function ContactUsModal() {
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        {/* <Dialog.Overlay className="fixed inset-0 bg-black/40 data-[state=open]:animate-overlayShow" /> */}
         <Dialog.Overlay className="fixed inset-0 bg-black/40 z-40" /> 
-        {/* <Dialog.Content className="fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-md bg-red-400 p-[25px] shadow-lg focus:outline-none data-[state=open]:animate-contentShow"> */}
-        <Dialog.Content className="fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-md bg-red-400 p-[25px] shadow-lg focus:outline-none z-50">
-          <Dialog.Title className="m-0 text-[17px] font-medium text-gray-900">
+        <Dialog.Content className="fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-md bg-cfew-primary-50 p-[25px] shadow-lg focus:outline-none z-50 flex flex-col items-center">
+          <Dialog.Title className="m-0 text-[17px] font-medium text-gray-900 text-center">
             Contact Info
           </Dialog.Title>
-          <Dialog.Description className="mb-5 mt-2.5 text-[15px] leading-normal text-gray-600">
-            Make changes to your profile here. Click save when you're done.
-          </Dialog.Description>
-          <fieldset className="mb-[15px] flex items-center gap-5">
-            <label
-              className="w-[90px] text-right text-[15px] text-gray-700"
-              htmlFor="name"
-            >
-              Name
-            </label>
-            <input
-              className="inline-flex h-[35px] w-full flex-1 items-center justify-center rounded px-2.5 text-[15px] leading-none text-gray-900 border border-gray-300 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
-              id="name"
-              defaultValue="Pedro Duarte"
-            />
-          </fieldset>
-          <fieldset className="mb-[15px] flex items-center gap-5">
-            <label
-              className="w-[90px] text-right text-[15px] text-gray-700"
-              htmlFor="username"
-            >
-              Username
-            </label>
-            <input
-              className="inline-flex h-[35px] w-full flex-1 items-center justify-center rounded px-2.5 text-[15px] leading-none text-gray-900 border border-gray-300 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
-              id="username"
-              defaultValue="@peduarte"
-            />
-          </fieldset>
-          <div className="mt-[25px] flex justify-end">
-            <Dialog.Close asChild>
-              <button className="inline-flex h-[35px] items-center justify-center rounded bg-green-600 px-[15px] font-medium leading-none text-white hover:bg-green-700 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-green-500">
-                Save changes
-              </button>
-            </Dialog.Close>
+          <div className='flex flex-col items-center'>
+            <h5 className='text-cfew-dark text-lg font-bold'>24/7 Support Line</h5>
+            <CopyButton text='+2347062249235'   />
+          </div>
+
+          <div className='flex flex-col items-center'>
+            <h5 className='text-cfew-dark text-lg font-bold'>Email</h5>
+            <CopyButton text='cearthwork@gmail.com'   />
+          </div>
+
+          <div className='flex flex-col items-center'>
+            <h5 className='text-cfew-dark text-lg font-bold'>Address</h5>
+            <CopyButton text='+2347062249235'   />
           </div>
           <Dialog.Close asChild>
             <button
