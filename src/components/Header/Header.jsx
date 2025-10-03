@@ -3,11 +3,11 @@ import logo from "@/assets/CFEW-Logo.png";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants";
 import Container from "../Container/Container";
-// import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Dropdown from "../DropdownMenu/DropdownMenu";
 
 function Header() {
-  // const location = useLocation();
+  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   function toggleMobileMenu() {
@@ -19,7 +19,7 @@ function Header() {
   
     return isActive
       ? "text-cfew-primary-400 font-bold text-base"
-      : "text-cfew-interface font-bold text-base hover:underline";
+      : "text-cfew-interface font-bold text-base hover:text-cfew-primary-400";
   };
 
   return (
@@ -44,13 +44,13 @@ function Header() {
             {/* Desktop Design */}
             <nav className="hidden items-center gap-8 md:flex">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className={getLinkClassName(link.href)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <Dropdown isMobile={false}/>
             </nav>
