@@ -4,11 +4,11 @@ import { NAV_LINKS } from "../../constants";
 import { Phone, Mail, MapPin } from "lucide-react";
 import {SOCIAL_LINKS} from '../../constants';
 import {GET_INVOLVED_FOOTER} from '../../constants';
-// import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 function Footer() {
-  // const location = useLocation();
+  const location = useLocation();
 
   const getLinkClassName = (href) => {
     const isActive = location.pathname === href;
@@ -111,12 +111,12 @@ function Footer() {
                   <ul className="flex flex-col gap-4 font-semibold">
                     {GET_INVOLVED_FOOTER.map((link) => (
                       <li key={link.href}>
-                        <a
-                          href={link.href}
+                        <Link
+                          to={link.href}
                           className="text-sm transition-colors hover:text-gray-300 hover:underline md:text-lg"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

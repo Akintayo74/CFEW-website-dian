@@ -7,21 +7,22 @@ function FoundersMessage() {
   return (
     <Section background="pink" spacing="looseSymmetrical">
       <Container>
+        {/* Use a flex container that activates on large screens */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-10">
-          {/* Text Content */}
-          <div className="flex flex-col lg:w-180 lg:gap-10">
-            <h4 className="mb-5 text-4xl font-bold lg:mb-0 lg:text-start lg:text-5xl">
+          {/* Text Content Block */}
+          <div className="flex flex-col">
+            <h4 className="mb-5 text-4xl font-bold lg:mb-10 lg:text-start lg:text-5xl">
               Founder's Message
             </h4>
 
-            {/* Mobile Image - positioned after title */}
+            {/* 1. MOBILE IMAGE: This is visible only on screens smaller than 'lg' */}
             <img
               src="/portraits/founder-image.png"
-              className="mb-12 lg:hidden"
+              className="mb-8 rounded-lg object-cover lg:hidden"
               alt="Founder"
             />
 
-            <figure className="mb-6 text-left lg:mb-0">
+            <figure className="mb-6 text-left lg:mb-10">
               <blockquote className="text-xl font-semibold italic md:text-2xl md:font-medium lg:text-3xl">
                 <p>
                   "I am inspired by the power of simple ideas backed by
@@ -40,12 +41,12 @@ function FoundersMessage() {
             <Button>Learn More</Button>
           </div>
 
-          {/* Desktop Image */}
-          <div className="hidden lg:block">
+          {/* 2. DESKTOP IMAGE: This container is hidden until the 'lg' breakpoint */}
+          <div className="hidden flex-shrink-0 lg:block lg:w-1/2">
             <img
               src="/portraits/founder-image.png"
-              className="mb-12"
               alt="Founder"
+              className="h-full w-full rounded-lg object-cover"
             />
           </div>
         </div>
