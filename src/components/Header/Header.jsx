@@ -65,14 +65,14 @@ function Header() {
           <nav className="md:hidden flex flex-col items-center gap-5 bg-cfew-primary-800 absolute top-full left-0 right-0 ">
             <div className="flex flex-col items-center gap-5 mt-5">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="font-bold text-white hover:text-cfew-primary-400"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <Dropdown isMobile={true}/>
             </div>
