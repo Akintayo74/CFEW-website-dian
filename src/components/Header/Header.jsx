@@ -67,7 +67,7 @@ function Header() {
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="font-bold text-white hover:text-cfew-primary-400"
                 >
