@@ -12,6 +12,19 @@ function GlassCard({ runningAnimation, text, suffix = "+" }) {
     const triggerElement = cardRef.current;
     const counter = { value: 0 };
 
+    // Check if screen is mobile (less than 640px)
+    const isMobile = window.matchMedia("(max-width: 639px)").matches;
+    
+    if (isMobile) {
+      // Skip animation on mobile - show final value immediately
+      if (countRef.current) {
+        const formattedNumber = runningAnimation.toLocaleString('en-US');
+        countRef.current.innerText = `${formattedNumber}${suffix}`;
+      }
+      return; // Exit early, no animation
+    }
+
+
     const tween = gsap.to(counter, {
       value: runningAnimation,
       duration: 2.5,
