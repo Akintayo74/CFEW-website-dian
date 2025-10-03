@@ -1,12 +1,27 @@
-# React + Vite
+# CFEW Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website for [Organization Name - spell out CFEW]. Built with a mobile-first approach using React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
+- **React 19** - UI library
+- **Vite** - Build tool and dev server
+- **Tailwind CSS v4** - Utility-first styling
+- **React Router** - Client-side routing
+- **Radix UI** - Accessible component primitives
+- **Storybook** - Component development and testing
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Installation
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+To run the project, you can:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `npm run dev` runs the project using Vite's hot reloader on [http://localhost:5174/](http://localhost:5174/).
+
+-  `npm run storybook` runs the project using storybook, a tool which helps you test individual components in isolation. It runs on [http://localhost:6006/]( http://localhost:6006/).
+
+## 🤝 Contributing
+This is an ongoing project. Pull the latest changes regularly:
+```bash
+git pull origin main
