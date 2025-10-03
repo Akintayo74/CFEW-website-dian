@@ -92,12 +92,12 @@ function Footer() {
                   <ul className="flex flex-col gap-4 font-semibold">
                     {NAV_LINKS.map((link) => (
                       <li key={link.href}>
-                        <a
-                          href={link.href}
+                        <Link
+                          to={link.href}
                           className={getLinkClassName(link.href)}
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
