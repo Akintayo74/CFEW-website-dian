@@ -7,8 +7,7 @@ function FoundersMessage() {
   return (
     <Section background="pink" spacing="looseSymmetrical">
       <Container>
-        {/* Use a flex container that activates on large screens */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-10">
           {/* Text Content Block */}
           <div className="flex flex-col">
             <h4 className="mb-5 text-4xl font-bold lg:mb-10 lg:text-start lg:text-5xl">
@@ -18,7 +17,7 @@ function FoundersMessage() {
             {/* 1. MOBILE IMAGE: This is visible only on screens smaller than 'lg' */}
             <img
               src="/portraits/founder-image.png"
-              className="mb-8 rounded-lg object-cover lg:hidden"
+              className="mb-8 rounded-lg object-cover md:hidden"
               alt="Founder"
             />
 
@@ -42,7 +41,7 @@ function FoundersMessage() {
           </div>
 
           {/* 2. DESKTOP IMAGE: This container is hidden until the 'lg' breakpoint */}
-          <div className="hidden flex-shrink-0 lg:block lg:w-1/2">
+          <div className="hidden flex-shrink-0 md:block md:w-1/2">
             <img
               src="/portraits/founder-image.png"
               alt="Founder"
