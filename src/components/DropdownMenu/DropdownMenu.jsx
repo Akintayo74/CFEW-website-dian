@@ -2,9 +2,9 @@ import React from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import { GET_INVOLVED_HEADER } from "../../constants";
+import ContactUsModal from "../ContactUsModal/ContactUsModal";
 
 function Dropdown({ label = "Get Involved", isMobile = false }) {
-
   if (isMobile) {
     const [toggleIsOpen, setToggleIsOpen] = React.useState(false);
     return (
@@ -18,18 +18,21 @@ function Dropdown({ label = "Get Involved", isMobile = false }) {
             <ChevronDown width={24} height={24} />
           </span>
         </button>
-
         {toggleIsOpen && (
           <div className="flex flex-col items-center gap-3">
-            {GET_INVOLVED_HEADER.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-white hover:text-cfew-primary-400"
-              >
-                {link.label}
-              </a>
-            ))}
+            {GET_INVOLVED_HEADER.map((link) =>
+              link.isModal ? (
+                <ContactUsModal key={link.href} />
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-white hover:text-cfew-primary-400"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </div>
         )}
       </div>
@@ -49,10 +52,22 @@ function Dropdown({ label = "Get Involved", isMobile = false }) {
 
       <DropdownMenu.Content className="flex flex-col gap-4 bg-cfew-primary-800 p-7 rounded-xl text-white ">
         {GET_INVOLVED_HEADER.map((link) => (
-          <DropdownMenu.Item className="">
-            <a key={link.href} href={link.href} className="hover:text-cfew-primary-400">
-              {link.label}
-            </a>
+          <DropdownMenu.Item
+            className=""
+            key={link.href}
+            onSelect={(event) => {
+              if (link.isModal) {
+                event.preventDefault();
+              }
+            }}
+          >
+            {link.isModal ? (
+              <ContactUsModal />
+            ) : (
+              <a href={link.href} className="hover:text-cfew-primary-400">
+                {link.label}
+              </a>
+            )}
           </DropdownMenu.Item>
         ))}
       </DropdownMenu.Content>

@@ -35,6 +35,7 @@ export const GET_INVOLVED_HEADER = [
   {
     href: "/contact-us",
     label: "Contact Us",
+    isModal: true,
   },
 ];
 
