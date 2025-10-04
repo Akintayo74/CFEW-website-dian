@@ -1,11 +1,17 @@
-
+import Layout from '../components/Layout';
+import Section from '../components/Section';
 
 function HomePage() {
-
     return (
-        <div className="bg-blue-600">
-            <h1>You didn't find the page, but we still love you!</h1>
-        </div>
+        <Layout>
+            <Section>
+                <div className='bg-purple-600 py-20'>
+                    <h1 className='text-2xl lg:text-5xl'>
+                        Page not found! :(
+                    </h1>
+                </div>
+            </Section>
+        </Layout>
     )
 }
 
