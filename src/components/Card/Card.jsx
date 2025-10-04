@@ -1,6 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Card() {
+  const navigate = useNavigate();
+
+  function handleDonateBtnClick() {
+    navigate("/donate");
+  }
+
+  function handleVolunteerBtnClick() {
+    navigate("/donate");
+  }
+
   return (
     <div className="bg-cfew-transparent p-4 md:p-6 lg:p-8 max-w-[90%] md:max-w-lg lg:max-w-2xl">
       <h4 className="text-cfew-interface mb-3 text-lg font-bold md:mb-5 md:text-3xl lg:text-5xl lg:font-black">
@@ -12,10 +23,16 @@ function Card() {
         sustainable future.
       </p>
       <div className="flex gap-3 md:gap-4">
-        <button className="bg-cfew-primary-500 rounded-full px-4 py-2 text-xs font-normal text-white md:px-6 md:py-3 md:text-sm">
+        <button
+          className="bg-cfew-primary-500 rounded-full px-4 py-2 text-xs font-normal text-white md:px-6 md:py-3 md:text-sm hover:bg-cfew-primary-600 cursor-pointer"
+          onClick={handleDonateBtnClick}
+        >
           Donate
         </button>
-        <button className="border-cfew-interface rounded-full border-[1.5px] bg-transparent px-4 py-2 text-xs font-normal text-white md:px-6 md:py-3 md:text-sm">
+        <button
+          className="border-cfew-interface rounded-full border-[1.5px] bg-transparent px-4 py-2 text-xs font-normal text-white md:px-6 md:py-3 md:text-sm hover:bg-cfew-primary-500-15% cursor-pointer"
+          onClick={handleVolunteerBtnClick}
+        >
           Volunteer
         </button>
       </div>

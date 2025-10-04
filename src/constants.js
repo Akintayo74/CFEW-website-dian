@@ -197,7 +197,7 @@ export const GET_INVOLVED_FOOTER = [
     label: "Donate",
   },
   {
-    href: "/volunteer",
+    href: "/donate",
     label: "Volunteer",
   },
   {
