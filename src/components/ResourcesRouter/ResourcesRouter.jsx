@@ -36,9 +36,7 @@ function ResourcesRouter() {
   }
 
   return (
-    // <Section spacing='tight'>
-    <div>
-      
+    <div>     
       <Section spacing='defaultTight'>
         <Container>
           <BreadCrumbs
@@ -49,16 +47,10 @@ function ResourcesRouter() {
         </Container>
       </Section>
       
-
       <div>
         {renderContent()}
       </div>
-
-    </div>
-      
-    // </Section>
-    
-    
+    </div> 
   );
 }
 

@@ -82,3 +82,11 @@ h1 {
 .hero-gradient {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.159375) 57.51%, rgba(0, 0, 0, 0.31875) 79.82%, rgba(0, 0, 0, 0.6375) 100.04%);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
