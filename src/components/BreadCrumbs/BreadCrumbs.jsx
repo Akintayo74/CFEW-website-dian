@@ -16,12 +16,6 @@ function BreadCrumbs({ tabs, activeTab, onTabChange }) {
     
       {tabs.map((tab) => (
         <div key={tab.id} className="bg-cfew-primary-500-15% p-1 md:p-2.5 flex-shrink-0">
-          {/* <button
-            onClick={() => onTabChange(tab.id)}
-            className={getButtonClasses(tab.id) }
-          >
-            {tab.name}
-          </button> */}
           <button
             onClick={() => onTabChange(tab.id)}
             className={getButtonClasses(tab.id)}

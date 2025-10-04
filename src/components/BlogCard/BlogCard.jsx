@@ -4,14 +4,6 @@ import React from "react";
 function BlogCard({ imageSrc, imageAlt, publishDate, title, background = 'bg-cfew-primary-100' }) {
   return (
     <div className={`${background} flex flex-col w-full}`}>
-      {/* <div className="flex justify-center">
-        <img
-          src={imageSrc}
-          alt={imageAlt}
-          className="w-full h-50 md:h-60 lg:h-80 object-cover"
-        />
-      </div> */}
-
       <div className="w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2]">
         <img
           src={imageSrc}
