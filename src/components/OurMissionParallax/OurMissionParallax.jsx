@@ -21,7 +21,7 @@ function OurMissionParallax() {
                 <h2 className="text-3xl lg:text-5xl font-bold mb-2.5">
                   Our Mission
                 </h2>
-                <p className="text-sm md:text-lg leading-relaxed font-semibold">
+                <p className="text-sm md:text-lg md:max-w-130 leading-relaxed font-semibold">
                   To champion environmental sustainability through innovative
                   programs, research, and proactive advocacy in communities.
                 </p>
@@ -30,7 +30,7 @@ function OurMissionParallax() {
                 <h2 className="text-3xl lg:text-5xl font-bold mb-2.5">
                   Our Vision
                 </h2>
-                <p className="text-sm md:text-lg leading-relaxed font-semibold">
+                <p className="text-sm md:text-lg md:max-w-130 leading-relaxed font-semibold">
                   "We envision an empowered world where humanity is at
                   equilibrium with nature."
                 </p>
