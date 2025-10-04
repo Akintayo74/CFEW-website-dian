@@ -1,21 +1,35 @@
 import React from "react";
 import Card from "../Card/Card";
+import ImageBanner from "../ImageBanner/ImageBanner";
 
 function Slideshow() {
-  //  const slides = [
-  //   "/slide-1.png",
-  //   "/slide-2.png",
-  //   "/slide-3.png",
-  //   "/slide-4.png",
-  //   "/slide-5.png",
-  // ];
+  const slides = [
+    { src: "/slide-1.png", alt: "Slide 1" },
+    { src: "/slide-2.png", alt: "Slide 2" },
+    { src: "/slide-3.png", alt: "Slide 3" },
+    { src: "/slide-4.png", alt: "Slide 4" },
+    { src: "/slide-5.png", alt: "Slide 5" },
+  ];
+
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  // Auto-advance slides every 5 seconds
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   return (
     <div className="relative">
-      <img src="/slide-1.png" className="h-150 w-full md:h-auto" />
-      <div className="absolute bottom-20 left-0">
+      <ImageBanner
+        imageSrc={slides[currentSlide].src}
+        imageAlt={slides[currentSlide].alt}
+      >
         <Card />
-      </div>
+      </ImageBanner>
     </div>
   );
 }

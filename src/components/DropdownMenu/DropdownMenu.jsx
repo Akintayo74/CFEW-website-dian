@@ -3,6 +3,7 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import { GET_INVOLVED_HEADER } from "../../constants";
 import ContactUsModal from "../ContactUsModal/ContactUsModal";
+import { Link } from "react-router-dom";
 
 function Dropdown({ label = "Get Involved", isMobile = false }) {
   if (isMobile) {
@@ -24,13 +25,13 @@ function Dropdown({ label = "Get Involved", isMobile = false }) {
               link.isModal ? (
                 <ContactUsModal key={link.href} />
               ) : (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className="text-white hover:text-cfew-primary-400"
                 >
                   {link.label}
-                </a>
+                </Link>
               )
             )}
           </div>
@@ -64,9 +65,9 @@ function Dropdown({ label = "Get Involved", isMobile = false }) {
             {link.isModal ? (
               <ContactUsModal />
             ) : (
-              <a href={link.href} className="hover:text-cfew-primary-400">
+              <Link to={link.href} className="hover:text-cfew-primary-400">
                 {link.label}
-              </a>
+              </Link>
             )}
           </DropdownMenu.Item>
         ))}

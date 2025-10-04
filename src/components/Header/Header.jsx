@@ -3,11 +3,13 @@ import logo from "@/assets/CFEW-Logo.png";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/constants";
 import Container from "../Container/Container";
-// import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "../DropdownMenu/DropdownMenu";
 
 function Header() {
-  // const location = useLocation();
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   function toggleMobileMenu() {
@@ -16,11 +18,15 @@ function Header() {
 
   const getLinkClassName = (href) => {
     const isActive = location.pathname === href;
-  
+
     return isActive
       ? "text-cfew-primary-400 font-bold text-base"
-      : "text-cfew-interface font-bold text-base hover:underline";
+      : "text-cfew-interface font-bold text-base hover:text-cfew-primary-400";
   };
+
+  function handleClick() {
+    navigate("/donate");
+  }
 
   return (
     <header className="bg-cfew-primary-900-90% sticky top-0 z-10">
@@ -44,19 +50,22 @@ function Header() {
             {/* Desktop Design */}
             <nav className="hidden items-center gap-8 md:flex">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className={getLinkClassName(link.href)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <Dropdown isMobile={false}/>
+              <Dropdown isMobile={false} />
             </nav>
           </div>
 
-          <button className="bg-cfew-primary-500 hidden rounded-4xl px-8 py-4 text-white md:block">
+          <button
+            className="bg-cfew-primary-500 hidden rounded-4xl px-8 py-4 text-white md:block hover:bg-cfew-primary-600"
+            onClick={handleClick}
+          >
             Donate
           </button>
         </div>
@@ -65,16 +74,16 @@ function Header() {
           <nav className="md:hidden flex flex-col items-center gap-5 bg-cfew-primary-800 absolute top-full left-0 right-0 ">
             <div className="flex flex-col items-center gap-5 mt-5">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="font-bold text-white hover:text-cfew-primary-400"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <Dropdown isMobile={true}/>
+              <Dropdown isMobile={true} />
             </div>
 
             <button className="bg-cfew-primary-500 rounded-3xl px-4 py-2 text-white mb-16 font-bold">
