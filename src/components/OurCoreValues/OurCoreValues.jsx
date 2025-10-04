@@ -14,7 +14,7 @@ function OurCoreValues() {
         imageAlt="An Image of some members of the CFEW organisation posing with placards of causes they actively advocate for such as gender inequality and climate change."
         title="Our Core Values"
       >
-        <div className="text-cfew-dark flex flex-col gap-6 justify-between h-full">
+        <div className="text-cfew-dark flex flex-col gap-6 ">
           <div className="flex gap-2 items-center">
             <div className="w-10 h-10 flex items-center justify-center">
               <img src={plus} imageAlt='Image of a green plus sign' className="m-1" />
