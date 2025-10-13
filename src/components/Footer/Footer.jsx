@@ -71,7 +71,7 @@ function Footer() {
                       aria-label={`Visit our ${social.alt} page`}
                       className="transition-opacity hover:opacity-80"
                     >
-                      <img src={social.icon} width={40} height={40} alt={social.alt} />
+                      <img src={social.icon} width={40} height={40} alt={social.alt} className="flex-shrink-0"/>
                     </a>
                   ))}
                 </div>
@@ -163,7 +163,7 @@ function Footer() {
                   aria-label={`Visit our ${social.alt} page`}
                   className="transition-opacity hover:opacity-80"
                 >
-                  <img src={social.icon} width={40} height={40} alt={social.alt} />
+                  <img src={social.icon} width={40} height={40} alt={social.alt} className="flex-shrink-0"/>
                 </a>
               ))}
             </div>
