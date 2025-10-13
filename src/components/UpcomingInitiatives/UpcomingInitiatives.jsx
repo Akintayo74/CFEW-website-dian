@@ -37,7 +37,7 @@ function UpcomingInitiatives() {
 
               <div className='flex items-center gap-2'>
                 {/* <div className='w-10'> */}
-                  <img src={location} width={24} height={24} />
+                <img src={location} width={24} height={24} className='flex-shrink-0'/>
                 {/* </div> */}
                 <p>{event.location}</p>
               </div>
