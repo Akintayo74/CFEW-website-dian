@@ -22,7 +22,9 @@ function AboutUs() {
         ease: "power2.out",
         onUpdate: () => {
           if (ref.current) {
-            const formattedNumber = Math.round(counter.value).toLocaleString('en-US');
+            const formattedNumber = Math.round(counter.value).toLocaleString(
+              "en-US"
+            );
             ref.current.innerText = `${formattedNumber}${suffix}`;
           }
         },
@@ -35,7 +37,7 @@ function AboutUs() {
           trigger: statsRef.current,
           start: "top 80%",
           toggleActions: "restart none restart none",
-        }
+        },
       });
 
       timeline.add(animateCounter(count1Ref, 17000), 0);
@@ -57,7 +59,7 @@ function AboutUs() {
           chemicals, sustainable land management, water, sanitation and hygiene,
           renewable energy, and environmental justice.
         </p>
-        <div 
+        <div
           ref={statsRef}
           className="text-cfew-primary-600 flex flex-col text-left md:flex-row md:items-center md:gap-6 md:text-start"
         >
@@ -69,7 +71,7 @@ function AboutUs() {
           </div>
           <hr className="md:hidden border-cfew-primary-400 border-[1.5px]" />
           <div className="hidden md:border-cfew-primary-400 md:block md:h-12 md:border-l"></div>
-          
+
           <div className="my-6">
             <h6 className="text-2xl font-bold">
               <span ref={count2Ref}>0+</span>
@@ -78,16 +80,22 @@ function AboutUs() {
           </div>
           <hr className="border-cfew-primary-400 border-[1.5px] md:hidden" />
           <div className="md:border-cfew-primary-400 hidden md:block md:h-12 md:border-l"></div>
-          
+
           <div className="my-6">
             <h6 className="text-2xl font-bold">
               <span ref={count3Ref}>0+</span>
             </h6>
             <div className="font-semibold">Tonnes of Recovered Plastic</div>
           </div>
-          <Button className="md:hidden">Learn More</Button>
+          <Button color="overlay" size="medium" className="md:hidden">Learn More</Button>
         </div>
-        <Button className="hidden md:block lg:self-start">Learn More</Button>
+        <Button
+          className="hidden md:block lg:self-start"
+          color="overlay"
+          size="medium"
+        >
+          Learn More
+        </Button>
       </ImageText>
     </Section>
   );

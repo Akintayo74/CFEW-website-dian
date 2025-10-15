@@ -5,6 +5,7 @@ import { NAV_LINKS } from "@/constants";
 import Container from "../Container/Container";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "../DropdownMenu/DropdownMenu";
+import Button from "../Button/Button";
 
 function HeaderHome() {
   const location = useLocation();
@@ -62,12 +63,16 @@ function HeaderHome() {
             </nav>
           </div>
 
-          <button
+          {/* <button
             className="bg-cfew-primary-500 hidden rounded-4xl px-8 py-4 text-white md:block hover:bg-cfew-primary-600"
             onClick={handleClick}
           >
             Donate
-          </button>
+          </button> */}
+
+          <Button onClick={handleClick} size="large" className="hidden md:block">
+            DONATE
+          </Button>
         </div>
 
         {isMobileMenuOpen && (
