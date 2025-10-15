@@ -15,6 +15,10 @@ import DashboardLayout from './layouts/DashboardLayout';
 import Dashboard from './pages/Dashboard';
 import Categories from './pages/Categories';
 import Posts from './pages/Posts';
+import BlogDetail from './pages/BlogDetail';
+import PressRelease from './pages/PressRelease';
+import Publication from './pages/Publication';
+import UpcomingEvent from './pages/UpcomingEvent';
 
 function App() {
   return (
@@ -26,6 +30,7 @@ function App() {
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/donate" element={<DonatePage />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
 
           {/* Auth routes nested under AuthLayout */}
           <Route path="/admin" element={<AuthLayout />}>
@@ -43,6 +48,9 @@ function App() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="dashboard/categories" element={<Categories />} />
             <Route path="dashboard/posts" element={<Posts />} />
+            <Route path="dashboard/posts/press-release" element={<PressRelease />} />
+            <Route path="dashboard/posts/publication" element={<Publication />} />
+            <Route path="dashboard/posts/upcoming-event" element={<UpcomingEvent />} />
             {/* <Route path="posts" element={<PostsPage />} />
             <Route path="drafts" element={<DraftsPage />} />
             <Route path="settings" element={<SettingsPage />} /> */}

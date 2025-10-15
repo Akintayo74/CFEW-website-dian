@@ -1,6 +1,6 @@
 // src/pages/Posts.jsx
-import { useState } from "react";
-import { Plus } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Plus, Pilcrow, Image as ImageIcon, List, Bookmark } from "lucide-react";
 import Button from "../components/Button";
 
 export default function Posts() {
@@ -8,6 +8,19 @@ export default function Posts() {
   const [content, setContent] = useState("");
   const [tags, setTags] = useState("");
   const [author, setAuthor] = useState("");
+  const [showBlockMenu, setShowBlockMenu] = useState(false);
+  const blockMenuRef = useRef(null);
+
+  // Close the block menu when clicking outside
+  useEffect(() => {
+    function onDocClick(e) {
+      if (blockMenuRef.current && !blockMenuRef.current.contains(e.target)) {
+        setShowBlockMenu(false);
+      }
+    }
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, []);
 
   return (
     <div className="w-full h-full flex">
@@ -44,10 +57,61 @@ export default function Posts() {
               type="button"
               className="border border-[#4B6E3C] text-[#4B6E3C] rounded-[6px] hover:bg-[#4B6E3C] hover:text-white p-1"
               title="Add block"
+              onClick={() => setShowBlockMenu((v) => !v)}
             >
               <Plus size={18} />
             </button>
           </div>
+
+          {showBlockMenu && (
+            <div
+              ref={blockMenuRef}
+              className="absolute left-1/2 -translate-x-1/2 mt-6 w-[276px]  bg-[#F7F7F7] shadow-md rounded-[12px] border border-[#BBCCBB] p-[16px]"
+            >
+              {/* Options arranged with flex, not grid */}
+              <div className="flex flex-col justify-between gap-[16px]">
+                <div className="flex items-center justify-between gap-4">
+                  <button
+                    type="button"
+                    className="flex flex-col items-center justify-center w-full h-full rounded-[8px] hover:bg-white text-[#1B2816] p-[16px]"
+                    onClick={() => setShowBlockMenu(false)}
+                  >
+                    <Pilcrow color="#4b6e3c" size={18} className="mb-1" />
+                    <span className="text-[16px] text-[#4B6E3C] font-normal">Paragraph</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="flex flex-col items-center justify-center w-full h-full rounded-[8px] hover:bg-white text-[#1B2816] p-[16px]"
+                    onClick={() => setShowBlockMenu(false)}
+                  >
+                    <ImageIcon color="#4b6e3c" size={18} className="mb-1" />
+                    <span className="text-[16px] text-[#4B6E3C] font-normal">Images</span>
+                  </button>
+                </div>
+
+                <div className="flex items-center justify-between gap-4">
+                  <button
+                    type="button"
+                    className="flex flex-col items-center justify-center w-full h-full rounded-[8px] hover:bg-white text-[#1B2816] p-[16px]"
+                    onClick={() => setShowBlockMenu(false)}
+                  >
+                    <List  size={18} className="mb-1" />
+                    <span className="text-[16px] text-[#4B6E3C] font-normal">List</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="flex flex-col items-center justify-center w-full h-full rounded-[8px] hover:bg-white text-[#1B2816] p-[16px]"
+                    onClick={() => setShowBlockMenu(false)}
+                  >
+                    <Bookmark color="#4b6e3c" size={18} className="mb-1" />
+                    <span className="text-[16px] text-[#4B6E3C] font-normal">Sub Heading</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Simple textarea as placeholder for editor */}
           <textarea
