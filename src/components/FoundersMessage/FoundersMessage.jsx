@@ -37,7 +37,12 @@ function FoundersMessage() {
               </figcaption>
             </figure>
 
-            <Button>Learn More</Button>
+            <Button
+              color="overlay"
+              size="medium"
+            >
+              Learn More
+            </Button>
           </div>
 
           {/* 2. DESKTOP IMAGE: This container is hidden until the 'lg' breakpoint */}

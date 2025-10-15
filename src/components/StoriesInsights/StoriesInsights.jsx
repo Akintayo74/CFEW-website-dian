@@ -41,8 +41,17 @@ function StoriesInsights() {
             title='The reemergence of the North Central Green life'
           />
         </div>
-        <Button className="mt-12 bg-cfew-primary-100" align="none">
+        {/* <Button className="mt-12 bg-cfew-primary-100" align="none">
           More News
+        </Button> */}
+
+        <Button
+          className="mt-12"
+          align="none"
+          color="overlay"
+          size="medium"
+        >
+          More news
         </Button>
       </div>
       </Container>

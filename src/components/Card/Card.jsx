@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../Button/Button";
 
 function Card() {
   const navigate = useNavigate();
@@ -23,18 +24,12 @@ function Card() {
         sustainable future.
       </p>
       <div className="flex gap-3 md:gap-4">
-        <button
-          className="bg-cfew-primary-500 rounded-full px-4 py-2 text-xs font-normal text-white md:px-6 md:py-3 md:text-sm hover:bg-cfew-primary-600 cursor-pointer"
-          onClick={handleDonateBtnClick}
-        >
+        <Button>
           Donate
-        </button>
-        <button
-          className="border-cfew-interface rounded-full border-[1.5px] bg-transparent px-4 py-2 text-xs font-normal text-white md:px-6 md:py-3 md:text-sm hover:bg-cfew-primary-500-15% cursor-pointer"
-          onClick={handleVolunteerBtnClick}
-        >
+        </Button>
+        <Button color="clear" onClick={handleVolunteerBtnClick}>
           Volunteer
-        </button>
+        </Button>
       </div>
     </div>
   );
