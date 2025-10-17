@@ -29,7 +29,7 @@ export const GET_INVOLVED_HEADER = [
     label: "Donate",
   },
   {
-    href: "/volunteer",
+    href: "https://bit.ly/cfewvolunteer",
     label: "Volunteer",
   },
   {
@@ -117,9 +117,9 @@ export const CFEW_PORTRAITS_METADATA = [
     linkedIn: "https://www.linkedin.com/in/ayangunna-dorcas-22a019259",
   },
   {
-    source: "/portraits/timothy-kevin.png",
+    source: "/portraits/ayuba-waziri.webp",
     alt: "A portrait of the leader of CFEW organisation",
-    name: "TIMOTHY K. YANAN",
+    name: "AYUBA WAZIRI",
     currentPosition: "I.T OFFICER",
   },
 ];
