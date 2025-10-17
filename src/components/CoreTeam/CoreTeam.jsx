@@ -3,9 +3,13 @@ import Section from "../Section/Section";
 import Container from "../Container";
 import SectionHeader from "../SectionHeader";
 import { CFEW_PORTRAITS_METADATA } from "../../constants";
+// import linkedIn from '../../assets/linked-in.svg'
+import plainLinkedIn from "../../assets/plain-linkedIn.svg";
 
 function CoreTeam() {
   const [hoveredIndex, setHoveredIndex] = React.useState(null);
+
+  const uuid = self.crypto.randomUUID();
 
   return (
     <Section spacing="looseReverse">
@@ -22,11 +26,20 @@ function CoreTeam() {
               className="relative rounded"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              key={image.source}
             >
               <img src={image.source} alt={image.alt} />
               <div className="absolute inset-0 hero-gradient"></div>
               {hoveredIndex === index && (
-                <div className="absolute inset-0 bg-black/80"></div>
+                <div className="absolute inset-0 bg-black/80 flex items-center justify-center transition-opacity duration-300 cursor-pointer">
+                  {image.linkedIn ? (
+                    <div className="border-cfew-interface border-1 rounded-full p-2 hover:bg-cfew-secondary-500">
+                      <a href={image.linkedIn} target="_blank">
+                        <img src={plainLinkedIn} className="" />
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
               )}
               <div className="absolute bottom-8 left-8 text-sm text-left text-white">
                 <p className="font-bold lg:text-lg">
