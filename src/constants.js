@@ -207,7 +207,7 @@ export const GET_INVOLVED_FOOTER = [
     label: "Donate",
   },
   {
-    href: "/donate",
+    href: "https://bit.ly/cfewvolunteer",
     label: "Volunteer",
   },
   {
