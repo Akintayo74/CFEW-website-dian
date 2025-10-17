@@ -31,14 +31,20 @@ function CoreTeam() {
               <img src={image.source} alt={image.alt} />
               <div className="absolute inset-0 hero-gradient"></div>
               {hoveredIndex === index && (
-                <div className="absolute inset-0 bg-black/80 flex items-center justify-center transition-opacity duration-300 cursor-pointer">
+                <div className="absolute inset-0 bg-black/80 flex items-center justify-center transition-opacity duration-300">
                   {image.linkedIn ? (
-                    <div className="border-cfew-interface border-1 rounded-full p-2 hover:bg-cfew-secondary-500">
-                      <a href={image.linkedIn} target="_blank">
-                        <img src={plainLinkedIn} className="" />
-                      </a>
+                    <a
+                      href={image.linkedIn}
+                      target="noopener noreferrer"
+                      className="border-cfew-interface border-1 rounded-full p-2 hover:bg-cfew-secondary-500"
+                    >
+                      <img src={plainLinkedIn} className="" />
+                    </a>
+                  ) : (
+                    <div className="border-cfew-interface border-1 rounded-full p-2 cursor-default">
+                      <img src={plainLinkedIn} className="" />
                     </div>
-                  ) : null}
+                  )}
                 </div>
               )}
               <div className="absolute bottom-8 left-8 text-sm text-left text-white">
