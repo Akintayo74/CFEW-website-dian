@@ -31,7 +31,7 @@ function FoundersMessage() {
                 </p>
               </blockquote>
               <figcaption className="mt-6 text-xl lg:text-2xl">
-                <strong>Dotun F. Benson</strong>
+                <strong>Benson Dotun Fasanya</strong>
                 <br />
                 <span>CFEW Team Lead</span>
               </figcaption>
