@@ -6,6 +6,7 @@ import Container from "../Container/Container";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "../DropdownMenu/DropdownMenu";
 import Button from "../Button/Button";
+import { GET_INVOLVED_HEADER } from "../../constants";
 
 function HeaderHome() {
   const location = useLocation();
@@ -17,9 +18,7 @@ function HeaderHome() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
-  const getLinkClassName = (href) => {
-    const isActive = location.pathname === href;
-
+  const getLinkClassName = (isActive) => {
     return isActive
       ? "text-cfew-primary-400 font-bold text-base"
       : "text-cfew-interface font-bold text-base hover:text-cfew-primary-400";
@@ -28,6 +27,18 @@ function HeaderHome() {
   function handleClick() {
     navigate("/donate");
   }
+
+
+
+  const isDropdownActive = () => {
+    return GET_INVOLVED_HEADER.some((link) => {
+      // Handle external links and modals
+      if (link.href.startsWith("http") || link.isModal) {
+        return false;
+      }
+      return location.pathname === link.href;
+    });
+  };
 
   return (
     <header className="bg-cfew-primary-900-90% sticky top-0 z-10">
@@ -54,23 +65,20 @@ function HeaderHome() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={getLinkClassName(link.href)}
+                  className={getLinkClassName(location.pathname === link.href)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Dropdown isMobile={false} />
+              <Dropdown isMobile={false} isActive={isDropdownActive()} />
             </nav>
           </div>
 
-          {/* <button
-            className="bg-cfew-primary-500 hidden rounded-4xl px-8 py-4 text-white md:block hover:bg-cfew-primary-600"
+          <Button
             onClick={handleClick}
+            size="large"
+            className="hidden md:block"
           >
-            Donate
-          </button> */}
-
-          <Button onClick={handleClick} size="large" className="hidden md:block">
             DONATE
           </Button>
         </div>
@@ -88,7 +96,7 @@ function HeaderHome() {
                   {link.label}
                 </Link>
               ))}
-              <Dropdown isMobile={true} />
+              <Dropdown isMobile={true} isActive={isDropdownActive()} />
             </div>
 
             <button className="bg-cfew-primary-500 rounded-3xl px-4 py-2 text-white mb-16 font-bold">
