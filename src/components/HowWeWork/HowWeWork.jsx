@@ -14,11 +14,11 @@ function HowWeWork() {
     <Section spacing="loose">
       <Container>
         <SectionHeader>How We Work</SectionHeader>
-        <p className="text-cfew-dark">
+        <p className="text-cfew-dark mb-5 lg:mb-10">
           Where advocacy meets action, and every effort counts toward a
           sustainable tomorrow.
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-6 lg:gap-20">
+        <div className="grid grid-cols-1 grid-rows-2 gap-8 lg:grid-cols-6 lg:gap-20">
           <ActionCard
             imageSrc={Megaphone}
             imageAlt="An image"

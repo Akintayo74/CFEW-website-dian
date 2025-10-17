@@ -3,7 +3,7 @@ import React from "react";
 function ActionCard({ imageSrc, imageAlt, header, className = "" }) {
   return (
     <div
-      className={`bg-cfew-primary-600 mx-auto mt-5 flex h-55 w-full max-w-sm flex-col items-center justify-center gap-6 rounded md:h-65 ${className}`}
+      className={`bg-cfew-primary-600 mx-auto flex h-55 w-full max-w-sm flex-col items-center justify-center gap-6 rounded md:h-65 ${className}`}
     >
       <div className="bg-cfew-primary-500 border-cfew-interface rounded-full border p-4">
         <img src={imageSrc} alt={imageAlt} />
