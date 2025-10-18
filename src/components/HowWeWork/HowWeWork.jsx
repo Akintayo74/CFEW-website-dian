@@ -18,7 +18,7 @@ function HowWeWork() {
           Where advocacy meets action, and every effort counts toward a
           sustainable tomorrow.
         </p>
-        <div className="grid grid-cols-1 grid-rows-2 gap-8 lg:grid-cols-6 lg:gap-20">
+        <div className="grid grid-cols-1 grid-rows-2 gap-8 md:grid-cols-2 lg:grid-cols-6 lg:gap-20">
           <ActionCard
             imageSrc={Megaphone}
             imageAlt="An image"
