@@ -5,8 +5,10 @@ import ImageText from "../ImageText";
 import SectionHeader from "../SectionHeader";
 import Button from "../Button";
 import CopyButton from "../CopyButton/CopyButton";
+import { useNavigate } from "react-router-dom";
 
 function DonationImpact() {
+  let router = useNavigate();
   return (
     <Section>
       <div className="text-cfew-dark text-sm md:text-base lg:text-lg lg:leading-relaxed flex flex-col gap-20">
@@ -115,7 +117,9 @@ function DonationImpact() {
                   <h2 className="font-bold leading-snug text-xl md:text-2xl lg:text-3xl">
                     Pay Stack
                   </h2>
-                  <Button>Donate Now</Button>
+                  <a href="https://paystack.shop/pay/cfew" target="noopener noreferrer">
+                    <Button>Donate Now</Button>
+                  </a>
                 </div>
               </div>
             </Container>
