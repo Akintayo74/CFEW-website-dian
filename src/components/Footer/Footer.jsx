@@ -126,18 +126,18 @@ function Footer() {
               {/* Contact Info */}
               <section>
                 <h3 className="mb-6 text-2xl font-bold">Contact Info</h3>
-                <address className="space-y-4 not-italic text-sm leading-relaxed">
+                <address className="space-y-4 not-italic text-sm lg:text-lg leading-relaxed">
                   <div className="flex items-center gap-3">
                     <Phone color="#ffffff" size={20} className="flex-shrink-0" />
-                    <a href="tel:+2347062249235" className="hover:text-white">
-                      +234706224-9235 (24/7 Support Line)
+                    <a href="tel:+2347062249235" className="hover:text-cfew-primary-400">
+                      +234805861-1493 (24/7 Support Line)
                     </a>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Mail color="#ffffff" size={20} className="flex-shrink-0" />
                     <a href="mailto:cearthwork@gmail.com" className="hover:underline">
-                      cearthwork@gmail.com
+                      info@cearthwork.org
                     </a>
                   </div>
 

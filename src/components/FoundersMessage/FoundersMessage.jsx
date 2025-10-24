@@ -33,7 +33,7 @@ function FoundersMessage() {
               <figcaption className="mt-6 text-xl lg:text-2xl">
                 <strong>Benson Dotun Fasanya</strong>
                 <br />
-                <span>CFEW Team Lead</span>
+                <span>CFEW Executive Director</span>
               </figcaption>
             </figure>
 
