@@ -1,7 +1,9 @@
 // src/pages/Categories.jsx
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
-import { SquarePen, Trash2, MapPin, Clock } from "lucide-react";
+import { SquarePen, Trash2, MapPin, Clock, ChevronDown, Check } from "lucide-react";
+import { Menu, Transition } from "@headlessui/react";
+import postService from "../services/postService";
 
 const tabs = ["Blog", "Press Release", "Publications", "Upcoming Events"];
 
@@ -67,6 +69,7 @@ const mockPosts = Array.from({ length: 9 }).map((_, i) => ({
   title: "The reemergence of the North Central Green life",
   date: "August 8th 2025",
   image: "/previous-initiatives/green-school.png",
+  status: i % 3 === 0 ? 'published' : 'draft', // Add status field
 }));
 
 const mockPressReleases = [
@@ -102,6 +105,60 @@ const mockPressReleases = [
   },
 ];
 
+// Status dropdown component
+function StatusDropdown({ postId, currentStatus, onStatusChange }) {
+  const statuses = [
+    { value: true, label: 'Published' },
+    { value: false, label: 'Draft' },
+  ];
+  
+  // Convert currentStatus to boolean if it's a string
+  const isPublished = currentStatus === 'published' || currentStatus === true;
+
+  return (
+    <Menu as="div" className="relative z-50 inline-block text-left">
+      <div>
+        <Menu.Button className="inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#4B6E3C]">
+          {isPublished ? 'Published' : 'Draft'}
+          <ChevronDown className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+        </Menu.Button>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="fixed z-50 mt-1 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1">
+            {statuses.map((status) => (
+              <Menu.Item key={status.value}>
+                {({ active }) => (
+                  <button
+                    onClick={() => onStatusChange(postId, status.value)}
+                    className={`${
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                    } group flex w-full items-center px-4 py-2 text-sm`}
+                  >
+                    {status.label}
+                    {isPublished === status.value && (
+                      <Check className="ml-2 h-4 w-4 text-[#4B6E3C]" />
+                    )}
+                  </button>
+                )}
+              </Menu.Item>
+            ))}
+          </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
+  );
+}
+
 export default function Categories() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [editingEvent, setEditingEvent] = useState(null);
@@ -127,11 +184,38 @@ export default function Categories() {
     setEditingEvent(null);
   };
 
-  const confirmDelete = (target) => setDeleteTarget(target);
-  const cancelDelete = () => setDeleteTarget(null);
-  const handleDelete = () => {
-    // TODO: Call API to delete by deleteTarget.type and deleteTarget.id
-    setDeleteTarget(null);
+  const confirmDelete = ({ type, id }) => {
+    if (window.confirm(`Are you sure you want to delete this ${type}?`)) {
+      // In a real app, you would make an API call to delete the item
+      console.log(`Deleting ${type} with ID:`, id);
+    }
+  };
+
+  const handleStatusChange = async (postId, newStatus) => {
+    try {
+      // Use the postService to update the post status
+      const response = await postService.updatePostStatus(postId, newStatus);
+      
+      // Update the UI with the response
+      if (response.success) {
+        // Update the post in the state
+        const updatedPosts = mockPosts.map(post => 
+          post.id === postId ? { 
+            ...post, 
+            status: response.data.published ? 'published' : 'draft' 
+          } : post
+        );
+        // In a real app, you would update the state with the response from the API
+        // setPosts(updatedPosts);
+        
+        console.log('Status updated successfully:', response);
+      }
+    } catch (error) {
+      console.error('Error updating post status:', error);
+      // Show error message to the user
+      const errorMessage = error.response?.data?.message || 'Failed to update post status. Please try again.';
+      alert(errorMessage);
+    }
   };
 
   return (
@@ -280,22 +364,38 @@ export default function Categories() {
                 </Link>
 
                 {/* Actions */}
-                <div className="mt-4 flex items-center gap-4">
-                  <button
-                    type="button"
-                    title="Edit"
-                    className="p-2 rounded hover:bg-[#4B6E3C1A] text-[#1B2816]"
-                  >
-                    <SquarePen size={24} className="text-[#4B6E3C]" />
-                  </button>
-                  <button
-                    type="button"
-                    title="Delete"
-                    className="p-2 rounded hover:bg-red-50"
-                    onClick={() => confirmDelete({ type: 'blog', id: post.id })}
-                  >
-                    <Trash2 size={24} className="text-red-600" />
-                  </button>
+                <div className="mt-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <StatusDropdown 
+                      postId={post.id} 
+                      currentStatus={post.status || 'draft'} 
+                      onStatusChange={handleStatusChange} 
+                    />
+                    {/* <span className={`text-xs px-2 py-1 rounded-full ${
+                      post.status === 'published' 
+                        ? 'bg-green-100 text-green-800' 
+                        : 'bg-yellow-100 text-yellow-800'
+                    }`}>
+                      {post.status === 'published' ? 'Live' : 'Draft'}
+                    </span> */}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      title="Edit"
+                      className="p-2 rounded hover:bg-[#4B6E3C1A] text-[#1B2816]"
+                    >
+                      <SquarePen size={20} className="text-[#4B6E3C]" />
+                    </button>
+                    <button
+                      type="button"
+                      title="Delete"
+                      className="p-2 rounded hover:bg-red-50"
+                      onClick={() => confirmDelete({ type: 'blog', id: post.id })}
+                    >
+                      <Trash2 size={20} className="text-red-600" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </article>

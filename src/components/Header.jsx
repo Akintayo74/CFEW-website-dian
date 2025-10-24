@@ -76,7 +76,7 @@ export default function Header() {
                 <div className="relative">
                     <button
                         onClick={() => setOpen((v) => !v)}
-                        className="flex items-center bg-[#4B6E3C] text-white px-[24px] py-[12px] rounded-[8px] hover:bg-green-800"
+                        className="cursor-pointer flex items-center bg-[#4B6E3C] text-white px-[24px] py-[12px] rounded-[8px] hover:bg-green-800"
                     >
                         <Plus size={18} className="mr-1" /> Add New
                     </button>
