@@ -6,7 +6,7 @@ import Container from "../Container/Container";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "../DropdownMenu/DropdownMenu";
 
-function Header() {
+function HeaderHome() {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -96,4 +96,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderHome;
