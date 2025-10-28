@@ -3,7 +3,7 @@ import Section from "../Section";
 import Container from "../Container/Container";
 import ImageText from "../ImageText";
 import SectionHeader from "../SectionHeader";
-import Button from "../Button";
+import Button from "../Button/Button";
 import CopyButton from "../CopyButton/CopyButton";
 import { useNavigate } from "react-router-dom";
 

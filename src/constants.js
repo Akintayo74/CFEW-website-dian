@@ -172,7 +172,7 @@ export const UPCOMING_EVENTS = [
       "No.3 Old Nitel Building, Old Airport Road, Jos Plateau State, Nigeria",
   },
   {
-    name: "Protect the Environment (Webinar",
+    name: "Protect the Environment (Webinar)",
     date: "20 Sept",
     time: "8:00 am",
     location: "Online",
