@@ -18,7 +18,7 @@ function ContactUsModal() {
             Contact Info
           </Dialog.Title>
 
-          <div className='flex flex-col text-cfew-dark text-sm leading-relaxed md:text-base lg:text-lg gap-6'>
+          <div className='flex flex-col text-cfew-dark text-sm leading-relaxed md:text-base lg:text-lg gap-6 items-center'>
             <div className='flex flex-col gap-2 items-center'>
               <h5 className='text-cfew-primary-900 leading-none font-bold'>24/7 Support Line</h5>
               <CopyButton text='+2347062249235'   />
