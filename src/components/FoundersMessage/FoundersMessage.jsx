@@ -31,13 +31,18 @@ function FoundersMessage() {
                 </p>
               </blockquote>
               <figcaption className="mt-6 text-xl lg:text-2xl">
-                <strong>Dotun F. Benson</strong>
+                <strong>Benson Dotun Fasanya</strong>
                 <br />
-                <span>CFEW Team Lead</span>
+                <span>CFEW Executive Director</span>
               </figcaption>
             </figure>
 
-            <Button>Learn More</Button>
+            <Button
+              color="overlay"
+              size="medium"
+            >
+              Learn More
+            </Button>
           </div>
 
           {/* 2. DESKTOP IMAGE: This container is hidden until the 'lg' breakpoint */}

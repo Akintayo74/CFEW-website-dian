@@ -1,11 +1,12 @@
 import React from "react";
-import Header from "../Header";
+import HeaderHome from "../Header/HeaderHome";
+
 import Footer from "../Footer";
 
 function Layout({ children }) {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <HeaderHome />
       <main className="flex-grow">{children}</main>
       <Footer />
     </div>

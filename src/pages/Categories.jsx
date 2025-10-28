@@ -1,10 +1,9 @@
 // src/pages/Categories.jsx
 import { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
-import { SquarePen, Trash2, MapPin, Clock, ChevronDown, Check, Loader2, Image as ImageIcon } from "lucide-react";
+import { SquarePen, Trash2, MapPin, Clock, ChevronDown, Check, Loader2 } from "lucide-react";
 import { Menu, Transition } from "@headlessui/react";
 import postService from "../services/postService";
-import { getOptimizedImage, getResponsiveImage } from "../utils/cloudinary";
 
 const tabs = ["Blog", "Press Release", "Publications", "Upcoming Events"];
 const POST_TYPES = {
@@ -18,10 +17,10 @@ const POST_TYPES = {
 const formatDate = (dateString) => {
   if (!dateString) return '';
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'short', 
-    day: 'numeric' 
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
   });
 };
 
@@ -41,7 +40,7 @@ function StatusDropdown({ postId, currentStatus, onStatusChange }) {
     { value: true, label: 'Published' },
     { value: false, label: 'Draft' },
   ];
-  
+
   // Convert currentStatus to boolean if it's a string
   const isPublished = currentStatus === 'published' || currentStatus === true;
 
@@ -70,9 +69,8 @@ function StatusDropdown({ postId, currentStatus, onStatusChange }) {
                 {({ active }) => (
                   <button
                     onClick={() => onStatusChange(postId, status.value)}
-                    className={`${
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                    } group flex w-full items-center px-4 py-2 text-sm`}
+                    className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                      } group flex w-full items-center px-4 py-2 text-sm`}
                   >
                     {status.label}
                     {isPublished === status.value && (
@@ -116,10 +114,10 @@ export default function Categories() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const responseData = await response.json();
-        
+
         // Extract posts from the response data
         const posts = responseData.data || [];
-        
+
         // Organize posts by type
         const organized = {
           [POST_TYPES.BLOG]: [],
@@ -127,9 +125,9 @@ export default function Categories() {
           [POST_TYPES.PUBLICATION]: [],
           [POST_TYPES.EVENT]: []
         };
-        
+
         posts.forEach(post => {
-          switch(post.type) {
+          switch (post.type) {
             case 'blog':
               organized[POST_TYPES.BLOG].push({
                 ...post,
@@ -163,7 +161,6 @@ export default function Categories() {
               const { day, month } = getDayAndMonth(post.date || post.eventDate || new Date());
               organized[POST_TYPES.EVENT].push({
                 ...post,
-                image: post.featuredImage,
                 day,
                 month,
                 time: post.time || '8:00 AM',
@@ -194,7 +191,7 @@ export default function Categories() {
       // Format the date for the date input (YYYY-MM-DD)
       const eventDate = editingEvent.date || editingEvent.eventDate;
       const formattedDate = eventDate ? new Date(eventDate).toISOString().split('T')[0] : '';
-      
+
       setEditDate(formattedDate);
       setEditTitle(editingEvent.title || "");
       setEditLocation(editingEvent.location || "");
@@ -207,7 +204,7 @@ export default function Categories() {
       // In a real implementation, you would make an API call to update the event
       // For now, we'll just close the modal
       setEditingEvent(null);
-      
+
       // Example of how you might update the event:
       // const response = await fetch(`/api/v1/posts/${editingEvent._id}`, {
       //   method: 'PUT',
@@ -228,27 +225,24 @@ export default function Categories() {
     }
   };
 
-  const confirmDelete = async ({ type, id }) => {
-    if (window.confirm(`Are you sure you want to delete this ${type}?`)) {
-      try {
-        // In a real implementation, you would make an API call to delete the item
-        // For example:
-        // const response = await fetch(`/api/v1/posts/${id}`, { method: 'DELETE' });
-        // if (!response.ok) throw new Error('Failed to delete');
-        // Refresh posts after deletion
-        // fetchPosts();
-        console.log(`Deleted ${type} with ID:`, id);
-      } catch (err) {
-        console.error('Error deleting item:', err);
-        alert('Failed to delete item. Please try again.');
-      }
+  const confirmDelete = async () => {
+    if (!deleteTarget) return;
+    
+    try {
+      await postService.deletePost(deleteTarget.id);
+      // Refresh the posts after deletion
+      fetchPosts();
+      setDeleteTarget(null);
+    } catch (error) {
+      console.error('Error deleting post:', error);
+      setDeleteTarget(null);
     }
   };
 
   const cancelDelete = () => setDeleteTarget(null);
   const handleDelete = async () => {
     if (!deleteTarget) return;
-    await confirmDelete(deleteTarget);
+    await confirmDelete();
     setDeleteTarget(null);
   };
 
@@ -256,19 +250,19 @@ export default function Categories() {
     try {
       // Use the postService to update the post status
       const response = await postService.updatePostStatus(postId, newStatus);
-      
+
       // Update the UI with the response
       if (response.success) {
         // Update the post in the state
-        const updatedPosts = postsByType[POST_TYPES.BLOG].map(post => 
-          post.id === postId ? { 
-            ...post, 
-            status: response.data.published ? 'published' : 'draft' 
+        const updatedPosts = postsByType[POST_TYPES.BLOG].map(post =>
+          post.id === postId ? {
+            ...post,
+            status: response.data.published ? 'published' : 'draft'
           } : post
         );
         // In a real app, you would update the state with the response from the API
         // setPosts(updatedPosts);
-        
+
         console.log('Status updated successfully:', response);
       }
     } catch (error) {
@@ -291,8 +285,8 @@ export default function Categories() {
             key={t}
             onClick={() => setActiveTab(t)}
             className={`pb-3 -mb-px text-[16px] font-normal transition-colors ${activeTab === t
-                ? "text-[#4B6E3C] border-b-2 border-[#4B6E3C]"
-                : "text-[#8B909A] hover:text-[#4B6E3C]"
+              ? "text-[#4B6E3C] border-b-2 border-[#4B6E3C]"
+              : "text-[#8B909A] hover:text-[#4B6E3C]"
               }`}
           >
             {t}
@@ -313,21 +307,11 @@ export default function Categories() {
         <div className="space-y-10">
           {postsByType[POST_TYPES.PRESS_RELEASE].map((item) => (
             <article key={item._id || item.id} className="grid grid-cols-1 md:grid-cols-3 gap-9">
-              <div className="w-full md:w-[543.5px] h-full md:h-[284px] bg-gray-100 rounded overflow-hidden flex items-center justify-center">
-                {item.image ? (
-                  <img
-                    src={getOptimizedImage(item.image, { width: 800, height: 400 })}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="text-gray-400 flex flex-col items-center">
-                    <ImageIcon size={48} className="mb-2" />
-                    <span>No image</span>
-                  </div>
-                )}
-              </div>
+              <img
+                src={item.image || "/previous-initiatives/green-school.png"}
+                alt={item.title}
+                className="w-full md:w-[543.5px] h-full md:h-[284px] object-cover rounded"
+              />
               <div className="w-full md:w-[700px] pr-4">
                 <h3 className="text-[#1B2816] text-[20px] md:text-[24px] font-bold leading-snug mb-3">
                   {item.title}
@@ -353,21 +337,11 @@ export default function Categories() {
         <div className="space-y-10">
           {postsByType[POST_TYPES.PUBLICATION].map((item) => (
             <article key={item._id || item.id} className="grid grid-cols-1 md:grid-cols-3 gap-9">
-              <div className="w-full md:w-[543.5px] h-full md:h-[284px] bg-gray-100 rounded overflow-hidden flex items-center justify-center">
-                {item.image ? (
-                  <img
-                    src={getOptimizedImage(item.image, { width: 800, height: 400 })}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="text-gray-400 flex flex-col items-center">
-                    <ImageIcon size={48} className="mb-2" />
-                    <span>No image</span>
-                  </div>
-                )}
-              </div>
+              <img
+                src={item.image || "/previous-initiatives/climate-recovery.png"}
+                alt={item.title}
+                className="w-full md:w-[543.5px] h-full md:h-[284px] object-cover rounded"
+              />
               <div className="w-full md:w-[700px] pr-4">
                 <h3 className="text-[#1B2816] text-[20px] md:text-[24px] font-bold leading-snug mb-3">
                   {item.title}
@@ -420,20 +394,19 @@ export default function Categories() {
                       </div>
                     )}
                   </div>
-                </div>
-
-                {/* Actions */}
-                <div className="flex items-center gap-3">
-                  <button title="Edit" className="p-2 rounded hover:bg-[#4B6E3C1A]" onClick={() => setEditingEvent(ev)}>
-                    <SquarePen size={20} className="text-[#4B6E3C]" />
-                  </button>
-                  <button title="Delete" className="p-2 rounded hover:bg-red-50" onClick={() => confirmDelete({ type: 'event', id: ev.id })}>
-                    <Trash2 size={20} className="text-red-600" />
-                  </button>
+                  {/* Actions */}
+                  <div className="flex items-center gap-3">
+                    <button title="Edit" className="p-2 rounded hover:bg-[#4B6E3C1A]" onClick={() => setEditingEvent(ev)}>
+                      <SquarePen size={20} className="text-[#4B6E3C]" />
+                    </button>
+                    <button title="Delete" className="p-2 rounded hover:bg-red-50" onClick={() => setDeleteTarget({ type: 'event', id: ev.id, title: ev.title })}>
+                      <Trash2 size={20} className="text-red-600" />
+                    </button>
+                  </div>
                 </div>
               </div>
-              {/* Divider */}
-              {idx < mockEvents.length - 1 && <hr className="border-t border-[#BBCCBB]" />}
+              {/* Divider - Only show if not the last event */}
+              {idx < postsByType[POST_TYPES.EVENT].length - 1 && <hr className="border-t border-[#BBCCBB]" />}
             </div>
           ))}
         </div>
@@ -445,20 +418,11 @@ export default function Categories() {
               className="w-[263.75px] h-[428px] bg-[#4B6E3C1A] rounded-[8px] overflow-hidden  shadow-sm"
             >
               <Link to={`/blog/${post.slug || post._id || post.id}`}>
-                <div className="w-full h-[200px] bg-gray-100 overflow-hidden">
-                {post.image ? (
-                  <img
-                    src={getOptimizedImage(post.image, { width: 400, height: 200 })}
-                    alt={post.title}
-                    className="w-full h-full object-cover cursor-pointer"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-gray-400">
-                    <ImageIcon size={32} />
-                  </div>
-                )}
-              </div>  
+                <img
+                  src={post.image || "/previous-initiatives/green-school.png"}
+                  alt={post.title}
+                  className="w-full h-[200px] object-cover cursor-pointer"
+                />
               </Link>
 
               <div className="flex flex-col p-[24px]">
@@ -474,10 +438,10 @@ export default function Categories() {
                 {/* Actions */}
                 <div className="mt-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <StatusDropdown 
-                      postId={post._id || post.id} 
-                      currentStatus={post.status || 'draft'} 
-                      onStatusChange={handleStatusChange} 
+                    <StatusDropdown
+                      postId={post._id || post.id}
+                      currentStatus={post.status || 'draft'}
+                      onStatusChange={handleStatusChange}
                     />
                     {/* <span className={`text-xs px-2 py-1 rounded-full ${
                       post.status === 'published' 
@@ -514,7 +478,37 @@ export default function Categories() {
       {postsByType[POST_TYPES.BLOG].length === 0 && activeTab === "Blog" && !isLoading && !error && (
         <p className="text-gray-500 text-center py-10 col-span-full">No blog posts found.</p>
       )}
-      
+
+      {/* Delete Confirmation Modal */}
+      {deleteTarget && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setDeleteTarget(null)} />
+          <div className="relative bg-white rounded-lg p-6 w-full max-w-md">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Confirm Delete</h3>
+            <p className="text-gray-700 mb-6">
+              Are you sure you want to delete "{deleteTarget.title || 'this item'}"? This action cannot be undone.
+            </p>
+            <div className="flex justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setDeleteTarget(null)}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={handleDelete}
+                className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Event Modal */}
       {editingEvent && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black/50" onClick={() => setEditingEvent(null)} />

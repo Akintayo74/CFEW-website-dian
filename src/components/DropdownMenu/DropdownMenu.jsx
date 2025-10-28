@@ -5,13 +5,23 @@ import { GET_INVOLVED_HEADER } from "../../constants";
 import ContactUsModal from "../ContactUsModal/ContactUsModal";
 import { Link } from "react-router-dom";
 
-function Dropdown({ label = "Get Involved", isMobile = false }) {
+function Dropdown({
+  label = "Get Involved",
+  isMobile = false,
+  isActive = false,
+}) {
+  const baseClasses =
+    "font-bold flex hover:text-cfew-primary-400 cursor-pointer";
+  const activeClass = isActive
+    ? "text-cfew-primary-400"
+    : "text-cfew-interface";
+
   if (isMobile) {
     const [toggleIsOpen, setToggleIsOpen] = React.useState(false);
     return (
       <div className="flex flex-col items-center gap-3 ">
         <button
-          className="text-cfew-interface font-bold flex hover:text-cfew-primary-400 cursor-pointer"
+          className={`${baseClasses} ${activeClass}`}
           onClick={() => setToggleIsOpen(!toggleIsOpen)}
         >
           {label}
@@ -43,7 +53,7 @@ function Dropdown({ label = "Get Involved", isMobile = false }) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="text-cfew-interface flex items-center gap-3 font-bold border-0 hover:text-cfew-primary-400 cursor-pointer">
+        <button className={`${baseClasses} ${activeClass} items-center gap-3 border-0`}>
           Get Involved
           <span>
             <ChevronDown width={24} height={24} />
