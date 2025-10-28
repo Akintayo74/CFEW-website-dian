@@ -8,7 +8,7 @@ export default function ResetPasswordPage() {
     const handleEmail = (e) => {
         e.preventDefault();
         // TODO: API integration
-        navigate("/dashboard");
+        navigate("/admin/new-password");
     };
 
     return (

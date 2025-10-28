@@ -11,7 +11,7 @@ export default function NewPasswordPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // TODO: API integration
-        navigate("/dashboard");
+        navigate("/admin/password-reset");
     };
 
     return (
@@ -25,7 +25,7 @@ export default function NewPasswordPage() {
                     placeholder="Type your password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required
+                    // required
                     showToggle
                 />
 
@@ -34,7 +34,7 @@ export default function NewPasswordPage() {
                     placeholder="Confirm your password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
+                    // required
                     showToggle
                 />
 
