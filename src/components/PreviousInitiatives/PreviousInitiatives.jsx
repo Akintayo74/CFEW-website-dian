@@ -3,7 +3,7 @@ import Section from "../Section";
 import Container from "../Container/Container";
 import ImageText from "../ImageText/ImageText";
 import SectionHeader from '../SectionHeader';
-import Button from '../Button';
+import Button from '../Button/Button';
 
 function PreviousInitiatives() {
 
