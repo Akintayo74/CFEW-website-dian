@@ -1,109 +1,39 @@
 // src/pages/Categories.jsx
 import { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
-import { SquarePen, Trash2, MapPin, Clock, ChevronDown, Check } from "lucide-react";
+import { SquarePen, Trash2, MapPin, Clock, ChevronDown, Check, Loader2, Image as ImageIcon } from "lucide-react";
 import { Menu, Transition } from "@headlessui/react";
 import postService from "../services/postService";
+import { getOptimizedImage, getResponsiveImage } from "../utils/cloudinary";
 
 const tabs = ["Blog", "Press Release", "Publications", "Upcoming Events"];
+const POST_TYPES = {
+  BLOG: 'blog',
+  PRESS_RELEASE: 'press-release',
+  PUBLICATION: 'publication',
+  EVENT: 'event'
+};
 
-const mockEvents = [
-  {
-    id: 1,
-    day: "20",
-    month: "Sept",
-    title: "Environmental Sanitation",
-    time: "8:00 am",
-    location: "No.3 Old Nitel Building, Old Airport",
-  },
-  {
-    id: 2,
-    day: "20",
-    month: "Sept",
-    title: "Protect the Environment (Webinar)",
-    time: "8:00 am",
-    location: "No.3 Old Nitel Building, Old Airport",
-  },
-  {
-    id: 3,
-    day: "20",
-    month: "Sept",
-    title: "Environmental Sanitation",
-    time: "8:00 am",
-    location: "No.3 Old Nitel Building, Old Airport",
-  },
-];
+// Helper function to format date
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'short', 
+    day: 'numeric' 
+  });
+};
 
-const mockPublications = [
-  {
-    id: 1,
-    title: "Community-led mangrove restoration boosts coastal resilience",
-    source: "CFEW JOURNAL",
-    date: "May 2nd 2024",
-    excerpt:
-      "A longitudinal study across North-Central communities shows mangrove restoration projects reduce storm surge impacts while improving local biodiversity indices.",
-    image: "/previous-initiatives/climate-recovery.png",
-  },
-  {
-    id: 2,
-    title: "Clean cooking transitions: health and climate co-benefits",
-    source: "ENERGY & HEALTH REVIEW",
-    date: "July 18th 2024",
-    excerpt:
-      "Field measurements indicate substantial reductions in household PM2.5 concentrations where LPG and electric stoves replaced traditional biomass.",
-    image: "/previous-initiatives/methane-reduction.png",
-  },
-  {
-    id: 3,
-    title: "Urban tree canopies mitigate heat island effects in Jos",
-    source: "URBAN ECOLOGY NOTES",
-    date: "October 1st 2024",
-    excerpt:
-      "Remote sensing analysis links increased canopy coverage to measurable surface temperature declines across pilot wards in Jos North.",
-    image: "/previous-initiatives/climate-recovery.png",
-  },
-];
-
-const mockPosts = Array.from({ length: 9 }).map((_, i) => ({
-  id: i + 1,
-  title: "The reemergence of the North Central Green life",
-  date: "August 8th 2025",
-  image: "/previous-initiatives/green-school.png",
-  status: i % 3 === 0 ? 'published' : 'draft', // Add status field
-}));
-
-const mockPressReleases = [
-  {
-    id: 1,
-    title:
-      "GAIA calls for limited production of plastics, says it’s a threat to public health.",
-    source: "DAILY TRUST",
-    date: "August 18th 2023",
-    excerpt:
-      "The Global Alliance for Incinerator Alternatives (GAIA) has pushed for a limit in the production of plastic products because it has become a threat to public health and environmental pollution.",
-    image: "/previous-initiatives/green-school.png",
-  },
-  {
-    id: 2,
-    title:
-      "Coalition advocates robust global plastic treaty implementation.",
-    source: "THE GAURDIAN",
-    date: "December 24th 2023",
-    excerpt:
-      "The Global Alliance for Incinerator Alternatives (GAIA) has pushed for a limit in the production of plastic products because it has become a threat to public health and environmental pollution.",
-    image: "/previous-initiatives/green-school.png",
-  },
-  {
-    id: 3,
-    title:
-      "Ban single-use plastics to reduce pollution, GAIA tells govt.",
-    source: "PUNCH",
-    date: "December 2nd 2023",
-    excerpt:
-      "The Global Alliance for Incinerator Alternatives (GAIA) has pushed for a limit in the production of plastic products because it has become a threat to public health and environmental pollution.",
-    image: "/previous-initiatives/green-school.png",
-  },
-];
+// Helper function to get day and month from date
+const getDayAndMonth = (dateString) => {
+  if (!dateString) return { day: '', month: '' };
+  const date = new Date(dateString);
+  return {
+    day: date.getDate().toString(),
+    month: date.toLocaleString('default', { month: 'short' })
+  };
+};
 
 // Status dropdown component
 function StatusDropdown({ postId, currentStatus, onStatusChange }) {
@@ -167,28 +97,159 @@ export default function Categories() {
   const [editLocation, setEditLocation] = useState("");
   const [editTime, setEditTime] = useState("");
   const [deleteTarget, setDeleteTarget] = useState(null); // {type: 'event'|'blog', id}
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [postsByType, setPostsByType] = useState({
+    [POST_TYPES.BLOG]: [],
+    [POST_TYPES.PRESS_RELEASE]: [],
+    [POST_TYPES.PUBLICATION]: [],
+    [POST_TYPES.EVENT]: []
+  });
+
+  // Fetch posts from the admin endpoint
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch('https://centre-for-earth-works-26db89bfe5a5.herokuapp.com/api/v1/posts/admin');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const responseData = await response.json();
+        
+        // Extract posts from the response data
+        const posts = responseData.data || [];
+        
+        // Organize posts by type
+        const organized = {
+          [POST_TYPES.BLOG]: [],
+          [POST_TYPES.PRESS_RELEASE]: [],
+          [POST_TYPES.PUBLICATION]: [],
+          [POST_TYPES.EVENT]: []
+        };
+        
+        posts.forEach(post => {
+          switch(post.type) {
+            case 'blog':
+              organized[POST_TYPES.BLOG].push({
+                ...post,
+                image: post.featuredImage,
+                date: formatDate(post.createdAt || post.date),
+                status: post.published ? 'published' : 'draft',
+                author: post.author || 'CFEW Team'
+              });
+              break;
+            case 'press-release':
+              organized[POST_TYPES.PRESS_RELEASE].push({
+                ...post,
+                image: post.featuredImage,
+                date: formatDate(post.createdAt || post.date),
+                source: post.press || post.source || 'CFEW',
+                excerpt: post.excerpt || 'No excerpt available',
+                link: post.link || '#'
+              });
+              break;
+            case 'publication':
+              organized[POST_TYPES.PUBLICATION].push({
+                ...post,
+                image: post.featuredImage,
+                date: formatDate(post.createdAt || post.date),
+                source: post.author || post.source || 'CFEW',
+                excerpt: post.excerpt || 'No excerpt available',
+                link: post.link || '#'
+              });
+              break;
+            case 'event':
+              const { day, month } = getDayAndMonth(post.date || post.eventDate || new Date());
+              organized[POST_TYPES.EVENT].push({
+                ...post,
+                image: post.featuredImage,
+                day,
+                month,
+                time: post.time || '8:00 AM',
+                location: post.location || 'Location not specified'
+              });
+              break;
+            default:
+              break;
+          }
+        });
+
+        setPostsByType(organized);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching posts:', err);
+        setError('Failed to load posts. Please try again later.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   // populate form when an event is selected
   useEffect(() => {
     if (editingEvent) {
-      // Build a simple date string placeholder (no real date source in mock)
-      setEditDate(`${editingEvent.day}/${editingEvent.month}/2025`);
+      // Format the date for the date input (YYYY-MM-DD)
+      const eventDate = editingEvent.date || editingEvent.eventDate;
+      const formattedDate = eventDate ? new Date(eventDate).toISOString().split('T')[0] : '';
+      
+      setEditDate(formattedDate);
       setEditTitle(editingEvent.title || "");
       setEditLocation(editingEvent.location || "");
-      setEditTime(editingEvent.time || "");
+      setEditTime(editingEvent.time || editingEvent.eventTime || "");
     }
   }, [editingEvent]);
 
-  const handleUpdate = () => {
-    // TODO: Persist update via API; for now just close
-    setEditingEvent(null);
+  const handleUpdate = async () => {
+    try {
+      // In a real implementation, you would make an API call to update the event
+      // For now, we'll just close the modal
+      setEditingEvent(null);
+      
+      // Example of how you might update the event:
+      // const response = await fetch(`/api/v1/posts/${editingEvent._id}`, {
+      //   method: 'PUT',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({
+      //     title: editTitle,
+      //     location: editLocation,
+      //     eventDate: editDate,
+      //     eventTime: editTime
+      // })
+      // });
+      // if (!response.ok) throw new Error('Failed to update event');
+      // Refresh posts after update
+      // fetchPosts();
+    } catch (err) {
+      console.error('Error updating event:', err);
+      alert('Failed to update event. Please try again.');
+    }
   };
 
-  const confirmDelete = ({ type, id }) => {
+  const confirmDelete = async ({ type, id }) => {
     if (window.confirm(`Are you sure you want to delete this ${type}?`)) {
-      // In a real app, you would make an API call to delete the item
-      console.log(`Deleting ${type} with ID:`, id);
+      try {
+        // In a real implementation, you would make an API call to delete the item
+        // For example:
+        // const response = await fetch(`/api/v1/posts/${id}`, { method: 'DELETE' });
+        // if (!response.ok) throw new Error('Failed to delete');
+        // Refresh posts after deletion
+        // fetchPosts();
+        console.log(`Deleted ${type} with ID:`, id);
+      } catch (err) {
+        console.error('Error deleting item:', err);
+        alert('Failed to delete item. Please try again.');
+      }
     }
+  };
+
+  const cancelDelete = () => setDeleteTarget(null);
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    await confirmDelete(deleteTarget);
+    setDeleteTarget(null);
   };
 
   const handleStatusChange = async (postId, newStatus) => {
@@ -199,7 +260,7 @@ export default function Categories() {
       // Update the UI with the response
       if (response.success) {
         // Update the post in the state
-        const updatedPosts = mockPosts.map(post => 
+        const updatedPosts = postsByType[POST_TYPES.BLOG].map(post => 
           post.id === postId ? { 
             ...post, 
             status: response.data.published ? 'published' : 'draft' 
@@ -240,15 +301,33 @@ export default function Categories() {
       </div>
 
       {/* Content */}
-      {activeTab === "Press Release" ? (
+      {isLoading ? (
+        <div className="flex justify-center items-center h-64">
+          <Loader2 className="animate-spin h-10 w-10 text-[#4B6E3C]" />
+        </div>
+      ) : error ? (
+        <div className="text-red-600 p-4 bg-red-50 rounded-md">
+          {error}
+        </div>
+      ) : activeTab === "Press Release" ? (
         <div className="space-y-10">
-          {mockPressReleases.map((item) => (
-            <article key={item.id} className=" grid grid-cols-1 md:grid-cols-3 gap-9">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full md:w-[543.5px] h-full md:h-[284px] object-cover rounded"
-              />
+          {postsByType[POST_TYPES.PRESS_RELEASE].map((item) => (
+            <article key={item._id || item.id} className="grid grid-cols-1 md:grid-cols-3 gap-9">
+              <div className="w-full md:w-[543.5px] h-full md:h-[284px] bg-gray-100 rounded overflow-hidden flex items-center justify-center">
+                {item.image ? (
+                  <img
+                    src={getOptimizedImage(item.image, { width: 800, height: 400 })}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="text-gray-400 flex flex-col items-center">
+                    <ImageIcon size={48} className="mb-2" />
+                    <span>No image</span>
+                  </div>
+                )}
+              </div>
               <div className="w-full md:w-[700px] pr-4">
                 <h3 className="text-[#1B2816] text-[20px] md:text-[24px] font-bold leading-snug mb-3">
                   {item.title}
@@ -266,16 +345,29 @@ export default function Categories() {
               </div>
             </article>
           ))}
+          {postsByType[POST_TYPES.PRESS_RELEASE].length === 0 && (
+            <p className="text-gray-500 text-center py-10">No press releases found.</p>
+          )}
         </div>
       ) : activeTab === "Publications" ? (
         <div className="space-y-10">
-          {mockPublications.map((item) => (
-            <article key={item.id} className=" grid grid-cols-1 md:grid-cols-3 gap-9">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full md:w-[543.5px] h-full md:h-[284px] object-cover rounded"
-              />
+          {postsByType[POST_TYPES.PUBLICATION].map((item) => (
+            <article key={item._id || item.id} className="grid grid-cols-1 md:grid-cols-3 gap-9">
+              <div className="w-full md:w-[543.5px] h-full md:h-[284px] bg-gray-100 rounded overflow-hidden flex items-center justify-center">
+                {item.image ? (
+                  <img
+                    src={getOptimizedImage(item.image, { width: 800, height: 400 })}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="text-gray-400 flex flex-col items-center">
+                    <ImageIcon size={48} className="mb-2" />
+                    <span>No image</span>
+                  </div>
+                )}
+              </div>
               <div className="w-full md:w-[700px] pr-4">
                 <h3 className="text-[#1B2816] text-[20px] md:text-[24px] font-bold leading-snug mb-3">
                   {item.title}
@@ -293,10 +385,13 @@ export default function Categories() {
               </div>
             </article>
           ))}
+          {postsByType[POST_TYPES.PUBLICATION].length === 0 && (
+            <p className="text-gray-500 text-center py-10">No publications found.</p>
+          )}
         </div>
       ) : activeTab === "Upcoming Events" ? (
         <div className="space-y-6">
-          {mockEvents.map((ev, idx) => (
+          {postsByType[POST_TYPES.EVENT].map((ev, idx) => (
             <div key={ev.id} className="">
               {/* Row */}
               <div className="flex items-center justify-between gap-4 py-[20px] px-[24px]">
@@ -311,15 +406,19 @@ export default function Categories() {
                 <div className="w-full h-full flex items-center justify-between">
                   <h3 className="text-[20px] md:text-[24px] font-bold">{ev.title}</h3>
                   {/* Time + location */}
-                  <div className="hidden md:flex items-center gap-8 text-[#1B2816]">
-                    <div className="flex items-center gap-2">
-                      <Clock size={18} className="text-[#4B6E3C]" />
-                      <span className="text-[16px] font-normal">{ev.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2 max-w-[360px] truncate">
-                      <MapPin size={18} className="text-[#4B6E3C]" />
-                      <span className="text-[16px] font-normal truncate">{ev.location}</span>
-                    </div>
+                  <div className="flex items-center gap-6 text-[#1B2816] text-[16px] font-normal mb-4">
+                    {ev.time && (
+                      <div className="flex items-center gap-2">
+                        <Clock size={18} className="text-[#4B6E3C]" />
+                        <span className="text-[16px] font-normal">{ev.time}</span>
+                      </div>
+                    )}
+                    {ev.location && (
+                      <div className="flex items-center gap-2 max-w-[360px] truncate">
+                        <MapPin size={18} className="text-[#4B6E3C]" />
+                        <span className="text-[16px] font-normal truncate">{ev.location}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -340,25 +439,34 @@ export default function Categories() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          {mockPosts.map((post) => (
+          {postsByType[POST_TYPES.BLOG].map((post) => (
             <article
               key={post.id}
               className="w-[263.75px] h-[428px] bg-[#4B6E3C1A] rounded-[8px] overflow-hidden  shadow-sm"
             >
-              <Link to={`/blog/${post.id}`}>
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-[200px] object-cover cursor-pointer"
-                />
+              <Link to={`/blog/${post.slug || post._id || post.id}`}>
+                <div className="w-full h-[200px] bg-gray-100 overflow-hidden">
+                {post.image ? (
+                  <img
+                    src={getOptimizedImage(post.image, { width: 400, height: 200 })}
+                    alt={post.title}
+                    className="w-full h-full object-cover cursor-pointer"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-gray-400">
+                    <ImageIcon size={32} />
+                  </div>
+                )}
+              </div>  
               </Link>
 
               <div className="flex flex-col p-[24px]">
-                <Link to={`/blog/${post.id}`} className="group">
+                <Link to={`/blog/${post.slug || post._id || post.id}`} className="group">
                   <p className="text-[16px] font-normal text-[#1B2816] mb-2 group-hover:underline">
                     {post.date}
                   </p>
-                  <h3 className="text-[20px] font-bold text-[#1B2816] leading-snug group-hover:underline">
+                  <h3 className="text-[20px] font-bold text-[#1B2816] leading-snug group-hover:underline line-clamp-2">
                     {post.title}
                   </h3>
                 </Link>
@@ -367,7 +475,7 @@ export default function Categories() {
                 <div className="mt-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <StatusDropdown 
-                      postId={post.id} 
+                      postId={post._id || post.id} 
                       currentStatus={post.status || 'draft'} 
                       onStatusChange={handleStatusChange} 
                     />
@@ -391,7 +499,7 @@ export default function Categories() {
                       type="button"
                       title="Delete"
                       className="p-2 rounded hover:bg-red-50"
-                      onClick={() => confirmDelete({ type: 'blog', id: post.id })}
+                      onClick={() => confirmDelete({ type: 'blog', id: post._id || post.id })}
                     >
                       <Trash2 size={20} className="text-red-600" />
                     </button>
@@ -403,6 +511,10 @@ export default function Categories() {
         </div>
       )}
       {/* Edit Upcoming Event Modal */}
+      {postsByType[POST_TYPES.BLOG].length === 0 && activeTab === "Blog" && !isLoading && !error && (
+        <p className="text-gray-500 text-center py-10 col-span-full">No blog posts found.</p>
+      )}
+      
       {editingEvent && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black/50" onClick={() => setEditingEvent(null)} />
