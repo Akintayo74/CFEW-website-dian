@@ -15,7 +15,7 @@ function StoriesInsights() {
           Stay informed with stories from the field, environmental tips, and
           updates on our ongoing programs.
         </p>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:justify-between lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:justify-between lg:grid-cols-4 2xl:grid-cols-4">
           <BlogCard
             imageSrc="/slide-1.png"
             imageAlt="Random Image"

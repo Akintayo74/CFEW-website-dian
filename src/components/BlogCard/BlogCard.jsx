@@ -22,7 +22,9 @@ function BlogCard({ imageSrc, imageAlt, publishDate, title, background = 'bg-cfe
 
       <div className="flex flex-col text-left gap-4 p-6">
         <p className="text-sm md:text-base lg:text-lg text-cfew-dark leading-relaxed">{publishDate}</p>
-        <h6 className="font-bold text-xl lg:text-2xl text-cfew-dark leading-[1.4]">{title}</h6>
+        <div>
+        <h6 className="font-bold text-xl lg:text-2xl text-cfew-dark leading-[1.4] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">{title}</h6>
+        </div>
         <a href="https://www.wikipedia.org/" className="font-semibold text-sm md:text-base leading-none text-cfew-primary-400 hover:underline">
           Read More
         </a>

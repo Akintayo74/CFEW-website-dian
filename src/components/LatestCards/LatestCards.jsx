@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button';
+import Button from '../Button/Button';
 
 function LatestCards({ imageSrc, title, publisher, dateSent, textExcerpt }) {
   return (

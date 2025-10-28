@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../Container';
 import SectionHeader from '../SectionHeader';
-import Button from '../Button';
+import Button from '../Button/Button';
 import LatestCards from '../LatestCards/LatestCards';
 import Section from '../Section';
 
