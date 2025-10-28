@@ -32,22 +32,27 @@ function App() {
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
 
-          {/* Auth routes nested under AuthLayout */}
-          <Route path="/admin" element={<AuthLayout />}>
+          {/* Admin routes */}
+          <Route path="/admin">
+            {/* Auth routes under /admin */}
+            <Route element={<AuthLayout />}>
+              <Route index element={<Navigate to="login" replace />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route path="forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="reset-password" element={<ResetPasswordPage />} />
+              <Route path="new-password" element={<NewPasswordPage />} />
+              <Route path="password-reset" element={<PasswordResetPage />} />
+            </Route>
+            
+            {/* Dashboard routes under /admin */}
+            <Route element={<DashboardLayout />}>
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="dashboard/categories" element={<Categories />} />
+              <Route path="dashboard/posts" element={<Posts />} />
+            </Route>
+            
+            {/* Redirect /admin to /admin/login by default */}
             <Route index element={<Navigate to="login" replace />} />
-            <Route path="login" element={<LoginPage />} />
-            <Route path="forgot-password" element={<ForgotPasswordPage />} />
-            <Route path="reset-password" element={<ResetPasswordPage />} />
-            <Route path="new-password" element={<NewPasswordPage />} />
-            <Route path="password-reset" element={<PasswordResetPage />} />
-          </Route>
-
-          {/* Dashboard routes nested under DashboardLayout */}
-          <Route path="/admin" element={<DashboardLayout/>}>
-            <Route index element={<Navigate to="dashboard" replace />} />
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="dashboard/categories" element={<Categories />} />
-            <Route path="dashboard/posts" element={<Posts />} />
             <Route path="dashboard/posts/press-release" element={<PressRelease />} />
             <Route path="dashboard/posts/publication" element={<Publication />} />
             <Route path="dashboard/posts/upcoming-event" element={<UpcomingEvent />} />

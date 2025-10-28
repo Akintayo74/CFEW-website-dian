@@ -26,7 +26,7 @@ export default function ForgotPasswordPage() {
                     placeholder="Type your Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required
+                    // required
                 />
                 <Button type="submit">Reset Password</Button>
             </form>
