@@ -1,7 +1,7 @@
 import Container from "../Container/Container";
 import React from "react";
 
-function BlogCard({ imageSrc, imageAlt, publishDate, title, background = 'bg-cfew-primary-100' }) {
+function BlogCard({ imageSrc, imageAlt, publishDate, title, background = 'bg-cfew-trial' }) {
   return (
     <div className={`${background} flex flex-col w-full}`}>
       {/* <div className="flex justify-center">

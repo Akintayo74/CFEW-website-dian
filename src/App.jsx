@@ -20,12 +20,14 @@ import PressRelease from './pages/PressRelease';
 import Publication from './pages/Publication';
 import UpcomingEvent from './pages/UpcomingEvent';
 import ScrollToHash from './components/ScrollToHash/ScrollToHash';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <div className="font-sans">
       <Router>
         <ScrollToHash />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
