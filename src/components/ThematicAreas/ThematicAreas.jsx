@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Add this import
 import SectionHeader from "../SectionHeader/SectionHeader";
 import Section from "../Section/Section";
+import ThematicCards from "../ThematicCards/ThematicCards";
 
 function ThematicAreas() {
   return (
@@ -14,58 +14,26 @@ function ThematicAreas() {
         </p>
       </div>
       <div className="grid grid-cols-2 gap-0 lg:grid-cols-4">
-        <Link
-          to="/about#environment"
-          className="relative group overflow-hidden block leading-none"
-        >
-          <img
-            src="./thematic-environment.png"
-            className="h-full w-full block object-cover scale-105 transition-transform duration-500 group-hover:scale-120"
-          />
-          <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500  group-hover:opacity-100"></div>
-          <p className="text-cfew-primary-50 absolute bottom-5 left-5 text-sm font-bold md:text-2xl lg:bottom-10 lg:left-10">
-            Environment
-          </p>
-        </Link>
-        <Link
-          to="/about#health"
-          className="relative group overflow-hidden block leading-none"
-        >
-          <img
-            src="./thematic-health.png"
-            className="h-full w-full block object-cover scale-105 transition-transform duration-500 group-hover:scale-120"
-          />
-          <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-          <p className="text-cfew-primary-50 absolute bottom-5 left-5 text-sm font-bold md:text-2xl lg:bottom-10 lg:left-10">
-            Health
-          </p>
-        </Link>
-        <Link
-          to="/about#agriculture"
-          className="relative group overflow-hidden block leading-none"
-        >
-          <img
-            src="./thematic-agriculture.png"
-            className="h-full w-full block object-cover scale-105 transition-transform duration-500 group-hover:scale-120"
-          />
-          <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-          <p className="text-cfew-primary-50 absolute bottom-5 left-5 text-sm font-bold md:text-2xl lg:bottom-10 lg:left-10">
-            Agriculture
-          </p>
-        </Link>
-        <Link
-          to="/about#education"
-          className="relative group overflow-hidden block leading-none"
-        >
-          <img
-            src="./thematic-education.png"
-            className="h-full w-full block object-cover scale-105 transition-transform duration-500 group-hover:scale-120"
-          />
-          <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-          <p className="text-cfew-primary-50 absolute bottom-5 left-5 text-sm font-bold md:text-2xl lg:bottom-10 lg:left-10">
-            Education
-          </p>
-        </Link>
+        <ThematicCards 
+          href="/about#environment"
+          imageSrc="./thematic-environment.png"
+          cardName='Environment'
+        />
+        <ThematicCards 
+          href="/about#health"
+          imageSrc="./thematic-health.png"
+          cardName='Health'
+        />
+        <ThematicCards 
+          href="/about#agriculture"
+          imageSrc="./thematic-agriculture.png"
+          cardName='Agriculture'
+        />
+        <ThematicCards 
+          href="/about#education"
+          imageSrc="./thematic-education.png"
+          cardName='Education'
+        />
       </div>
     </Section>
   );
