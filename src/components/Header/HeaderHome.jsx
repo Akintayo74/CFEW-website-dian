@@ -21,7 +21,7 @@ function HeaderHome() {
   const getLinkClassName = (isActive) => {
     return isActive
       ? "text-cfew-primary-400 font-bold text-base"
-      : "text-cfew-interface font-bold text-base transition duration-200 hover:text-cfew-primary-400";
+      : "text-cfew-interface font-bold text-base transition duration-150 hover:text-cfew-primary-400";
   };
 
   function handleClick() {
