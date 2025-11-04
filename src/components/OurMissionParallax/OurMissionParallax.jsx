@@ -7,7 +7,7 @@ function OurMissionParallax() {
     <div>
       {/* Parallax Section */}
       <div
-        className="relative min-h-[300px] md:min-h-[500px] bg-cover bg-center bg-no-repeat bg-fixed"
+        className="relative min-h-[300px] md:min-h-[500px] bg-cover bg-center bg-no-repeat bg-fixed max-[1000px]:[background-attachment:scroll]"
         style={{ backgroundImage: `url(${parallaxImage})` }}
       >
         {/* Dark overlay */}
@@ -21,7 +21,7 @@ function OurMissionParallax() {
                 <h2 className="text-3xl lg:text-5xl font-bold mb-2.5">
                   Our Mission
                 </h2>
-                <p className="text-sm md:text-lg md:max-w-130 leading-relaxed font-semibold">
+                <p className="text-sm md:text-base md:max-w-125 leading-8 font-semibold">
                   To champion environmental sustainability through innovative
                   programs, research, and proactive advocacy in communities.
                 </p>
@@ -30,10 +30,10 @@ function OurMissionParallax() {
                 <h2 className="text-3xl lg:text-5xl font-bold mb-2.5">
                   Our Vision
                 </h2>
-                <p className="text-sm md:text-lg md:max-w-130 leading-relaxed font-semibold">
+                <p className="text-sm md:text-base md:max-w-125 leading-8 font-semibold">
                   "We envision an empowered world where humanity is at
                   equilibrium with nature."
-                </p>
+                </p> 
               </div>
             </div>
           </Container>
