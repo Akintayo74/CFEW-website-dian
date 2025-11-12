@@ -20,7 +20,7 @@ function CoreTeam() {
           towards a greener, safer world.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-10 lg:gap-20 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-10 lg:gap-20 mt-10 ">
           {CFEW_PORTRAITS_METADATA.map((image, index) => (
             <div
               className="relative rounded w-full max-w-[298px] aspect-[298/354]"
@@ -28,8 +28,8 @@ function CoreTeam() {
               onMouseLeave={() => setHoveredIndex(null)}
               key={image.source}
             >
-              <img src={image.source} alt={image.alt} className="w-full h-full object-cover"/>
-              <div className="absolute inset-0 hero-gradient"></div>
+              <img src={image.source} alt={image.alt} className="w-full h-full object-cover rounded"/>
+              <div className="absolute inset-0 hero-gradient rounded"></div>
               {hoveredIndex === index && (
                 <div className="absolute inset-0 bg-black/80 flex items-center justify-center transition-opacity duration-300">
                   {image.linkedIn ? (

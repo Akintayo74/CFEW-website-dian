@@ -7,7 +7,7 @@ function OurMissionParallax() {
     <div>
       {/* Parallax Section */}
       <div
-        className="relative min-h-[300px] md:min-h-[500px] bg-cover bg-center bg-no-repeat bg-fixed max-[1000px]:[background-attachment:scroll]"
+        className="relative min-h-[300px] md:min-h-[500px] bg-cover bg-center bg-no-repeat bg-fixed "
         style={{ backgroundImage: `url(${parallaxImage})` }}
       >
         {/* Dark overlay */}
