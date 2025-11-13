@@ -154,7 +154,7 @@ function BlogPostDetail() {
           <Container>
             <article className="max-w-4xl mx-auto text-left text-cfew-primary-900">
               {/* Meta Information */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-cfew-dark mb-8">
+              <div className="flex flex-col flex-wrap justify-center gap-4 text-sm text-cfew-dark mb-8">
                 <h1 className="text-3xl md:text-5xl font-bold mb-4 max-w-4xl">
                   {post.title}
                 </h1>

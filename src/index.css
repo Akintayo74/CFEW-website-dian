@@ -18,7 +18,7 @@
   --color-cfew-dark: #2D2D2D;
   --color-cfew-blog: #EDEBD7;
   --color-cfew-blog-default: hsl(94, 23%, 86%);
-  --color-cfew-blog-hover: hsl(94, 23%, 62%)
+  --color-cfew-blog-hover: hsl(0, 0%, 50%)
 }
 
 .hero-gradient {

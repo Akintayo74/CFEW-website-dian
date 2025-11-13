@@ -44,7 +44,9 @@ function HeaderHome() {
     <header className="bg-cfew-primary-900-90% sticky top-0 z-10">
       <Container>
         <div className="flex items-center justify-between py-3.5">
-          <img src={logo} />
+          <Link to='/'>
+            <img src={logo} />
+          </Link>
           <div>
             {/* Mobile First design */}
             <button

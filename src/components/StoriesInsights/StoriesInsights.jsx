@@ -5,9 +5,15 @@ import BlogCard from "../BlogCard/BlogCard";
 import Container from "../Container/Container";
 import Button from "../Button/Button";
 import { useBlogPosts } from "../../hooks/useBlogPosts";
+import { useNavigate } from "react-router-dom";
 
 function StoriesInsights() {
   const { posts, pagination, isLoading, isError } = useBlogPosts(1, 4);
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate('/resources');
+  }
 
   return (
     <Section spacing="looseSymmetrical">
@@ -74,7 +80,7 @@ function StoriesInsights() {
             )}
           {/* </div> */}
 
-          <Button className="mt-12" align="none" color="overlay" size="medium">
+          <Button className="mt-12" align="none" color="overlay" size="medium" onClick={handleClick}>
             More news
           </Button>
         </div>
