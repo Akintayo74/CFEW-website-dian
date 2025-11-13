@@ -21,6 +21,7 @@ import Publication from './pages/Publication';
 import UpcomingEvent from './pages/UpcomingEvent';
 import ScrollToHash from './components/ScrollToHash/ScrollToHash';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import BlogPostDetail from './components/BlogPostDetail/BlogPostDetail';
 
 function App() {
   return (
@@ -64,6 +65,8 @@ function App() {
             <Route path="drafts" element={<DraftsPage />} />
             <Route path="settings" element={<SettingsPage />} /> */}
           </Route>
+
+          <Route path="/posts/:id" element={<BlogPostDetail />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
