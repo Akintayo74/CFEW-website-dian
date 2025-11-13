@@ -20,7 +20,7 @@ function Section({
   const bgClasses = {
     pink: "bg-cfew-interface",
     primary: "bg-cfew-primary-50",
-    green: "bg-cfew-primary-600",
+    green: "bg-cfew-primary-500",
   };
 
   return (
