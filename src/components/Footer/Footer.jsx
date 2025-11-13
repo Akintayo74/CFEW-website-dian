@@ -159,7 +159,7 @@ function Footer() {
               {SOCIAL_LINKS.map((social) => (
                 <a
                   key={social.href}
-                  href={social.href}
+                  hrobject-coveref={social.href}
                   aria-label={`Visit our ${social.alt} page`}
                   className="transition-opacity hover:opacity-80"
                 >
