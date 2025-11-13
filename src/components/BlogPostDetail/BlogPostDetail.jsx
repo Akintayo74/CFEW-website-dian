@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useBlogPosts } from '../../hooks/useBlogPosts';
+import { useSingleBlogPost } from '../../hooks/useSingeBlogPost';
 import Container from '../Container';
 import Section from '../Section';
 
 function BlogPostDetail() {
   const { id } = useParams();
-  const { post, isLoading, isError } = useBlogPost(id);
+  const { post, isLoading, isError } = useSingleBlogPost(id);
 
   // Loading State
   if (isLoading) {
