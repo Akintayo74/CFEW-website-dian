@@ -1,7 +1,7 @@
 import Container from "../Container/Container";
 import React from "react";
 
-function BlogCard({ imageSrc, imageAlt, publishDate, title, background = 'bg-cfew-blog-default' }) {
+function BlogCard({ imageSrc, imageAlt, publishDate, title, background = 'bg-cfew-blog-default', destination }) {
   return (
     <div className={`${background} flex flex-col w-full}`}>
 
@@ -18,7 +18,7 @@ function BlogCard({ imageSrc, imageAlt, publishDate, title, background = 'bg-cfe
         <div>
         <h6 className="font-bold text-xl lg:text-2xl text-cfew-dark leading-[1.4] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">{title}</h6>
         </div>
-        <a href="https://www.wikipedia.org/" className="font-semibold text-sm md:text-base leading-none text-cfew-primary-400 hover:underline">
+        <a href={destination} className="font-semibold text-sm md:text-base leading-none text-cfew-primary-400 hover:underline">
           Read More
         </a>
       </div>

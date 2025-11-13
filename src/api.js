@@ -3,17 +3,6 @@ import useSWR from 'swr';
 
 export const API_URL = 'https://centre-for-earth-works-26db89bfe5a5.herokuapp.com/api/v1/posts'
 
-// export async function fetcher(endpoint) {
-//     const response = await fetch(endpoint);
-//     const json = await response.json();
-
-//     if(!json.ok) {
-//         throw json;
-//     }
-
-//     return json;
-// }
-
 export async function fetcher(endpoint) {
     const response = await fetch(endpoint);
 

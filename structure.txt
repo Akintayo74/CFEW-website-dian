@@ -1,13 +1,21 @@
 .
+├── ./dist.zip
+├── ./.env
 ├── ./eslint.config.js
 ├── ./.gitignore
 ├── ./index.html
+├── ./.npmrc
 ├── ./package.json
 ├── ./package-lock.json
 ├── ./public
 │   ├── ./public/about-us-page.webp
 │   ├── ./public/about-us.png
+│   ├── ./public/blog-card-2.png
 │   ├── ./public/BLOG.webp
+│   ├── ./public/CFEW_LOGO_NEW.png
+│   ├── ./public/CFEW-Logo.png
+│   ├── ./public/donate-1.webp
+│   ├── ./public/donate-2.webp
 │   ├── ./public/get-involved.png
 │   ├── ./public/our-core-values.png
 │   ├── ./public/our-thematic-agriculture.png
@@ -27,6 +35,7 @@
 │   │   └── ./public/partners/ncf.png
 │   ├── ./public/portraits
 │   │   ├── ./public/portraits/angela-iyeh.png
+│   │   ├── ./public/portraits/ayuba-waziri.webp
 │   │   ├── ./public/portraits/bukunmi-olotu.png
 │   │   ├── ./public/portraits/catherine-oduah.png
 │   │   ├── ./public/portraits/dakuo-kitagak.png
@@ -48,8 +57,10 @@
 │   │   ├── ./public/previous-initiatives/tree-life.png
 │   │   └── ./public/previous-initiatives/youth-land.png
 │   ├── ./public/programs-page-banner.webp
+│   ├── ./public/resources-image-banner.webp
 │   ├── ./public/slide-1.png
 │   ├── ./public/slide-2.png
+│   ├── ./public/slide-3.jpg
 │   ├── ./public/slide-3.png
 │   ├── ./public/slide-4.png
 │   ├── ./public/slide-5.png
@@ -59,21 +70,26 @@
 │   └── ./public/thematic-health.png
 ├── ./README.md
 ├── ./src
+│   ├── ./src/api.js
 │   ├── ./src/App.jsx
 │   ├── ./src/assets
 │   │   ├── ./src/assets/book.png
 │   │   ├── ./src/assets/bulb.png
 │   │   ├── ./src/assets/CFEW-Logo.png
+│   │   ├── ./src/assets/clipboard.svg
 │   │   ├── ./src/assets/facebook.svg
 │   │   ├── ./src/assets/HandHeart.png
 │   │   ├── ./src/assets/instagram.svg
 │   │   ├── ./src/assets/Laptop.png
 │   │   ├── ./src/assets/linked-in.svg
 │   │   ├── ./src/assets/Megaphone.png
+│   │   ├── ./src/assets/parallax-image.jpg
+│   │   ├── ./src/assets/plain-linkedIn.svg
 │   │   ├── ./src/assets/plus.png
 │   │   ├── ./src/assets/Recycle.png
 │   │   ├── ./src/assets/shield.png
 │   │   ├── ./src/assets/SunHorizon.png
+│   │   ├── ./src/assets/Vector.svg
 │   │   ├── ./src/assets/x.svg
 │   │   └── ./src/assets/youtube.svg
 │   ├── ./src/components
@@ -97,17 +113,35 @@
 │   │   ├── ./src/components/Button
 │   │   │   ├── ./src/components/Button/Button.jsx
 │   │   │   └── ./src/components/Button/index.js
+│   │   ├── ./src/components/Button.jsx
 │   │   ├── ./src/components/Card
 │   │   │   ├── ./src/components/Card/Card.jsx
 │   │   │   ├── ./src/components/Card/Card.stories.js
 │   │   │   └── ./src/components/Card/index.js
+│   │   ├── ./src/components/ContactUsModal
+│   │   │   ├── ./src/components/ContactUsModal/ContactUsModal.jsx
+│   │   │   ├── ./src/components/ContactUsModal/ContactUsModal.stories.js
+│   │   │   └── ./src/components/ContactUsModal/index.js
 │   │   ├── ./src/components/Container
 │   │   │   ├── ./src/components/Container/Container.jsx
 │   │   │   └── ./src/components/Container/index.js
+│   │   ├── ./src/components/CopyButton
+│   │   │   ├── ./src/components/CopyButton/CopyButton.jsx
+│   │   │   └── ./src/components/CopyButton/index.js
 │   │   ├── ./src/components/CoreTeam
 │   │   │   ├── ./src/components/CoreTeam/CoreTeam.jsx
 │   │   │   ├── ./src/components/CoreTeam/CoreTeam.stories.js
 │   │   │   └── ./src/components/CoreTeam/index.js
+│   │   ├── ./src/components/DonationImpact
+│   │   │   ├── ./src/components/DonationImpact/DonationImpact.jsx
+│   │   │   ├── ./src/components/DonationImpact/DonationImpact.stories.js
+│   │   │   └── ./src/components/DonationImpact/index.js
+│   │   ├── ./src/components/DonationsImageBanner
+│   │   │   ├── ./src/components/DonationsImageBanner/DonationsImageBanner.jsx
+│   │   │   └── ./src/components/DonationsImageBanner/index.js
+│   │   ├── ./src/components/DropdownMenu
+│   │   │   ├── ./src/components/DropdownMenu/DropdownMenu.jsx
+│   │   │   └── ./src/components/DropdownMenu/index.js
 │   │   ├── ./src/components/Footer
 │   │   │   ├── ./src/components/Footer/Footer.jsx
 │   │   │   ├── ./src/components/Footer/Footer.stories.js
@@ -120,10 +154,14 @@
 │   │   │   ├── ./src/components/GetInvolved/GetInvolved.jsx
 │   │   │   ├── ./src/components/GetInvolved/GetInvolved.stories.js
 │   │   │   └── ./src/components/GetInvolved/index.js
+│   │   ├── ./src/components/GlassCard
+│   │   │   ├── ./src/components/GlassCard/GlassCard.jsx
+│   │   │   └── ./src/components/GlassCard/index.js
 │   │   ├── ./src/components/Header
-│   │   │   ├── ./src/components/Header/Header.jsx
+│   │   │   ├── ./src/components/Header/HeaderHome.jsx
 │   │   │   ├── ./src/components/Header/Header.stories.js
 │   │   │   └── ./src/components/Header/index.js
+│   │   ├── ./src/components/Header.jsx
 │   │   ├── ./src/components/HowWeWork
 │   │   │   ├── ./src/components/HowWeWork/HowWeWork.jsx
 │   │   │   ├── ./src/components/HowWeWork/HowWeWork.stories.js
@@ -137,6 +175,14 @@
 │   │   ├── ./src/components/ImageTextHeader
 │   │   │   ├── ./src/components/ImageTextHeader/ImageTextHeader.jsx
 │   │   │   └── ./src/components/ImageTextHeader/index.js
+│   │   ├── ./src/components/ImpactYears
+│   │   │   ├── ./src/components/ImpactYears/ImpactYears.jsx
+│   │   │   ├── ./src/components/ImpactYears/ImpactYears.stories.js
+│   │   │   └── ./src/components/ImpactYears/index.js
+│   │   ├── ./src/components/InputField.jsx
+│   │   ├── ./src/components/LatestCards
+│   │   │   ├── ./src/components/LatestCards/index.js
+│   │   │   └── ./src/components/LatestCards/LatestCards.jsx
 │   │   ├── ./src/components/Layout
 │   │   │   ├── ./src/components/Layout/index.js
 │   │   │   └── ./src/components/Layout/Layout.jsx
@@ -144,6 +190,10 @@
 │   │   │   ├── ./src/components/OurCoreValues/index.js
 │   │   │   ├── ./src/components/OurCoreValues/OurCoreValues.jsx
 │   │   │   └── ./src/components/OurCoreValues/OurCoreValues.stories.js
+│   │   ├── ./src/components/OurMissionParallax
+│   │   │   ├── ./src/components/OurMissionParallax/index.js
+│   │   │   ├── ./src/components/OurMissionParallax/OurMissionParallax.jsx
+│   │   │   └── ./src/components/OurMissionParallax/OurMissionParallax.stories.js
 │   │   ├── ./src/components/OurThematicAreas
 │   │   │   ├── ./src/components/OurThematicAreas/index.js
 │   │   │   ├── ./src/components/OurThematicAreas/OurThematicAreas.jsx
@@ -156,16 +206,45 @@
 │   │   │   ├── ./src/components/ProgramsImageBanner/index.js
 │   │   │   ├── ./src/components/ProgramsImageBanner/ProgramsImageBanner.jsx
 │   │   │   └── ./src/components/ProgramsImageBanner/ProgramsImageBanner.stories.js
+│   │   ├── ./src/components/ProgramsRouter
+│   │   │   ├── ./src/components/ProgramsRouter/index.js
+│   │   │   ├── ./src/components/ProgramsRouter/ProgramsRouter.jsx
+│   │   │   └── ./src/components/ProgramsRouter/ProgramsRouter.stories.js
+│   │   ├── ./src/components/ResourcesBlog
+│   │   │   ├── ./src/components/ResourcesBlog/index.js
+│   │   │   └── ./src/components/ResourcesBlog/ResourcesBlog.jsx
+│   │   ├── ./src/components/ResourcesImageBanner
+│   │   │   ├── ./src/components/ResourcesImageBanner/index.js
+│   │   │   ├── ./src/components/ResourcesImageBanner/ResourcesImageBanner.jsx
+│   │   │   └── ./src/components/ResourcesImageBanner/ResourcesImageBanner.stories.js
+│   │   ├── ./src/components/ResourcesPressRelease
+│   │   │   ├── ./src/components/ResourcesPressRelease/index.js
+│   │   │   └── ./src/components/ResourcesPressRelease/ResourcesPressRelease.jsx
+│   │   ├── ./src/components/ResourcesPublications
+│   │   │   ├── ./src/components/ResourcesPublications/index.js
+│   │   │   └── ./src/components/ResourcesPublications/ResourcesPublications.jsx
+│   │   ├── ./src/components/ResourcesRouter
+│   │   │   ├── ./src/components/ResourcesRouter/index.js
+│   │   │   ├── ./src/components/ResourcesRouter/ResourcesRouter.jsx
+│   │   │   └── ./src/components/ResourcesRouter/ResourcesRouter.stories.js
+│   │   ├── ./src/components/ScrollToHash
+│   │   │   ├── ./src/components/ScrollToHash/index.js
+│   │   │   └── ./src/components/ScrollToHash/ScrollToHash.jsx
+│   │   ├── ./src/components/ScrollToTop
+│   │   │   ├── ./src/components/ScrollToTop/index.js
+│   │   │   └── ./src/components/ScrollToTop/ScrollToTop.jsx
 │   │   ├── ./src/components/Section
 │   │   │   ├── ./src/components/Section/index.js
 │   │   │   └── ./src/components/Section/Section.jsx
 │   │   ├── ./src/components/SectionHeader
 │   │   │   ├── ./src/components/SectionHeader/index.js
 │   │   │   └── ./src/components/SectionHeader/SectionHeader.jsx
+│   │   ├── ./src/components/SideBar.jsx
 │   │   ├── ./src/components/Slideshow
 │   │   │   ├── ./src/components/Slideshow/index.js
 │   │   │   ├── ./src/components/Slideshow/Slideshow.jsx
 │   │   │   └── ./src/components/Slideshow/Slideshow.stories.js
+│   │   ├── ./src/components/StatsCard.jsx
 │   │   ├── ./src/components/StoriesInsights
 │   │   │   ├── ./src/components/StoriesInsights/index.js
 │   │   │   ├── ./src/components/StoriesInsights/StoriesInsights.jsx
@@ -174,10 +253,17 @@
 │   │   │   ├── ./src/components/ThematicAreas/index.js
 │   │   │   ├── ./src/components/ThematicAreas/ThematicAreas.jsx
 │   │   │   └── ./src/components/ThematicAreas/ThematicAreas.stories.js
+│   │   ├── ./src/components/ThematicCards
+│   │   │   ├── ./src/components/ThematicCards/index.js
+│   │   │   └── ./src/components/ThematicCards/ThematicCards.jsx
 │   │   ├── ./src/components/TrustedPartners
 │   │   │   ├── ./src/components/TrustedPartners/index.js
 │   │   │   ├── ./src/components/TrustedPartners/TrustedPartners.jsx
 │   │   │   └── ./src/components/TrustedPartners/TrustedPartners.stories.js
+│   │   ├── ./src/components/UpcomingInitiatives
+│   │   │   ├── ./src/components/UpcomingInitiatives/index.js
+│   │   │   ├── ./src/components/UpcomingInitiatives/UpcomingInitiatives.jsx
+│   │   │   └── ./src/components/UpcomingInitiatives/UpcomingInitiatives.stories.js
 │   │   └── ./src/components/WhoWeAre
 │   │       ├── ./src/components/WhoWeAre/index.js
 │   │       ├── ./src/components/WhoWeAre/WhoWeAre.jsx
@@ -185,15 +271,36 @@
 │   ├── ./src/constants.js
 │   ├── ./src/helpers
 │   ├── ./src/hooks
+│   │   └── ./src/hooks/useBlogPosts.js
 │   ├── ./src/index.css
+│   ├── ./src/layouts
+│   │   ├── ./src/layouts/AuthLayout.jsx
+│   │   └── ./src/layouts/DashboardLayout.jsx
 │   ├── ./src/main.jsx
 │   ├── ./src/pages
 │   │   ├── ./src/pages/AboutPage.jsx
+│   │   ├── ./src/pages/AllDone.jsx
+│   │   ├── ./src/pages/BlogDetail.jsx
+│   │   ├── ./src/pages/Categories.jsx
+│   │   ├── ./src/pages/Dashboard.jsx
+│   │   ├── ./src/pages/DonatePage.jsx
+│   │   ├── ./src/pages/ForgotPassword.jsx
 │   │   ├── ./src/pages/HomePage.jsx
+│   │   ├── ./src/pages/LoginPage.jsx
+│   │   ├── ./src/pages/NewPassword.jsx
 │   │   ├── ./src/pages/NotFoundPage.jsx
+│   │   ├── ./src/pages/Posts.jsx
+│   │   ├── ./src/pages/PressRelease.jsx
 │   │   ├── ./src/pages/ProgramsPage.jsx
-│   │   └── ./src/pages/ResourcesPage.jsx
+│   │   ├── ./src/pages/Publication.jsx
+│   │   ├── ./src/pages/ResetPassword.jsx
+│   │   ├── ./src/pages/ResourcesPage.jsx
+│   │   └── ./src/pages/UpcomingEvent.jsx
+│   ├── ./src/services
+│   │   └── ./src/services/postService.js
 │   ├── ./src/stories
+│   ├── ./src/utils
+│   │   └── ./src/utils/cloudinary.js
 │   └── ./src/utils.js
 ├── ./.storybook
 │   ├── ./.storybook/main.js
@@ -202,4 +309,4 @@
 ├── ./vercel.json
 └── ./vite.config.js
 
-42 directories, 161 files
+64 directories, 246 files
