@@ -45,22 +45,6 @@ function StoriesInsights() {
             {!isLoading && !isError && posts && posts.length > 0 && (
               <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:justify-between lg:grid-cols-4 2xl:grid-cols-4">
                 {posts.map((post) => (
-                  // <BlogCard
-                  //   key={post.id}
-                  //   imageSrc={post.featuredImage || "/slide-1.png"}
-                  //   imageAlt={post.title}
-                  //   publishDate={new Date(
-                  //     post.createdAt || Date.now()
-                  //   ).toLocaleDateString("en-US", {
-                  //     year: "numeric",
-                  //     month: "long",
-                  //     day: "numeric",
-                  //   })}
-                  //   title={post.title}
-                  //   postId={post.id}
-                  //   postTitle={post.title}
-                  // />
-
                   // In the BlogCard mapping, it should already look like this:
                   <BlogCard
                     key={post.id}
