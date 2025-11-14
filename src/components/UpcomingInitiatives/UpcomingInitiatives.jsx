@@ -9,14 +9,13 @@ function UpcomingInitiatives({ page = 1, pageSize = 4, type = "event" }) {
   const { posts, pagination, isLoading, isError } = useBlogPosts(
     page,
     pageSize,
-    gridCols = "lg:grid-cols-4",
     type
   );
 
   // Loading State
   if (isLoading) {
     return (
-      <div className={`grid grid-cols-1 gap-12 md:grid-cols-2 ${gridCols}`}>
+      <div className={`grid grid-cols-1 gap-12 md:grid-cols-2}`}>
         {[...Array(pageSize)].map((_, i) => (
           <div key={i} className="animate-pulse">
             <div className="bg-gray-300 aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] mb-4"></div>
