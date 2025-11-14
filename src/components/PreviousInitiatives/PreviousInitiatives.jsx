@@ -4,9 +4,14 @@ import Container from "../Container/Container";
 import ImageText from "../ImageText/ImageText";
 import SectionHeader from '../SectionHeader';
 import Button from '../Button/Button';
+import { useNavigate } from "react-router-dom";
 
 function PreviousInitiatives() {
+  const navigate = useNavigate();
 
+  function handleClick() {
+    navigate('/programs#upcoming')
+  }
   return (
     <div>
       <Container>
@@ -90,7 +95,7 @@ function PreviousInitiatives() {
         </ImageText>
       </div>
 
-      <Button className="bg-cfew-primary-100">
+      <Button className="bg-cfew-primary-100" onClick={handleClick}>
         Upcoming
       </Button>
       

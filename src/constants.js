@@ -68,7 +68,7 @@ export const CFEW_PORTRAITS_METADATA = [
     linkedIn: "https://www.linkedin.com/in/ogechi-chukwujekwu-88859b243",
   },
   {
-    source: "/portraits/dakuo-kitagak.png",
+    source: "/portraits/dakup-kitagak.webp",
     alt: "A portrait of DAKUP K. YOILA, the MONITORING & EVALUATION OFFICER of CFEW organisation",
     name: "DAKUP K. YOILA",
     currentPosition: "MONITORING & EVALUATION OFFICER",
