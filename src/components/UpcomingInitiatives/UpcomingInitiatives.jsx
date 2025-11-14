@@ -3,8 +3,50 @@ import SectionHeader from "../SectionHeader";
 import Container from "../Container";
 import { UPCOMING_EVENTS } from "../../constants";
 import location from "../../assets/Vector.svg";
+import { useBlogPosts } from "../../hooks/useBlogPosts";
 
-function UpcomingInitiatives() {
+function UpcomingInitiatives({ page = 1, pageSize = 4, type = "event" }) {
+  const { posts, pagination, isLoading, isError } = useBlogPosts(
+    page,
+    pageSize,
+    type
+  );
+
+  // Loading State
+  if (isLoading) {
+    return (
+      <div className={`grid grid-cols-1 gap-12 md:grid-cols-2 ${gridCols}`}>
+        {[...Array(pageSize)].map((_, i) => (
+          <div key={i} className="animate-pulse">
+            <div className="bg-gray-300 aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] mb-4"></div>
+            <div className="h-4 bg-gray-300 rounded mb-2"></div>
+            <div className="h-6 bg-gray-300 rounded"></div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // Error State
+  if (isError) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-red-600">
+          Failed to load blog posts. Please try again later.
+        </p>
+      </div>
+    );
+  }
+
+  // Empty State
+  if (!posts || posts.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-gray-600">No posts available at the moment.</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <Container>
@@ -13,7 +55,7 @@ function UpcomingInitiatives() {
         <hr className=" border-cfew-primary-400 border-[1.5px] " />
 
         <div className="flex flex-col gap-5 mt-5">
-          {UPCOMING_EVENTS.map((event, index) => (
+          {posts.map((event, index) => (
             <div
               key={index}
               className="grid grid-cols-1 h-full lg:grid-cols-2 justify-items-start items-center text-left text-cfew-primary-800 text-sm gap-6"
@@ -30,9 +72,10 @@ function UpcomingInitiatives() {
                 >
                   {event.date}
                 </span>
-                <h5 className="font-bold text-2xl lg:text-3xl leading-snug">{event.name}</h5>
+                <h5 className="font-bold text-2xl lg:text-3xl leading-snug">
+                  {event.title}
+                </h5>
               </div>
-              
 
               <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:justify-self-end lg:mr-10">
                 <p className="lg:justify-self-end lg:mr-6">{event.time}</p>
