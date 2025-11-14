@@ -6,7 +6,7 @@ function BlogList({
   page = 1, 
   pageSize = 4, 
   gridCols = "lg:grid-cols-4",
-  type = null // Optional: filter by type (blog, press-release, etc.)
+  type = 'blog' // Optional: filter by type (blog, press-release, etc.)
 }) {
   const { posts, pagination, isLoading, isError } = useBlogPosts(page, pageSize, type);
 
@@ -41,7 +41,7 @@ function BlogList({
     return (
       <div className="text-center py-12">
         <p className="text-gray-600">
-          No blog posts available at the moment.
+          No posts available at the moment.
         </p>
       </div>
     );

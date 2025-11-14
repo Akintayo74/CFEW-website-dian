@@ -1,8 +1,8 @@
 import useSWR from "swr";
 import { fetcher, API_URL } from "../api";
 
-export function useBlogPosts(page = 1, pageSize = 1) {
-  const endpoint = `${API_URL}/public?page=${page}&pageSize=${pageSize}`;
+export function useBlogPosts(page = 1, pageSize = 8, type='blog') {
+  const endpoint = `${API_URL}/public?page=${page}&pageSize=${pageSize}&type=${type}`;
 
   const { data, error, isLoading } = useSWR(endpoint, fetcher);
 

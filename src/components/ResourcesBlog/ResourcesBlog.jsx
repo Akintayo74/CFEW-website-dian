@@ -29,7 +29,7 @@ function ResourcesBlog() {
           </SectionHeader>
 
           {/* Reusable BlogList component */}
-          <BlogList page={1} pageSize={4} gridCols="lg:grid-cols-4" />
+          <BlogList page={1} pageSize={4} type='blog' gridCols="lg:grid-cols-4" />
 
         </Container>
       </Section>

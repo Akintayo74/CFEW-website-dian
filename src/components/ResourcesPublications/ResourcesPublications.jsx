@@ -4,6 +4,7 @@ import SectionHeader from '../SectionHeader';
 import LatestCards from '../LatestCards/LatestCards';
 import Section from '../Section';
 import FeaturedPost from '../FeaturedBlog';
+import BlogList from '../BlogList/BlogList';
 
 function ResourcesPublications() {
   return (
@@ -21,6 +22,10 @@ function ResourcesPublications() {
           textExcerpt='The Global Alliance for Incinerator Alternatives (GAIA) has pushed for a limit in the production of plastic products because it has become a threat to public health and environmental pollution.'
         /> */}
         <FeaturedPost type='publication'/>
+
+        <Section>
+          <BlogList type='publication' page={1} pageSize={18} />
+        </Section>
 
       </Container>
     </Section>
