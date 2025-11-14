@@ -9,10 +9,6 @@ function Card() {
     navigate("/donate");
   }
 
-  function handleVolunteerBtnClick() {
-    navigate("/donate");
-  }
-
   return (
     <div className="bg-cfew-transparent p-4 md:p-6 lg:p-8 max-w-[90%] md:max-w-lg lg:max-w-2xl">
       <h4 className="text-cfew-interface mb-3 text-lg font-bold md:mb-5 md:text-3xl lg:text-5xl lg:font-black">
@@ -23,13 +19,15 @@ function Card() {
         to protect the environment, tackle climate change, and build a
         sustainable future.
       </p>
-      <div className="flex gap-3 md:gap-4">
-        <Button>
+      <div className="flex gap-3 md:gap-4 items-end">
+        <Button onClick={handleDonateBtnClick} align="self-end">
           Donate
         </Button>
-        <Button color="clear" onClick={handleVolunteerBtnClick}>
-          Volunteer
-        </Button>
+        <a href="https://bit.ly/cfewvolunteer" target="noopener noreferrer" className="block self-start">
+          <Button color="clear" align="self-end">
+            Volunteer
+          </Button>
+        </a>
       </div>
     </div>
   );

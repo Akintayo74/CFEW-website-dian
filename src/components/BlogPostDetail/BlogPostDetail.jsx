@@ -13,7 +13,7 @@ function BlogPostDetail() {
   // Loading State
   if (isLoading) {
     return (
-      <Section spacing="looseSymmetrical">
+      <Section>
         <Container>
           <div className="animate-pulse">
             <div className="h-96 bg-gray-300 mb-8"></div>

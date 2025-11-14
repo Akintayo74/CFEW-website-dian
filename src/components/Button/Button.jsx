@@ -16,7 +16,7 @@ function Button({
   };
 
   const buttonColors = {
-    primary: "bg-cfew-primary-500 text-white",
+    primary: "bg-cfew-primary-500 text-white border-[1.5px] border-transparent",
     clear: "bg-transparent text-cfew-interface border-[1.5px] border-cfew-interface",
     overlay: "bg-cfew-primary-500-15% text-cfew-primary-500 border-[1.5px] border-cfew-primary-500 hover:text-cfew-interface",
   };

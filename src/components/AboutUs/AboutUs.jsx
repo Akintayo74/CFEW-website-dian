@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Section from "../Section/Section";
 import ImageText from "../ImageText/ImageText";
 import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,8 @@ function AboutUs() {
   const count2Ref = React.useRef(null);
   const count3Ref = React.useRef(null);
   const statsRef = React.useRef(null);
+
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const animateCounter = (ref, endValue, suffix = "+") => {
@@ -47,6 +50,10 @@ function AboutUs() {
 
     return () => ctx.revert();
   }, []);
+
+  function handleClick() {
+    navigate('/about');
+  }
 
   return (
     <Section>
@@ -93,6 +100,7 @@ function AboutUs() {
           className="hidden md:block lg:self-start"
           color="overlay"
           size="medium"
+          onClick={handleClick}
         >
           Learn More
         </Button>

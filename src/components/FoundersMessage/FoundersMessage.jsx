@@ -2,8 +2,14 @@ import React from "react";
 import Section from "../Section/Section";
 import Button from "../Button/Button";
 import Container from "../Container";
+import { useNavigate } from "react-router-dom";
 
 function FoundersMessage() {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate('/about');
+  }
   return (
     <Section background="pink" spacing="looseSymmetrical">
       <Container>
@@ -40,6 +46,7 @@ function FoundersMessage() {
             <Button
               color="overlay"
               size="medium"
+              onClick={handleClick}
             >
               Learn More
             </Button>
