@@ -5,19 +5,40 @@ import Section from '../Section';
 import ResourcesBlog from '../ResourcesBlog';
 import ResourcesPressRelease from '../ResourcesPressRelease';
 import ResourcesPublications from '../ResourcesPublications';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function ResourcesRouter() {
-   const [activeTab, setActiveTab] = React.useState('blog');
+  const location = useLocation();
+  const navigate = useNavigate();
 
-   const tabs = [
+  // Get initial tab from URL hash, default to 'blog'
+  const getInitialTab = () => {
+    const hash = location.hash.replace('#', '');
+    return hash === 'blog' || hash === 'press-release' || hash === 'publications' 
+      ? hash 
+      : 'blog';
+  };
+
+  const [activeTab, setActiveTab] = React.useState(getInitialTab);
+
+  const tabs = [
     { id: 'blog', name: 'BLOG' },
     { id: 'press-release', name: 'PRESS RELEASE' },
     { id: 'publications', name: 'PUBLICATIONS'}
   ];
 
+  // Update URL when tab changes
   function handleTabChange(tabId) {
-    setActiveTab(tabId)
+    setActiveTab(tabId);
+    navigate(`#${tabId}`, { replace: true });
   }
+
+  React.useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash && (hash === 'blog' || hash === 'press-release' || hash === 'publications')) {
+      setActiveTab(hash);
+    }
+  }, [location.hash]);
 
   function renderContent() {
     if(activeTab === 'blog') {
