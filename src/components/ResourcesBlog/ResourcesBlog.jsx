@@ -5,7 +5,7 @@ import Section from '../Section';
 import BlogCard from '../BlogCard/BlogCard';
 import LatestCards from '../LatestCards/LatestCards';
 import BlogList from '../BlogList/BlogList';
-import FeaturedBlog from '../FeaturedBlog/FeaturedBlog';
+import FeaturedPost from '../FeaturedBlog/FeaturedPost';
 
 function ResourcesBlog() {
   return (
@@ -15,8 +15,8 @@ function ResourcesBlog() {
           <SectionHeader align='text-left'>
             Latest from Blog
           </SectionHeader>
-          
-          <FeaturedBlog />
+
+          <FeaturedPost type='blog'/>
 
         </Container>
       </Section>

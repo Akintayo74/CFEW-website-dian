@@ -9,6 +9,7 @@ function LatestCards({
   dateSent,
   textExcerpt,
   postId,
+  enableLink = true,
 }) {
   return (
     // <div className="flex flex-col md:flex-row md:justify-between md:gap-10 md:items-center text-left text-cfew-primary-900 mb-16 md:mb-30">
@@ -27,9 +28,21 @@ function LatestCards({
           <p>{dateSent}</p>
         </div>
         <p className="[display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">{textExcerpt}</p>
-        <Link to={`/posts/${postId}`}>
+        {/* <Link to={`/posts/${postId}`}>
           <Button className="bg-cfew-primary-100">Read More</Button>
-        </Link>
+        </Link> */}
+
+        {enableLink ? (
+          <Link to={`/posts/${postId}`}>
+            <Button className='bg-cfew-primary-100'>
+              Read More
+            </Button>
+          </Link>
+        ) : (
+          <Button className='bg-cfew-primary-100' disabled>
+            Read More
+          </Button>
+        )}
       </div>
     </div>
   );

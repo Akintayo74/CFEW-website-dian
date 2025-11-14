@@ -2,8 +2,8 @@ import React from "react";
 import LatestCards from "../LatestCards/LatestCards";
 import { useFeaturedPost } from "../../hooks/useFeaturedPost";
 
-function FeaturedBlog() {
-  const { post, isLoading, isError } = useFeaturedPost("blog");
+function FeaturedPost({ type = "blog" }) {
+  const { post, isLoading, isError } = useFeaturedPost(type);
 
   // Loading State
   if (isLoading) {
@@ -34,29 +34,41 @@ function FeaturedBlog() {
     return null;
   }
 
-  // Get the first textBlock
-  const sortedTextBlocks = post.textBlocks
-    ? [...post.textBlocks].sort((a, b) => a.position - b.position)
-    : [];
-  
-  const firstTextBlock = sortedTextBlocks.length > 0 
-    ? sortedTextBlocks[0].content 
-    : "Read this latest story from our team.";
+  // Get excerpt text based on type
+  const getExcerpt = () => {
+    // For blogs: use first textBlock
+    if (type === "blog" && post.textBlocks) {
+      const sortedTextBlocks = [...post.textBlocks].sort((a, b) => a.position - b.position);
+      return sortedTextBlocks[0]?.content || "Read this latest story from our team.";
+    }
+    
+    // For press-release and publications: use excerpt field
+    return post.excerpt || "Read more about this update.";
+  };
+
+  // Get publisher/author based on type
+  const getPublisher = () => {
+    if (type === "press-release") {
+      return post.press || "Centre for Earth Works";
+    }
+    return post.author || "Centre for Earth Works";
+  };
 
   return (
     <LatestCards
       imageSrc={post.featuredImage || "/slide-1.png"}
       title={post.title}
-      publisher={post.author || "Centre for Earth Works"}
+      publisher={getPublisher()}
       dateSent={new Date(post.createdAt || Date.now()).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
       })}
-      textExcerpt={firstTextBlock}
+      textExcerpt={getExcerpt()}
       postId={post.id}
+      enableLink={type==='blog'}
     />
   );
 }
 
-export default FeaturedBlog;
+export default FeaturedPost;
