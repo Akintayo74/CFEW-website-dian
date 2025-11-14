@@ -9,6 +9,7 @@ function UpcomingInitiatives({ page = 1, pageSize = 4, type = "event" }) {
   const { posts, pagination, isLoading, isError } = useBlogPosts(
     page,
     pageSize,
+    gridCols = "lg:grid-cols-4",
     type
   );
 
