@@ -4,6 +4,7 @@ import SectionHeader from '../SectionHeader';
 import Section from '../Section';
 import BlogCard from '../BlogCard/BlogCard';
 import LatestCards from '../LatestCards/LatestCards';
+import BlogList from '../BlogList/BlogList';
 
 function ResourcesBlog() {
   return (
@@ -32,8 +33,8 @@ function ResourcesBlog() {
             Recent Blogs
           </SectionHeader>
 
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-20'>
-            <BlogCard
+          {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-20'> */}
+            {/* <BlogCard
               imageSrc='/blog-card-2.png'
               publishDate='August 8th 2025'
               title='The reemergence of the North Central Green life'
@@ -87,8 +88,11 @@ function ResourcesBlog() {
               publishDate='August 8th 2025'
               title='The reemergence of the North Central Green life'
               background='bg-cfew-blog'
-            />
-          </div>
+            /> */}
+
+            {/* Reusable BlogList component */}
+            <BlogList page={1} pageSize={4} gridCols="lg:grid-cols-4" />
+          {/* </div> */}
 
         </Container>
       </Section>
