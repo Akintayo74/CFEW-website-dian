@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
 
 /**
  * DataStateWrapper - Centralized state management for data fetching
@@ -52,11 +53,12 @@ function DataStateWrapper({
 
     // Default loading skeleton
     return (
-      <div className="animate-pulse space-y-4">
-        <div className="h-8 bg-gray-300 rounded w-3/4"></div>
-        <div className="h-4 bg-gray-300 rounded w-1/2"></div>
-        <div className="h-32 bg-gray-300 rounded"></div>
-      </div>
+      // <div className="animate-pulse space-y-4">
+      //   <div className="h-8 bg-gray-300 rounded w-3/4"></div>
+      //   <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+      //   <div className="h-32 bg-gray-300 rounded"></div>
+      // </div>
+      <Spinner size={20} color={slateBlue} />
     );
   }
 
