@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSingleBlogPost } from "../../hooks/useSingeBlogPost";
 import Container from "../Container";
 import Section from "../Section";
@@ -12,6 +12,7 @@ import Layout from "../Layout/Layout";
 function BlogPostDetail() {
   const { id } = useParams();
   const { post, isLoading, isError } = useSingleBlogPost(id);
+  const navigate = useNavigate();
 
   // Custom loading skeleton matching the detail page layout
   const loadingSkeleton = (
@@ -30,6 +31,10 @@ function BlogPostDetail() {
       </Container>
     </Section>
   );
+
+  function handleClick() {
+    navigate('/resources')
+  }
 
   return (
     <Layout>
@@ -175,14 +180,14 @@ function BlogPostDetail() {
                     )}
 
                     {/* Navigation Arrows */}
-                    <div className="flex items-center justify-between gap-6 py-8">
-                      <Button color="overlay">
+                    <div className="flex items-center justify-center gap-6 py-8">
+                      {/* <Button color="overlay" disabled={true}>
                         <ChevronLeft />
-                      </Button>
-                      <Button color="overlay">ALL POSTS</Button>
-                      <Button color="overlay">
+                      </Button> */}
+                      <Button color="overlay" onClick={handleClick} align="self-center">ALL POSTS</Button>
+                      {/* <Button color="overlay" disabled={true}>
                         <ChevronRight />
-                      </Button>
+                      </Button> */}
                     </div>
                   </article>
                 </Container>

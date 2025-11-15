@@ -42,11 +42,11 @@ function BlogList({
               key={post.id}
               imageSrc={post.featuredImage || "/slide-1.png"}
               imageAlt={post.title}
-              publishDate={new Date(post.createdAt || Date.now()).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+              // publishDate={new Date(post.createdAt || Date.now()).toLocaleDateString("en-US", {
+              //   year: "numeric",
+              //   month: "long",
+              //   day: "numeric",
+              // })}
               title={post.title}
               postId={post.id}
             />

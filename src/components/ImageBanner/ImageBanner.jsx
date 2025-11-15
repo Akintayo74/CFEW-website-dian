@@ -6,7 +6,7 @@ function ImageBanner({ imageSrc, imageAlt, children, overlay = true }) {
       <img
         src={imageSrc}
         alt={imageAlt}
-        className='w-full aspect-[9/16] md:aspect-[16/9] lg:h-[calc(100vh-80px)] object-cover'
+        className='w-full aspect-[9/16] md:aspect-[16/9] lg:h-[calc(100vh-80px)] 2xl:aspect-[21/9] object-cover'
       />
       {overlay && <div className='absolute inset-0 bg-black/40'></div>}
 
