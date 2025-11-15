@@ -39,15 +39,16 @@
 │   │   ├── ./public/portraits/bukunmi-olotu.png
 │   │   ├── ./public/portraits/catherine-oduah.png
 │   │   ├── ./public/portraits/dakuo-kitagak.png
+│   │   ├── ./public/portraits/dakup-kitagak.webp
 │   │   ├── ./public/portraits/dorcas-olayemi.png
 │   │   ├── ./public/portraits/dotun-benson.png
 │   │   ├── ./public/portraits/founder-image.png
 │   │   ├── ./public/portraits/nenbammwa-micah.png
+│   │   ├── ./public/portraits/ogechi-jacintha.jpg
 │   │   ├── ./public/portraits/ogechi-jacintha.png
 │   │   ├── ./public/portraits/osarumwense-ogbeifun.png
 │   │   ├── ./public/portraits/peace-ayuba.png
-│   │   ├── ./public/portraits/ruth-eshioagiame.png
-│   │   └── ./public/portraits/timothy-kevin.png
+│   │   └── ./public/portraits/ruth-eshioagiame.png
 │   ├── ./public/previous-initiatives
 │   │   ├── ./public/previous-initiatives/climate-recovery.png
 │   │   ├── ./public/previous-initiatives/green-school.png
@@ -107,6 +108,12 @@
 │   │   ├── ./src/components/BlogCard
 │   │   │   ├── ./src/components/BlogCard/BlogCard.jsx
 │   │   │   └── ./src/components/BlogCard/index.js
+│   │   ├── ./src/components/BlogList
+│   │   │   ├── ./src/components/BlogList/BlogList.jsx
+│   │   │   └── ./src/components/BlogList/index.js
+│   │   ├── ./src/components/BlogPostDetail
+│   │   │   ├── ./src/components/BlogPostDetail/BlogPostDetail.jsx
+│   │   │   └── ./src/components/BlogPostDetail/index.js
 │   │   ├── ./src/components/BreadCrumbs
 │   │   │   ├── ./src/components/BreadCrumbs/BreadCrumbs.jsx
 │   │   │   └── ./src/components/BreadCrumbs/index.js
@@ -142,6 +149,9 @@
 │   │   ├── ./src/components/DropdownMenu
 │   │   │   ├── ./src/components/DropdownMenu/DropdownMenu.jsx
 │   │   │   └── ./src/components/DropdownMenu/index.js
+│   │   ├── ./src/components/FeaturedBlog
+│   │   │   ├── ./src/components/FeaturedBlog/FeaturedPost.jsx
+│   │   │   └── ./src/components/FeaturedBlog/index.js
 │   │   ├── ./src/components/Footer
 │   │   │   ├── ./src/components/Footer/Footer.jsx
 │   │   │   ├── ./src/components/Footer/Footer.stories.js
@@ -271,7 +281,9 @@
 │   ├── ./src/constants.js
 │   ├── ./src/helpers
 │   ├── ./src/hooks
-│   │   └── ./src/hooks/useBlogPosts.js
+│   │   ├── ./src/hooks/useBlogPosts.js
+│   │   ├── ./src/hooks/useFeaturedPost.js
+│   │   └── ./src/hooks/useSingeBlogPost.js
 │   ├── ./src/index.css
 │   ├── ./src/layouts
 │   │   ├── ./src/layouts/AuthLayout.jsx
@@ -309,4 +321,4 @@
 ├── ./vercel.json
 └── ./vite.config.js
 
-64 directories, 246 files
+67 directories, 255 files

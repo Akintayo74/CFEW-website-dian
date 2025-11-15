@@ -7,6 +7,7 @@ import HeaderHome from "../Header/HeaderHome";
 import { SOCIAL_LINKS } from "../../constants";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "../Button/Button";
+import Layout from "../Layout/Layout";
 
 function BlogPostDetail() {
   const { id } = useParams();
@@ -88,8 +89,8 @@ function BlogPostDetail() {
     : [];
 
   return (
-    <div className="bg-cfew-interface min-h-screen">
-      <HeaderHome />
+    // <div className="bg-cfew-interface min-h-screen">
+    <Layout>
 
       <Section spacing="none">
         <Section background="green">
@@ -221,12 +222,7 @@ function BlogPostDetail() {
 
               {/* Navigation Arrows - Previous/Next Posts */}
               <div className="flex items-center justify-between gap-6 py-8">
-                {/* <button
-                  className="w-12 h-12 rounded-full border-2 border-cfew-primary-600 text-cfew-primary-600 hover:bg-cfew-primary-600 hover:text-white flex items-center justify-center transition disabled:opacity-30 disabled:cursor-not-allowed"
-                  aria-label="Previous post"
-                > */}
                 <Button color="overlay">
-
                   <ChevronLeft />
                 </Button>
 
@@ -242,7 +238,7 @@ function BlogPostDetail() {
           </Container>
         </Section>
       </Section>
-    </div>
+    </Layout>
   );
 }
 
