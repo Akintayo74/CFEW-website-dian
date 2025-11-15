@@ -49,6 +49,7 @@ function BlogList({
               // })}
               title={post.title}
               postId={post.id}
+              externalLink={post.link }
             />
           ))}
         </div>

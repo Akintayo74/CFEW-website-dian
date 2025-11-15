@@ -8,7 +8,24 @@ function BlogCard({
   title,
   background = "bg-cfew-blog-default",
   postId,
+  externalLink,
 }) {
+
+  // If there's an external link, use <a> tag with target="_blank"
+  if (externalLink) {
+    return (
+      <a 
+        href={externalLink} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block hover:opacity-90 transition-opacity"
+      >
+        {/* Your existing card content */}
+      </a>
+    );
+  }
+  
+
   return (
     <Link
       to={`/posts/${postId}`}

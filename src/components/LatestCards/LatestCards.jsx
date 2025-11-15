@@ -10,10 +10,11 @@ function LatestCards({
   textExcerpt,
   postId,
   enableLink = true,
+  externalLink,
 }) {
   return (
     // <div className="flex flex-col md:flex-row md:justify-between md:gap-10 md:items-center text-left text-cfew-primary-900 mb-16 md:mb-30">
-      <div className="md:grid md:grid-cols-5 md:gap-10 md:items-center text-left text-cfew-primary-900 mb-16 md:mb-30">
+    <div className="md:grid md:grid-cols-5 md:gap-10 md:items-center text-left text-cfew-primary-900 mb-16 md:mb-30">
       <div className="w-full md:col-span-3 h-[300px] md:w-[500px] lg:w-[700px] aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2]">
         <img
           src={imageSrc}
@@ -27,22 +28,32 @@ function LatestCards({
           <p>{publisher}</p>
           <p>{dateSent}</p>
         </div>
-        <p className="[display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">{textExcerpt}</p>
+        <p className="[display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">
+          {textExcerpt}
+        </p>
         {/* <Link to={`/posts/${postId}`}>
           <Button className="bg-cfew-primary-100">Read More</Button>
         </Link> */}
 
         {enableLink ? (
           <Link to={`/posts/${postId}`}>
-            <Button className='bg-cfew-primary-100'>
-              Read More
-            </Button>
+            <Button className="bg-cfew-primary-100">Read More</Button>
           </Link>
-        ) : (
-          <Button className='bg-cfew-primary-100' disabled>
-            Read More
-          </Button>
-        )}
+        ) : // <Button className='bg-cfew-primary-100' disabled>
+        //   Read More
+        // </Button>
+        null}
+
+        {externalLink ? (
+          <a
+            href={externalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="your-button-classes"
+          >
+            <Button className="bg-cfew-primary-100">Read More</Button>
+          </a>
+        ) : null}
       </div>
     </div>
   );

@@ -55,6 +55,7 @@ function FeaturedPost({ type = "blog" }) {
           })}
           textExcerpt={getExcerpt(post)}
           postId={post.id}
+          externalLink={post.link}
           enableLink={type === 'blog'}
         />
       )}
